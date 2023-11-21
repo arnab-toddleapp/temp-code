@@ -1,0 +1,1269 @@
+# Each line is a file pattern followed by one or more owners.
+
+# Order is important; the last matching pattern takes the most precedence.
+
+# CONTROLLERS
+
+# FROM HERE ON ALL THE CONTROLLER FILES ARE LISTED
+
+# AI
+
+src/services/ai/controllers/aiContent.js @toddle-edu/backend-team-2C
+src/services/ai/controllers/aiUsageMetrics.js @toddle-edu/backend-team-2C
+src/services/ai/controllers/assessment.js @toddle-edu/backend-team-2C
+src/services/ai/controllers/conversation.js @toddle-edu/backend-team-2C
+src/services/ai/controllers/message.js @toddle-edu/backend-team-2C
+src/services/ai/controllers/progressReport.js @toddle-edu/backend-team-1B
+src/services/ai/controllers/rte.js @toddle-edu/backend-team-2C
+src/services/ai/controllers/worksheet.js @toddle-edu/backend-team-2C
+src/services/platform/controllers/peoplesoftBilling.js @toddle-edu/backend-team-4B
+src/services/ai/controllers/voiceConfiguration.js @toddle-edu/backend-team-1B
+
+# AUTH
+
+src/services/auth/controllers/authApis.js @toddle-edu/backend-team-6A
+src/services/auth/controllers/authorization.js @toddle-edu/backend-team-2C
+src/services/auth/controllers/buddy.js @toddle-edu/backend-team-3C
+src/services/auth/controllers/bulkInsert.js @toddle-edu/backend-team-3A @toddle-edu/backend-team-4C
+src/services/auth/controllers/configuration.js @toddle-edu/backend-team-3A
+src/services/auth/controllers/configuration_deprecated.js @toddle-edu/backend-team-3A
+src/services/auth/controllers/dpRoster.js @toddle-edu/backend-team-1B @toddle-edu/backend-team-3A
+src/services/auth/controllers/examSession.js @toddle-edu/backend-team-1C
+src/services/auth/controllers/googleSheetController.js @toddle-edu/backend-team-4A @toddle-edu/backend-team-3C @toddle-edu/backend-team-5C
+src/services/auth/controllers/grade.js @toddle-edu/backend-team-3C
+src/services/auth/controllers/gradeEntityMap.js @toddle-edu/backend-team-1B
+src/services/auth/controllers/identity.js @toddle-edu/backend-team-3C
+src/services/auth/controllers/identityPool.js @toddle-edu/backend-team-6A
+src/services/auth/controllers/identityPoolAuthentication.js @toddle-edu/backend-team-6A
+src/services/auth/controllers/identityPoolForgotPasswordCode.js @toddle-edu/backend-team-6A
+src/services/auth/controllers/mapIdentityPoolUser.js @toddle-edu/backend-team-6A
+src/services/auth/controllers/mapUserField.js @toddle-edu/backend-team-4B
+src/services/auth/controllers/mapUserRegion.js @toddle-edu/backend-team-6A
+src/services/auth/controllers/multiAccessIdentity.js @toddle-edu/backend-team-6A
+src/services/auth/controllers/openAPIs.js @toddle-edu/backend-team-3C @toddle-edu/backend-team-4C
+src/services/auth/controllers/orgCreationData.js @toddle-edu/backend-team-3C
+src/services/auth/controllers/organization.js @toddle-edu/backend-team-3C @toddle-edu/backend-team-1B
+src/services/auth/controllers/organizationManagment.js @toddle-edu/backend-team-3C
+src/services/auth/controllers/publicApi.js @toddle-edu/backend-team-3A @toddle-edu/backend-team-4C
+src/services/auth/controllers/region.js @toddle-edu/backend-team-6A
+src/services/auth/controllers/signUp.js @toddle-edu/backend-team-4A
+src/services/auth/controllers/staffPermission.js @toddle-edu/backend-team-4B
+src/services/auth/controllers/staffStudentRelation.js @toddle-edu/backend-team-2D
+src/services/auth/controllers/studentData.js @toddle-edu/backend-team-6A
+src/services/auth/controllers/subject.js @toddle-edu/backend-team-1B
+src/services/auth/controllers/subjectGroup.js @toddle-edu/backend-team-1B
+src/services/auth/controllers/subjectVariant.js @toddle-edu/backend-team-1B
+src/services/auth/controllers/superAdmin.js @toddle-edu/backend-team-3A
+src/services/auth/controllers/thirdPartyInfo.js @toddle-edu/backend-team-6A
+src/services/auth/controllers/user.js @toddle-edu/backend-team-6A @toddle-edu/backend-team-3C @toddle-edu/backend-team-4C
+src/services/auth/controllers/userAccountDeletion.js @toddle-edu/backend-team-6A
+src/services/auth/controllers/userAuthentication.js @toddle-edu/backend-team-6A
+src/services/auth/controllers/bulkInsert.js @toddle-edu/backend-team-3A @toddle-edu/backend-team-3C
+src/services/auth/controllers/dpRoster.js @toddle-edu/backend-team-1B @toddle-edu/backend-team-1C @toddle-edu/backend-team-3B
+src/services/auth/controllers/externalUser.js @toddle-edu/backend-team-1C
+src/services/auth/models/externalUser.js @toddle-edu/backend-team-1C
+
+# ROUTES
+
+src/routes/build-templates.js @toddle-edu/backend-team-3B
+
+# COMMUNICATION
+
+src/services/communication/controllers/attendance.js @toddle-edu/backend-team-2D
+src/services/communication/controllers/attendanceExcusal.js @toddle-edu/backend-team-2D
+src/services/communication/controllers/classroom.js @toddle-edu/backend-team-2C
+src/services/communication/controllers/community.js @toddle-edu/backend-team-3A
+src/services/communication/controllers/examReg.js @toddle-edu/backend-team-4A
+src/services/communication/controllers/familyInviteEmail.js @toddle-edu/backend-team-4C
+src/services/communication/controllers/journal.js @toddle-edu/backend-team-2D
+src/services/communication/controllers/message.js @toddle-edu/backend-team-2D @toddle-edu/backend-team-3A
+src/services/communication/controllers/notification.js @toddle-edu/backend-team-2D
+src/services/communication/controllers/other.js @toddle-edu/backend-team-2D
+src/services/communication/controllers/planning.js @toddle-edu/backend-team-2D @toddle-edu/backend-team-4A
+src/services/communication/controllers/productUpdate.js @toddle-edu/backend-team-2D
+src/services/communication/controllers/project.js @toddle-edu/backend-team-1C
+src/services/communication/controllers/standardPractices.js @toddle-edu/backend-team-3A
+src/services/communication/controllers/studentProjectPortfolio.js @toddle-edu/backend-team-1C
+src/services/communication/controllers/user.js @toddle-edu/backend-team-2C
+src/services/communication/controllers/calendarEventItem.js @toddle-edu/backend-team-2D
+src/services/communication/controllers/progressReport.js @toddle-edu/backend-team-1A
+src/services/communication/controllers/studentProfile.js @toddle-edu/backend-team-4B
+
+# COMMUNITY
+
+src/services/community/controllers/activationEmail.js @toddle-edu/backend-team-3D
+src/services/community/controllers/activity.js @toddle-edu/backend-team-3D
+src/services/community/controllers/src/services/communityEntities.js @toddle-edu/backend-team-3D
+src/services/community/controllers/conversation.js @toddle-edu/backend-team-3D
+src/services/community/controllers/follow.js @toddle-edu/backend-team-3D
+src/services/community/controllers/globalGrade.js @toddle-edu/backend-team-3D
+src/services/community/controllers/globals.js @toddle-edu/backend-team-3D
+src/services/community/controllers/invite.js @toddle-edu/backend-team-3D
+src/services/community/controllers/keywordSearchReport.js @toddle-edu/backend-team-3D
+src/services/community/controllers/leCollection.js @toddle-edu/backend-team-3D
+src/services/community/controllers/notification.js @toddle-edu/backend-team-3D
+src/services/community/controllers/organizationOps.js @toddle-edu/backend-team-3D
+src/services/community/controllers/ratings.js @toddle-edu/backend-team-3D
+src/services/community/controllers/resourceRequest.js @toddle-edu/backend-team-3D
+src/services/community/controllers/school.js @toddle-edu/backend-team-3D
+src/services/community/controllers/share.js @toddle-edu/backend-team-3D
+src/services/community/controllers/submission.js @toddle-edu/backend-team-3D
+src/services/community/controllers/tag.js @toddle-edu/backend-team-3D
+src/services/community/controllers/user.js @toddle-edu/backend-team-3D
+
+# CMS
+
+src/services/cms/controllers/academyModule.js @toddle-edu/backend-team-2D
+src/services/cms/controllers/academyVideo.js @toddle-edu/backend-team-2D
+src/services/cms/controllers/productUpdates.js @toddle-edu/backend-team-2D
+src/services/cms/controllers/category.js @toddle-edu/backend-team-2D
+src/services/cms/controllers/directusFiles.js @toddle-edu/backend-team-2D
+src/services/ai/controllers/unitFlow.js @toddle-edu/backend-team-1B
+src/services/cms/controllers/contextualHelp.js @toddle-edu/backend-team-3C
+
+# INTER ORG
+
+src/services/interOrg/controllers/interOrg.js @toddle-edu/backend-team-6A
+
+# DOCUMENTATION
+
+src/services/documentation/controllers/attachment.js @toddle-edu/backend-team-4A
+src/services/documentation/controllers/folder.js @toddle-edu/backend-team-2B
+src/services/documentation/controllers/mapStudentProgressReportCompletedSection.js @toddle-edu/backend-team-5C
+src/services/documentation/controllers/post.js @toddle-edu/backend-team-2B
+src/services/documentation/controllers/progressReport.js @toddle-edu/backend-team-1A
+src/services/documentation/controllers/progressReportBaseTemplate.js @toddle-edu/backend-team-1A
+src/services/documentation/controllers/progressReportTaskGroup.js @toddle-edu/backend-team-1A
+src/services/documentation/controllers/project.js @toddle-edu/backend-team-1C
+src/services/documentation/controllers/projectAcademicHonesty.js @toddle-edu/backend-team-1C
+src/services/documentation/controllers/projectGroup.js @toddle-edu/backend-team-1C
+src/services/documentation/controllers/projectGroupGuidingQuestion.js @toddle-edu/backend-team-1C
+src/services/documentation/controllers/studentGoal.js @toddle-edu/backend-team-3A
+src/services/documentation/controllers/studentProjectPortfolio.js @toddle-edu/backend-team-1C
+src/services/documentation/controllers/test.js @toddle-edu/backend-team-4A
+src/services/documentation/controllers/testsrcipt.js @toddle-edu/backend-team-4A
+src/services/documentation/controllers/transrcipt.js @toddle-edu/backend-team-1A
+
+# CONTENT
+
+src/services/content/controller/MapQuestionField.js @toddle-edu/backend-team-2A
+src/services/content/controller/QuestionSubmission.js @toddle-edu/backend-team-2A
+src/services/content/controller/QuestionTypes.js @toddle-edu/backend-team-2A
+src/services/content/controller/Questions.js @toddle-edu/backend-team-2A
+src/services/content/controller/h5p.js @toddle-edu/backend-team-2A
+src/services/content/controller/h5pClass.js @toddle-edu/backend-team-2A
+
+# INTEGRATION
+
+src/services/integration/controller/LTIIntegration.js @toddle-edu/backend-team-4C
+src/services/integration/controller/attendance.js @toddle-edu/backend-team-4C
+src/services/integration/controller/benchMark.js @toddle-edu/backend-team-4C
+src/services/integration/controller/courses.js @toddle-edu/backend-team-4C
+src/services/integration/controller/globalSettings.js @toddle-edu/backend-team-4C
+src/services/integration/controller/job.js @toddle-edu/backend-team-4C
+src/services/integration/controller/mapCourseUser.js @toddle-edu/backend-team-4C
+src/services/integration/controller/mapOrgAuthToken.js @toddle-edu/backend-team-4C
+src/services/integration/controller/mapStudentAttendance.js @toddle-edu/backend-team-4A
+src/services/integration/controller/parent.js @toddle-edu/backend-team-4C
+src/services/integration/controller/resources.js @toddle-edu/backend-team-4C
+src/services/integration/controller/subTask.js @toddle-edu/backend-team-4C
+src/services/integration/controller/subjects.js @toddle-edu/backend-team-4C
+src/services/integration/controller/sync.js @toddle-edu/backend-team-4C
+src/services/integration/controller/task.js @toddle-edu/backend-team-4C
+src/services/integration/controller/thirdPartyMapping.js @toddle-edu/backend-team-4C
+src/services/integration/controller/timetable.js @toddle-edu/backend-team-2D
+src/services/integration/controller/tpsMedia.js @toddle-edu/backend-team-4A
+src/services/integration/controller/turnitin.js @toddle-edu/backend-team-1A
+src/services/integration/controller/unitPlans.js @toddle-edu/backend-team-4C
+src/services/integration/controller/users.js @toddle-edu/backend-team-4C
+src/services/openAPI/controller/students.js @toddle-edu/backend-team-4C
+
+# PLANNER
+
+src/services/planner/controllers/assessment.js @toddle-edu/backend-team-2C @toddle-edu/backend-team-1B
+src/services/planner/controllers/benchmark.js @toddle-edu/backend-team-3C
+src/services/planner/controllers/classProgressSummary.js @toddle-edu/backend-team-1A
+src/services/planner/controllers/curriculum.js @toddle-edu/backend-team-3C @toddle-edu/backend-team-1B
+src/services/planner/controllers/entityAchievedPlannerElementMap.js @toddle-edu/backend-team-1C
+src/services/planner/controllers/evaluation.js @toddle-edu/backend-team-1A @toddle-edu/backend-team-2C
+src/services/planner/controllers/field.js @toddle-edu/backend-team-1B
+src/services/planner/controllers/i18n.js @toddle-edu/backend-team-3A @toddle-edu/backend-team-3B
+src/services/planner/controllers/ibPYPElements.js @toddle-edu/backend-team-3C
+src/services/planner/controllers/learningEngagement.js @toddle-edu/backend-team-4A
+src/services/planner/controllers/mypObjectiveRubric.js @toddle-edu/backend-team-3A
+src/services/planner/controllers/plannerElement.js @toddle-edu/backend-team-1B
+src/services/planner/controllers/planningInsights.js @toddle-edu/backend-team-1B
+src/services/planner/controllers/planningInsightsUtils.js @toddle-edu/backend-team-1B
+src/services/planner/controllers/poi.js @toddle-edu/backend-team-3C @toddle-edu/backend-team-4A
+src/services/planner/controllers/pointAssessment.js @toddle-edu/backend-team-2C
+src/services/planner/controllers/pypPlanningInsights.js @toddle-edu/backend-team-1B
+src/services/planner/controllers/resource.js @toddle-edu/backend-team-4A
+src/services/planner/controllers/schedule.js @toddle-edu/backend-team-2D
+src/services/planner/controllers/scheduler.js @toddle-edu/backend-team-3C
+src/services/planner/controllers/singlePointRubric.js @toddle-edu/backend-team-3A
+src/services/planner/controllers/template.js @toddle-edu/backend-team-3B
+src/services/planner/controllers/templateField.js @toddle-edu/backend-team-3B
+src/services/planner/controllers/templateFieldTemplateMap.js @toddle-edu/backend-team-3B
+src/services/planner/controllers/testsrcipt.js @toddle-edu/backend-team-4A
+src/services/planner/controllers/theme.js @toddle-edu/backend-team-3C
+src/services/planner/controllers/treeResolvers.js @toddle-edu/backend-team-4A
+src/services/planner/controllers/unitPlan.js @toddle-edu/backend-team-1B
+src/services/planner/controllers/userGroupSharingSectionMap.js @toddle-edu/backend-team-1A
+src/services/planner/controllers/userGroupSharingSectionOrgTemplateConfig.js @toddle-edu/backend-team-1A
+src/services/planner/controllers/assessmentGradebook.js @toddle-edu/backend-team-2C
+src/services/planner/controllers/weeklyPlannerTemplate.js @toddle-edu/backend-team-1B
+src/services/planner/models/weeklyPlannerTemplate.js @toddle-edu/backend-team-1B
+src/services/platform/controllers/mapCourseWeeklyPlannerTemplate.js @toddle-edu/backend-team-1B
+src/services/platform/models/mapCourseWeeklyPlannerTemplate.js @toddle-edu/backend-team-1B
+src/services/planner/controllers/weeklyPlannerSection.js @toddle-edu/backend-team-1B
+src/services/planner/models/weeklyPlannerSection.js @toddle-edu/backend-team-1B
+src/services/planner/controllers/document.js @toddle-edu/backend-team-1B
+src/services/planner/models/mapWeeklyPlannerTemplateUser.js @toddle-edu/backend-team-1B
+src/services/planner/controllers/weeklyPlannerUtils.js @toddle-edu/backend-team-1B
+src/services/planner/controllers/assessmentType.js @toddle-edu/backend-team-2C @toddle-edu/backend-team-1B
+src/services/planner/models/assessmentType.js @toddle-edu/backend-team-2C @toddle-edu/backend-team-1B
+src/services/platform/controllers/evidenceDownload.js @toddle-edu/backend-team-3B
+src/services/planner/models/templateComponent.js @toddle-edu/backend-team-3B
+
+# PLATFORM
+
+src/services/platform/controllers/academicTerm.js @toddle-edu/backend-team-1A
+src/services/platform/controllers/academicYear.js @toddle-edu/backend-team-3A
+src/services/platform/controllers/academicYearEntityMap.js @toddle-edu/backend-team-3A @toddle-edu/backend-team-1C
+src/services/platform/controllers/assignment.js @toddle-edu/backend-team-2C
+src/services/platform/controllers/assignmentNotification.js @toddle-edu/backend-team-2C
+src/services/platform/controllers/attachment.js @toddle-edu/backend-team-2D
+src/services/platform/controllers/attachmentGroup.js @toddle-edu/backend-team-2D
+src/services/platform/controllers/attendance.js @toddle-edu/backend-team-2D
+src/services/platform/controllers/attendanceAnalytics.js @toddle-edu/backend-team-2D
+src/services/platform/controllers/attendanceExcusals.js @toddle-edu/backend-team-2D
+src/services/platform/controllers/bellSchedule.js @toddle-edu/backend-team-2D
+src/services/platform/controllers/calendar.js @toddle-edu/backend-team-2D
+src/services/platform/controllers/calendarEvent.js @toddle-edu/backend-team-2D
+src/services/platform/controllers/chat.js @toddle-edu/backend-team-4A
+src/services/platform/controllers/circular.js @toddle-edu/backend-team-4A
+src/services/platform/controllers/circularHelpers.js @toddle-edu/backend-team-4A
+src/services/platform/controllers/comment.js @toddle-edu/backend-team-3A
+src/services/platform/controllers/continuum.js @toddle-edu/backend-team-2D @toddle-edu/backend-team-4A
+src/services/platform/controllers/conversation.js @toddle-edu/backend-team-4A
+src/services/platform/controllers/course.js @toddle-edu/backend-team-3C @toddle-edu/backend-team-3A
+src/services/platform/controllers/driveApi.js @toddle-edu/backend-team-2A
+src/services/platform/controllers/emailSubsrciption.js @toddle-edu/backend-team-4A
+src/services/platform/controllers/engagementData.js @toddle-edu/backend-team-3C
+src/services/platform/controllers/entityCurriculumTypeMap.js @toddle-edu/backend-team-3C
+src/services/platform/controllers/entityTranslationMap.js @toddle-edu/backend-team-1B
+src/services/platform/controllers/eventTracker.js @toddle-edu/backend-team-6A
+src/services/platform/controllers/examReg.js @toddle-edu/backend-team-4B
+src/services/platform/controllers/externalEntity.js @toddle-edu/backend-team-1A
+src/services/platform/controllers/facet.js @toddle-edu/backend-team-3C
+src/services/platform/controllers/feedback.js @toddle-edu/backend-team-4B
+src/services/platform/controllers/folder.js @toddle-edu/backend-team-2C
+src/services/platform/controllers/genericForm.js @toddle-edu/backend-team-3C
+src/services/platform/controllers/genericTags.js @toddle-edu/backend-team-1B
+src/services/platform/controllers/googleMeetApi.js @toddle-edu/backend-team-2A
+src/services/platform/controllers/groupStudentMap.js @toddle-edu/backend-team-1C
+src/services/platform/controllers/importedEntity.js @toddle-edu/backend-team-1A
+src/services/platform/controllers/internalToolsApi.js @toddle-edu/backend-team-3C
+src/services/platform/controllers/learnerPortfolio.js @toddle-edu/backend-team-2B
+src/services/platform/controllers/like.js @toddle-edu/backend-team-2B
+src/services/platform/controllers/mapCourseSignInCode.js @toddle-edu/backend-team-6A
+src/services/platform/controllers/mapEntityLockingState.js @toddle-edu/backend-team-1C
+src/services/platform/controllers/meeting.js @toddle-edu/backend-team-2A
+src/services/platform/controllers/microsoftApi.js @toddle-edu/backend-team-2A
+src/services/platform/controllers/notification.js @toddle-edu/backend-team-2D
+src/services/platform/controllers/notificationIcon.js @toddle-edu/backend-team-4A
+src/services/platform/controllers/organization.js @toddle-edu/backend-team-3C @toddle-edu/backend-team-3A
+src/services/platform/controllers/organizationDataBulkDownload.js @toddle-edu/backend-team-3C @toddle-edu/backend-team-3A
+src/services/platform/controllers/organizationResource.js @toddle-edu/backend-team-1B
+src/services/platform/controllers/period.js @toddle-edu/backend-team-2D
+src/services/platform/controllers/platformApis.js @toddle-edu/backend-team-6A
+src/services/platform/controllers/project.js @toddle-edu/backend-team-1C
+src/services/platform/controllers/publicApi.js @toddle-edu/backend-team-3C
+src/services/platform/controllers/routine.js @toddle-edu/backend-team-2D
+src/services/platform/controllers/routineDates.js @toddle-edu/backend-team-2D
+src/services/platform/controllers/scheduledTask.js @toddle-edu/backend-team-3C
+src/services/platform/controllers/schoolFeedback.js @toddle-edu/backend-team-3A
+src/services/platform/controllers/schoolHandOver.js @toddle-edu/backend-team-3C
+src/services/platform/controllers/seen.js @toddle-edu/backend-team-3A
+src/services/platform/controllers/smsLogs.js @toddle-edu/backend-team-2C
+src/services/platform/controllers/standardPractices.js @toddle-edu/backend-team-3B
+src/services/platform/controllers/studentAdditionalInfo.js @toddle-edu/backend-team-4A
+src/services/platform/controllers/studentNotes.js @toddle-edu/backend-team-4A
+src/services/platform/controllers/studentOffense.js @toddle-edu/backend-team-2D
+src/services/platform/controllers/subjectPoi.js @toddle-edu/backend-team-1B
+src/services/platform/controllers/subjectVariant.js @toddle-edu/backend-team-1B @toddle-edu/backend-team-3A
+src/services/platform/controllers/tags.js @toddle-edu/backend-team-4A
+src/services/platform/controllers/tasks.js @toddle-edu/backend-team-2D
+src/services/platform/controllers/thirdPartyToken.js @toddle-edu/backend-team-2A
+src/services/platform/controllers/translate.js @toddle-edu/backend-team-1A
+src/services/platform/controllers/urlShortener.js @toddle-edu/backend-team-2C
+src/services/platform/controllers/userEntityState.js @toddle-edu/backend-team-1C @toddle-edu/backend-team-2D
+src/services/platform/controllers/course.js @toddle-edu/backend-team-3A @toddle-edu/backend-team-3C
+src/services/platform/controllers/courseGradeMap.js @toddle-edu/backend-team-3A @toddle-edu/backend-team-3C
+src/services/platform/controllers/yearGroup.js @toddle-edu/backend-team-1C
+src/services/platform/controllers/yearGroupGradeMap.js @toddle-edu/backend-team-1C
+src/services/platform/controllers/zendesk.js @toddle-edu/backend-team-3A
+src/services/platform/controllers/zoomApi.js @toddle-edu/backend-team-2A
+src/services/platform/controllers/mapCourseWeeklyPlannerTemplate.js @toddle-edu/backend-team-1B
+src/services/platform/controllers/workramp.js @toddle-edu/backend-team-3C
+src/services/platform/controllers/emailSummary.js @toddle-edu/backend-team-2D
+src/services/platform/controllers/termGradeStudentWiseCriteria.js @toddle-edu/backend-team-1A
+src/services/platform/controllers/assignmentGroup.js @toddle-edu/backend-team-2C
+src/services/platform/models/assignmentGroup.js @toddle-edu/backend-team-2C
+src/services/platform/models/timetableSlot.js @toddle-edu/backend-team-2D
+
+# PLANNING
+
+src/services/planning/controllers/activity.js @toddle-edu/backend-team-4A
+src/services/planning/controllers/activityListing.js @toddle-edu/backend-team-4A
+src/services/planning/controllers/benchmark.js @toddle-edu/backend-team-4A
+src/services/planning/controllers/planning.js @toddle-edu/backend-team-1B
+src/services/planning/controllers/unitPlan.js @toddle-edu/backend-team-4A
+
+# RESOURCE BANK
+
+src/services/resourceBank/controllers/allResource.js @toddle-edu/backend-team-4C
+src/services/resourceBank/controllers/khanAcademy.js @toddle-edu/backend-team-2C
+src/services/resourceBank/controllers/pixabay.js @toddle-edu/backend-team-2C
+src/services/resourceBank/controllers/tedEd.js @toddle-edu/backend-team-2C
+src/services/resourceBank/controllers/unsplash.js @toddle-edu/backend-team-2C
+src/services/resourceBank/controllers/youtube.js @toddle-edu/backend-team-2C
+
+# REST
+
+src/services/rest/controllers/POI.js @toddle-edu/backend-team-4A
+src/services/rest/controllers/activationEmailHandler.js @toddle-edu/backend-team-3C
+src/services/rest/controllers/benchmark.js @toddle-edu/backend-team-4A
+src/services/rest/controllers/dpThinkathon2022Registration.js @toddle-edu/backend-team-3A
+src/services/rest/controllers/dpcr2023Registrations.js @toddle-edu/backend-team-5C
+src/services/rest/controllers/googleSheetController.js @toddle-edu/backend-team-3A
+src/services/rest/controllers/grade.js @toddle-edu/backend-team-4A
+src/services/rest/controllers/learnWebsite.js @toddle-edu/backend-team-2C
+src/services/rest/controllers/learningJamRegistration.js @toddle-edu/backend-team-1A
+src/services/rest/controllers/mypAc2022Registrations.js @toddle-edu/backend-team-3A
+src/services/rest/controllers/mypMeetUpRegistration.js @toddle-edu/backend-team-3A
+src/services/rest/controllers/platformSearch.js @toddle-edu/backend-team-4B
+src/services/rest/controllers/playSummit2023Registrations.js @toddle-edu/backend-team-5C
+src/services/rest/controllers/pypBootCampRegistration.js @toddle-edu/backend-team-1A
+src/services/rest/controllers/pypxRegistration.js @toddle-edu/backend-team-3A
+src/services/rest/controllers/slb2022Registration.js @toddle-edu/backend-team-3A
+src/services/rest/controllers/ties2021Registration.js @toddle-edu/backend-team-3A
+src/services/rest/controllers/ties2022Registration.js @toddle-edu/backend-team-3A
+src/services/rest/controllers/tiesDemoRequest.js @toddle-edu/backend-team-3A
+src/services/rest/controllers/tiesRegistration.js @toddle-edu/backend-team-1A
+src/services/rest/controllers/toddleDemoRequest.js @toddle-edu/backend-team-2C
+src/services/rest/controllers/toddleReferralCode.js @toddle-edu/backend-team-3A
+src/services/rest/controllers/toddleTalksRegistration.js @toddle-edu/backend-team-3A
+src/services/rest/controllers/unitPlan.js @toddle-edu/backend-team-4A
+src/services/rest/controllers/websiteSchoolListManager.js @toddle-edu/backend-team-3A
+src/services/rest/controllers/workbookControllers.js @toddle-edu/backend-team-2A
+src/services/rest/controllers/yearlyInsight.js @toddle-edu/backend-team-4A
+src/services/rest/controllers/ibdpLaunchpad2023Registrations.js @toddle-edu/backend-team-5C
+src/services/rest/controllers/mypLaunchpad2023Registrations.js @toddle-edu/backend-team-5C
+src/services/rest/controllers/serviceLearningSummit2023Registrations.js @toddle-edu/backend-team-5C
+src/services/rest/controllers/odysseyCounsellingRegistrations.js @toddle-edu/backend-team-5C
+src/services/rest/controllers/toddleaiRegistrations.js @toddle-edu/backend-team-5C
+
+# LIBRARY
+
+src/services/library/controllers/bookmark.js @toddle-edu/backend-team-3D
+src/services/library/controllers/leCollection.js @toddle-edu/backend-team-3D
+src/services/library/controllers/libraryEntities.js @toddle-edu/backend-team-3D
+src/services/library/controllers/tag.js @toddle-edu/backend-team-3D
+src/services/library/controllers/globals.js @toddle-edu/backend-team-3D
+src/services/library/controllers/premiumEntityMap.js @toddle-edu/backend-team-3D
+src/services/library/controllers/grades.js @toddle-edu/backend-team-3D
+src/services/library/controllers/popularityIndex.js @toddle-edu/backend-team-3D
+src/services/library/controllers/question.js @toddle-edu/backend-team-3D
+
+# MODELS
+
+# FROM HERE ON ALL THE MODEL FILES ARE LISTED
+
+# AI
+
+src/services/ai/models/aiUsageMetrics.js @toddle-edu/backend-team-2C
+src/services/ai/models/conversation.js @toddle-edu/backend-team-2C
+src/services/ai/models/message.js @toddle-edu/backend-team-2C
+src/services/ai/models/progressReport.js @toddle-edu/backend-team-1B
+src/services/ai/models/rpc.js @toddle-edu/backend-team-2C
+src/services/ai/models/voiceConfiguration.js @toddle-edu/backend-team-1B
+
+# AUTH
+
+src/services/auth/models/address.js @toddle-edu/backend-team-4A
+src/services/auth/models/authFunctions.js @toddle-edu/backend-team-4A
+src/services/auth/models/basicUserDetails.js @toddle-edu/backend-team-4B
+src/services/auth/models/buddy.js @toddle-edu/backend-team-3C
+src/services/auth/models/configuration.js @toddle-edu/backend-team-3A
+src/services/auth/models/configurationEntityGroupEntityMap.js @toddle-edu/backend-team-3A
+src/services/auth/models/configurationEntityGroupPrecedence.js @toddle-edu/backend-team-3A
+src/services/auth/models/configurationEntityGroupValueMap.js @toddle-edu/backend-team-3A
+src/services/auth/models/configurationView.js @toddle-edu/backend-team-3A
+src/services/auth/models/configurationViewEntityMap.js @toddle-edu/backend-team-3A
+src/services/auth/models/configurationViewPlatformMap.js @toddle-edu/backend-team-3A
+src/services/auth/models/courseSetting.js @toddle-edu/backend-team-4A
+src/services/auth/models/demoUnitCreator.js @toddle-edu/backend-team-4A
+src/services/auth/models/designation.js @toddle-edu/backend-team-4A
+src/services/auth/models/displayRole.js @toddle-edu/backend-team-4A
+src/services/auth/models/encryptionHelpers.js @toddle-edu/backend-team-4A
+src/services/auth/models/examSession.js @toddle-edu/backend-team-1C
+src/services/auth/models/genericConfiguration.js @toddle-edu/backend-team-3A
+src/services/auth/models/genericConfigurationLockStateMap.js @toddle-edu/backend-team-3A
+src/services/auth/models/genericConfigurationValidityMap.js @toddle-edu/backend-team-3A
+src/services/auth/models/genericPermissionConfigurablePermissionMap.js @toddle-edu/backend-team-3A
+src/services/auth/models/genericPermissions.js @toddle-edu/backend-team-3A
+src/services/auth/models/genericSetting.js @toddle-edu/backend-team-3A
+src/services/auth/models/globalGrade.js @toddle-edu/backend-team-3C
+src/services/auth/models/globalSubject.js @toddle-edu/backend-team-1B
+src/services/auth/models/globalSubjectGroup.js @toddle-edu/backend-team-1B
+src/services/auth/models/globalSubjectProjectGroupTypeMap.js @toddle-edu/backend-team-1C
+src/services/auth/models/gradeEntityMap.js @toddle-edu/backend-team-1B
+src/services/auth/models/identity.js @toddle-edu/backend-team-3C
+src/services/auth/models/identityPool.js @toddle-edu/backend-team-6A
+src/services/auth/models/identityPoolForgotPasswordCode.js @toddle-edu/backend-team-6A
+src/services/auth/models/mapGradeSubject.js @toddle-edu/backend-team-3C
+src/services/auth/models/mapIdentityPoolUser.js @toddle-edu/backend-team-6A
+src/services/auth/models/mapOrganizationConfigurationStatus.js @toddle-edu/backend-team-1A
+src/services/auth/models/mapOrganizationRegion.js @toddle-edu/backend-team-6A
+src/services/auth/models/mapOrganizationSubscriptionPlan.js @toddle-edu/backend-team-3A
+src/services/auth/models/mapOrganizationUser.js @toddle-edu/backend-team-3A
+src/services/auth/models/mapParentChild.js @toddle-edu/backend-team-4C @toddle-edu/backend-team-3C
+src/services/auth/models/mapParentClassInvite.js @toddle-edu/backend-team-4C
+src/services/auth/models/mapScreenStateSubscriptionPlan.js @toddle-edu/backend-team-3A
+src/services/auth/models/mapStaffStudent.js @toddle-edu/backend-team-2D
+src/services/auth/models/mapUserCircular.js @toddle-edu/backend-team-4A
+src/services/auth/models/mapUserClassNotification.js @toddle-edu/backend-team-1A
+src/services/auth/models/mapUserCoachMark.js @toddle-edu/backend-team-3A
+src/services/auth/models/mapUserCommunicationState.js @toddle-edu/backend-team-4C
+src/services/auth/models/mapUserDesignation.js @toddle-edu/backend-team-3A
+src/services/auth/models/mapUserField.js @toddle-edu/backend-team-4B
+src/services/auth/models/mapUserIdentity.js @toddle-edu/backend-team-3C
+src/services/auth/models/mapUserRegion.js @toddle-edu/backend-team-6A
+src/services/auth/models/mapUserRoles.js @toddle-edu/backend-team-3A
+src/services/auth/models/mapUserStateInfo.js @toddle-edu/backend-team-4A
+src/services/auth/models/multiAccessIdentity.js @toddle-edu/backend-team-6A
+src/services/auth/models/openAPIs.js @toddle-edu/backend-team-4A
+src/services/auth/models/orgCreationData.js @toddle-edu/backend-team-3C
+src/services/auth/models/orgGrade.js @toddle-edu/backend-team-3C
+src/services/auth/models/orgSubject.js @toddle-edu/backend-team-1B
+src/services/auth/models/organization.js @toddle-edu/backend-team-3C @toddle-edu/backend-team-6A
+src/services/auth/models/organizationAwaitingApproval.js @toddle-edu/backend-team-1A
+src/services/auth/models/organizationData.js @toddle-edu/backend-team-3A
+src/services/auth/models/organizationMigration.js @toddle-edu/backend-team-6A
+src/services/auth/models/organizationPermissions.js @toddle-edu/backend-team-3A
+src/services/auth/models/organizationPreset.js @toddle-edu/backend-team-3A
+src/services/auth/models/organizationSetting.js @toddle-edu/backend-team-3A
+src/services/auth/models/pendingOrganizationUser.js @toddle-edu/backend-team-3A
+src/services/auth/models/personalContact.js @toddle-edu/backend-team-4B
+src/services/auth/models/planUpgradeRequest.js @toddle-edu/backend-team-3A
+src/services/auth/models/region.js @toddle-edu/backend-team-3A @toddle-edu/backend-team-6A
+src/services/auth/models/staffPermission.js @toddle-edu/backend-team-4B
+src/services/auth/models/studentData.js @toddle-edu/backend-team-4B @toddle-edu/backend-team-3A
+src/services/auth/models/subjectGroup.js @toddle-edu/backend-team-1B
+src/services/auth/models/subjectGroupSubjectMap.js @toddle-edu/backend-team-1B
+src/services/auth/models/subjectVariant.js @toddle-edu/backend-team-1B
+src/services/auth/models/subscriptionPlan.js @toddle-edu/backend-team-3C
+src/services/auth/models/superAdmin.js @toddle-edu/backend-team-3A
+src/services/auth/models/systemConstants.js @toddle-edu/backend-team-3A
+src/services/auth/models/unauthenticatedUser.js @toddle-edu/backend-team-1A
+src/services/auth/models/user.js @toddle-edu/backend-team-6A @toddle-edu/backend-team-3C @toddle-edu/backend-team-4C
+src/services/auth/models/userAccountDeletion.js @toddle-edu/backend-team-6A
+src/services/auth/models/userEmailVerifyCode.js @toddle-edu/backend-team-3A
+src/services/auth/models/userForgotPasswordCode.js @toddle-edu/backend-team-3A
+src/services/auth/models/userOtpSignup.js @toddle-edu/backend-team-4A
+src/services/auth/models/userPasswordUpdate.js @toddle-edu/backend-team-3A
+src/services/auth/models/userPermissions.js @toddle-edu/backend-team-3A
+src/services/auth/models/userPreferences.js @toddle-edu/backend-team-4A
+src/services/auth/models/userSetting.js @toddle-edu/backend-team-3A
+src/services/auth/models/userSignInToken.js @toddle-edu/backend-team-4A
+src/services/auth/models/configurationCache.js @toddle-edu/backend-team-3A
+
+# COMMUNITY
+
+src/services/community/models/activity.js @toddle-edu/backend-team-3D
+src/services/community/models/activityCategory.js @toddle-edu/backend-team-3D
+src/services/community/models/assessment.js @toddle-edu/backend-team-3D
+src/services/community/models/communityEntity.js @toddle-edu/backend-team-3D
+src/services/community/models/entityNewMap.js @toddle-edu/backend-team-3D
+src/services/community/models/globals.js @toddle-edu/backend-team-3D
+src/services/community/models/keywordSearchReport.js @toddle-edu/backend-team-3D
+src/services/community/models/leCollection.js @toddle-edu/backend-team-3D
+src/services/community/models/mapCollectionEntity.js @toddle-edu/backend-team-3D
+src/services/community/models/mapCommunityActivationEmail.js @toddle-edu/backend-team-3D
+src/services/community/models/mapCommunityUserGlobalGrades.js @toddle-edu/backend-team-3D
+src/services/community/models/mapEntityFollower.js @toddle-edu/backend-team-3D
+src/services/community/models/mapEntityTag.js @toddle-edu/backend-team-3D
+src/services/community/models/mapOrganizationCommunityDetails.js @toddle-edu/backend-team-3D
+src/services/community/models/mapTemplateField.js @toddle-edu/backend-team-3D
+src/services/community/models/mapUserActivity.js @toddle-edu/backend-team-3D
+src/services/community/models/mapUserCommunityDetails.js @toddle-edu/backend-team-3D
+src/services/community/models/mapUserCommunityProfile.js @toddle-edu/backend-team-3D
+src/services/community/models/mapUserContentUpvote.js @toddle-edu/backend-team-3D
+src/services/community/models/mapUserEntityRating.js @toddle-edu/backend-team-3D
+src/services/community/models/mapUserInvitation.js @toddle-edu/backend-team-3D
+src/services/community/models/mapUserSchoolHistory.js @toddle-edu/backend-team-3D
+src/services/community/models/orgGrade.js @toddle-edu/backend-team-3D
+src/services/community/models/premiumEntityMap.js @toddle-edu/backend-team-3D
+src/services/community/models/rating.js @toddle-edu/backend-team-3D
+src/services/community/models/resourceRequest.js @toddle-edu/backend-team-3D
+src/services/community/models/school.js @toddle-edu/backend-team-3D
+src/services/community/models/share.js @toddle-edu/backend-team-3D
+src/services/community/models/submissionCalls.js @toddle-edu/backend-team-3D
+src/services/community/models/systemConstants.js @toddle-edu/backend-team-3D
+src/services/community/models/tag.js @toddle-edu/backend-team-3D
+src/services/community/models/unitPlan.js@toddle-edu/backend-team-3D
+src/services/community/models/user.js @toddle-edu/backend-team-3D
+
+# CMS
+
+src/services/cms/models/academyModule.js @toddle-edu/backend-team-2D
+src/services/cms/models/academyVideo.js @toddle-edu/backend-team-2D
+src/services/cms/models/productUpdates.js @toddle-edu/backend-team-2D
+src/services/cms/models/orgGroups.js @toddle-edu/backend-team-2D
+src/services/cms/models/category.js @toddle-edu/backend-team-2D
+src/services/cms/models/directusFiles.js @toddle-edu/backend-team-2D
+src/services/cms/models/contextualHelp.js @toddle-edu/backend-team-3C
+
+# LIBRARY
+
+src/services/library/models/assessment.js @toddle-edu/backend-team-3D
+src/services/library/models/leCollection.js @toddle-edu/backend-team-3D
+src/services/library/models/libraryEntity.js @toddle-edu/backend-team-3D
+src/services/library/models/mapCollectionEntity.js @toddle-edu/backend-team-3D
+src/services/library/models/unitPlan.js @toddle-edu/backend-team-3D
+src/services/library/models/user.js @toddle-edu/backend-team-3D
+src/services/library/models/mapEntityFollower.js @toddle-edu/backend-team-3D
+src/services/library/models/utils.js @toddle-edu/backend-team-3D
+src/services/library/models/tag.js @toddle-edu/backend-team-3D
+src/services/library/models/entityNewMap.js @toddle-edu/backend-team-3D
+src/services/library/models/globals.js @toddle-edu/backend-team-3D
+src/services/library/models/libraryGenericEntity.js @toddle-edu/backend-team-3D
+src/services/library/models/grades.js @toddle-edu/backend-team-3D
+src/services/library/models/popularityIndex.js @toddle-edu/backend-team-3D
+src/services/library/models/worksheet.js @toddle-edu/backend-team-3D @toddle-edu/backend-team-2A
+src/services/library/models/libraryEntityAnalytics.js @toddle-edu/backend-team-3D
+src/services/library/models/question.js @toddle-edu/backend-team-3D
+
+# COMMUNICATION
+
+src/services/communication/models/community.js @toddle-edu/backend-team-3A
+src/services/communication/models/notification.js @toddle-edu/backend-team-3A
+src/services/communication/models/other.js @toddle-edu/backend-team-2C
+src/services/communication/models/project.js @toddle-edu/backend-team-1C
+
+# CONTENT
+
+src/services/content/models/Questions.js @toddle-edu/backend-team-2A
+src/services/content/models/QuestionSubmisson.js @toddle-edu/backend-team-2A
+src/services/content/models/QuestionTypes.js @toddle-edu/backend-team-2A
+src/services/content/models/QuestionEntityMap.js @toddle-edu/backend-team-2A
+src/services/content/models/MapQuestionField.js @toddle-edu/backend-team-2A
+
+# DOCUMENTATION
+
+src/services/documentation/models/MapPostParentEntity.js @toddle-edu/backend-team-2B
+src/services/documentation/models/ProgressReportTaskGroup.js @toddle-edu/backend-team-1A
+src/services/documentation/models/attachment.js @toddle-edu/backend-team-4A
+src/services/documentation/models/authFunctions.js @toddle-edu/backend-team-4A
+src/services/documentation/models/courseProgressReportTask.js @toddle-edu/backend-team-1A
+src/services/documentation/models/courseProgressReportTaskSignatory.js @toddle-edu/backend-team-5C
+src/services/documentation/models/folder.js @toddle-edu/backend-team-2B
+src/services/documentation/models/generatedStudentTranscript.js @toddle-edu/backend-team-1A
+src/services/documentation/models/goalTask.js @toddle-edu/backend-team-3A
+src/services/documentation/models/localFinalGradeMap.js @toddle-edu/backend-team-1A
+src/services/documentation/models/mapCourseProgressReportRaskPypElement.js @toddle-edu/backend-team-1A
+src/services/documentation/models/mapCourseProgressReportTaskUnit.js @toddle-edu/backend-team-3A
+src/services/documentation/models/mapPostField.js @toddle-edu/backend-team-2B
+src/services/documentation/models/mapPostFolder.js @toddle-edu/backend-team-1A
+src/services/documentation/models/mapPostStudent.js @toddle-edu/backend-team-4A
+src/services/documentation/models/mapProgressReportBaseTemplateOrganization.js @toddle-edu/backend-team-1A
+src/services/documentation/models/mapProgressReportTemplateGrade.js @toddle-edu/backend-team-3A
+src/services/documentation/models/mapProgressReportTemplatePypElementRating.js @toddle-edu/backend-team-3A
+src/services/documentation/models/mapProgressReportTemplatePypElementRatingAuditLog.js @toddle-edu/backend-team-1A
+src/services/documentation/models/mapProgressReportTemplateRemark.js @toddle-edu/backend-team-1A
+src/services/documentation/models/mapProgressReportTemplateRemarkAuditLog.js @toddle-edu/backend-team-1A
+src/services/documentation/models/mapProgressReportTemplateRemarkEvidence.js @toddle-edu/backend-team-1A
+src/services/documentation/models/mapProjectdeadline.js @toddle-edu/backend-team-1B
+src/services/documentation/models/mapStudentProgressReportAttendance.js @toddle-edu/backend-team-1A
+src/services/documentation/models/mapStudentProgressReportCompletedSection.js @toddle-edu/backend-team-5C
+src/services/documentation/models/mapStudentProgressReportEntityStaff.js @toddle-edu/backend-team-1A
+src/services/documentation/models/mapStudentProgressReportPublishedTemplate.js @toddle-edu/backend-team-1A
+src/services/documentation/models/post.js @toddle-edu/backend-team-2B
+src/services/documentation/models/progressReportBaseTemplate.js @toddle-edu/backend-team-1A
+src/services/documentation/models/progressReportBaseTemplateAuditLogs.js @toddle-edu/backend-team-1A
+src/services/documentation/models/progressReportCommentTemplate.js @toddle-edu/backend-team-1A
+src/services/documentation/models/progressReportCommentTemplateGradeMap.js @toddle-edu/backend-team-1A
+src/services/documentation/models/progressReportTaskGroupGradeSubjectObjectiveMap.js @toddle-edu/backend-team-1A
+src/services/documentation/models/progressReportTemplate.js @toddle-edu/backend-team-1A
+src/services/documentation/models/project.js @toddle-edu/backend-team-1C
+src/services/documentation/models/projectAcademicHonesty.js @toddle-edu/backend-team-1C
+src/services/documentation/models/projectGroup.js @toddle-edu/backend-team-1C
+src/services/documentation/models/projectGroupDeadline.js @toddle-edu/backend-team-1C
+src/services/documentation/models/projectGroupGuidingQuestion.js @toddle-edu/backend-team-1C
+src/services/documentation/models/projectGroupSupervisorInvitedByMap.js @toddle-edu/backend-team-1C
+src/services/documentation/models/searchPost.js @toddle-edu/backend-team-2B
+src/services/documentation/models/studentGoal.js @toddle-edu/backend-team-3A
+src/services/documentation/models/studentProgressReport.js @toddle-edu/backend-team-1A
+src/services/documentation/models/studentProgressReportUnitPlanMap.js @toddle-edu/backend-team-1A
+src/services/documentation/models/studentProjectPortfolio.js @toddle-edu/backend-team-1C
+src/services/documentation/models/studentTranscriptNodeData.js @toddle-edu/backend-team-1A
+src/services/documentation/models/test.js @toddle-edu/backend-team-4A
+src/services/documentation/models/transcriptGenerationTask.js @toddle-edu/backend-team-1A
+src/services/documentation/models/transcriptStudentSubjectGradeMap.js @toddle-edu/backend-team-1A
+src/services/documentation/models/transcriptYearGroupAcademicTermMap.js @toddle-edu/backend-team-1A
+src/services/documentation/models/transcriptYearTermDataSourceMap.js @toddle-edu/backend-team-1A
+
+# INTEGRATION
+
+src/services/integration/models/LTIIntegration.js @toddle-edu/backend-team-4C
+src/services/integration/models/benchMark.js @toddle-edu/backend-team-4C
+src/services/integration/models/courses.js @toddle-edu/backend-team-4C
+src/services/integration/models/dailymotion.js @toddle-edu/backend-team-4C
+src/services/integration/models/globalSettings.js @toddle-edu/backend-team-4C
+src/services/integration/models/google.js @toddle-edu/backend-team-4C
+src/services/integration/models/job.js @toddle-edu/backend-team-4C
+src/services/integration/models/kacademy.js @toddle-edu/backend-team-4C
+src/services/integration/models/mapCourseUser.js @toddle-edu/backend-team-4C
+src/services/integration/models/mapEntityMapping.js @toddle-edu/backend-team-4C
+src/services/integration/models/mapOrgAuthToken.js @toddle-edu/backend-team-4C
+src/services/integration/models/mapOrgThirdPartyService.js @toddle-edu/backend-team-4A
+src/services/integration/models/microsoft.js @toddle-edu/backend-team-4C
+src/services/integration/models/openapplyPaginationQueue.js @toddle-edu/backend-team-4A
+src/services/integration/models/peertube.js @toddle-edu/backend-team-4C
+src/services/integration/models/permission.js @toddle-edu/backend-team-4A
+src/services/integration/models/pixabay.js @toddle-edu/backend-team-4C
+src/services/integration/models/shutterstock.js @toddle-edu/backend-team-4C
+src/services/integration/models/subTask.js @toddle-edu/backend-team-4C
+src/services/integration/models/subjects.js @toddle-edu/backend-team-4C
+src/services/integration/models/task.js @toddle-edu/backend-team-4C
+src/services/integration/models/thirdPartyMapping.js @toddle-edu/backend-team-4C
+src/services/integration/models/turnitinAttachmentSubmission.js @toddle-edu/backend-team-1A
+src/services/integration/models/turnitinEula.js @toddle-edu/backend-team-1A
+src/services/integration/models/turnitinLogs.js @toddle-edu/backend-team-1A
+src/services/integration/models/turnitinUserEulaAcceptance.js @toddle-edu/backend-team-1A
+src/services/integration/models/users.js @toddle-edu/backend-team-4C
+src/services/integration/models/vimeo.js @toddle-edu/backend-team-4C
+src/services/integration/models/weeklyServiceAttendance.js @toddle-edu/backend-team-4C
+src/services/integration/models/youtube.js @toddle-edu/backend-team-4C
+
+# PLANNER
+
+src/services/planner/models/academicCriteriaSet.js @toddle-edu/backend-team-1A
+src/services/planner/models/academicCriteriaValue.js @toddle-edu/backend-team-1A
+src/services/planner/models/academicCriteriaValueScore.js @toddle-edu/backend-team-1A @toddle-edu/backend-team-2C
+src/services/planner/models/action.js @toddle-edu/backend-team-1B
+src/services/planner/models/analytics.js @toddle-edu/backend-team-4A
+src/services/planner/models/anecdote.js @toddle-edu/backend-team-4A
+src/services/planner/models/assessment.js @toddle-edu/backend-team-2C @toddle-edu/backend-team-1B
+src/services/planner/models/assessmentDataAuditLogs.js @toddle-edu/backend-team-1B
+src/services/planner/models/assessmentEvaluation.js @toddle-edu/backend-team-3C @toddle-edu/backend-team-4A
+src/services/planner/models/assessmentEvaluationToolResponse.js @toddle-edu/backend-team-2C
+src/services/planner/models/assessmentSectionMap.js @toddle-edu/backend-team-3A
+src/services/planner/models/assessmentTool.js @toddle-edu/backend-team-2C
+src/services/planner/models/assessmentToolParentEntityMap.js @toddle-edu/backend-team-2C @toddle-edu/backend-team-1B
+src/services/planner/models/atl.js @toddle-edu/backend-team-1B
+src/services/planner/models/benchmark.js @toddle-edu/backend-team-3C
+src/services/planner/models/benchmarkQuestionCountMap.js @toddle-edu/backend-team-4B
+src/services/planner/models/benchmarkSet.js @toddle-edu/backend-team-3C
+src/services/planner/models/checklist.js @toddle-edu/backend-team-4A
+src/services/planner/models/checklistItem.js @toddle-edu/backend-team-4A
+src/services/planner/models/checklistOption.js @toddle-edu/backend-team-4A
+src/services/planner/models/concept.js @toddle-edu/backend-team-3C
+src/services/planner/models/curriculum.js @toddle-edu/backend-team-1B
+src/services/planner/models/curriculumProgram.js @toddle-edu/backend-team-1B
+src/services/planner/models/curriculumProgramEntityMap.js @toddle-edu/backend-team-1B
+src/services/planner/models/entityAchievedPlannerElementMap.js @toddle-edu/backend-team-1C
+src/services/planner/models/exemplar.js @toddle-edu/backend-team-4A
+src/services/planner/models/expertProfile.js @toddle-edu/backend-team-3A
+src/services/planner/models/fieldAuditLog.js @toddle-edu/backend-team-1A
+src/services/planner/models/focusArea.js @toddle-edu/backend-team-1B @toddle-edu/backend-team-3B
+src/services/planner/models/globalFieldProperty.js @toddle-edu/backend-team-3B
+src/services/planner/models/helpText.js @toddle-edu/backend-team-3B
+src/services/planner/models/ibPYPElementRating.js @toddle-edu/backend-team-1A
+src/services/planner/models/ibPypElementRatingColor.js @toddle-edu/backend-team-4C
+src/services/planner/models/ibPypElementRemark.js @toddle-edu/backend-team-3A
+src/services/planner/models/learnerProfile.js @toddle-edu/backend-team-1B
+src/services/planner/models/learningEngagement.js @toddle-edu/backend-team-4A
+src/services/planner/models/mapDayTemplateSlot.js @toddle-edu/backend-team-2D
+src/services/planner/models/mapFieldResponse.js @toddle-edu/backend-team-1B
+src/services/planner/models/mapFieldUIDValueType.js @toddle-edu/backend-team-1B @toddle-edu/backend-team-3B
+src/services/planner/models/mapOrgGradeUnitType.js @toddle-edu/backend-team-1B
+src/services/planner/models/mapOrganizationPYPElements.js @toddle-edu/backend-team-3C
+src/services/planner/models/mapPlannerFieldConversation.js @toddle-edu/backend-team-3A
+src/services/planner/models/mapResourceWithParent.js @toddle-edu/backend-team-1B
+src/services/planner/models/mapSinglePointRubricAssessment.js @toddle-edu/backend-team-3A
+src/services/planner/models/mapTemplateField.js @toddle-edu/backend-team-1B
+src/services/planner/models/mapTemplateHelpText.js @toddle-edu/backend-team-3B
+src/services/planner/models/mapTemplateOrgGrade.js @toddle-edu/backend-team-3B
+src/services/planner/models/mapTemplateOrganization.js @toddle-edu/backend-team-3B
+src/services/planner/models/mapTemplateSlotItem.js @toddle-edu/backend-team-3A
+src/services/planner/models/mapUnitPlanAssessment.js @toddle-edu/backend-team-1B
+src/services/planner/models/mapUnitPlanField.js @toddle-edu/backend-team-1B
+src/services/planner/models/mapUnitPlanUser.js @toddle-edu/backend-team-1B
+src/services/planner/models/multiLevelNodeEditorDraft.js @toddle-edu/backend-team-1A
+src/services/planner/models/multiLevelNodeEditorDraftNode.js @toddle-edu/backend-team-3C
+src/services/planner/models/mypObjectiveRubric.js @toddle-edu/backend-team-1B
+src/services/planner/models/mypObjectiveRubricDescriptor.js @toddle-edu/backend-team-1B
+src/services/planner/models/note.js @toddle-edu/backend-team-3A
+src/services/planner/models/plannerElement.js @toddle-edu/backend-team-1B
+src/services/planner/models/plannerElementNode.js @toddle-edu/backend-team-1B
+src/services/planner/models/plannerElementParentDepthLabel.js @toddle-edu/backend-team-1B
+src/services/planner/models/plannerElementParentMap.js @toddle-edu/backend-team-1B
+src/services/planner/models/plannerSkill.js @toddle-edu/backend-team-3B
+src/services/planner/models/planningInsights.js @toddle-edu/backend-team-1B
+src/services/planner/models/poi.js @toddle-edu/backend-team-3C
+src/services/planner/models/pointAssessmentSet.js @toddle-edu/backend-team-2C
+src/services/planner/models/pointAssessmentSetCategory.js @toddle-edu/backend-team-2C
+src/services/planner/models/pointAssessmentSetEntityMap.js @toddle-edu/backend-team-2C
+src/services/planner/models/pypPlanningInsights.js @toddle-edu/backend-team-1B
+src/services/planner/models/relatedConcepts.js @toddle-edu/backend-team-1B
+src/services/planner/models/remark.js @toddle-edu/backend-team-1C
+src/services/planner/models/resource.js @toddle-edu/backend-team-4A
+src/services/planner/models/responseChecklist.js @toddle-edu/backend-team-4A
+src/services/planner/models/responseEvidenceMap.js @toddle-edu/backend-team-3B
+src/services/planner/models/responseRubric.js @toddle-edu/backend-team-4A
+src/services/planner/models/rubric.js @toddle-edu/backend-team-4A
+src/services/planner/models/rubricCriteria.js @toddle-edu/backend-team-4A
+src/services/planner/models/rubricDescriptor.js @toddle-edu/backend-team-4A
+src/services/planner/models/rubricIndicator.js @toddle-edu/backend-team-4A
+src/services/planner/models/scoreToolData.js @toddle-edu/backend-team-2C
+src/services/planner/models/singlePointRubric.js @toddle-edu/backend-team-3A
+src/services/planner/models/singlePointRubricCriteria.js @toddle-edu/backend-team-3A
+src/services/planner/models/singlePointRubricStandard.js @toddle-edu/backend-team-3A
+src/services/planner/models/standardBenchmarkSet.js @toddle-edu/backend-team-4A
+src/services/planner/models/studentAssessmentEvaluation.js @toddle-edu/backend-team-2C
+src/services/planner/models/template.js @toddle-edu/backend-team-3B
+src/services/planner/models/templateAuditLog.js @toddle-edu/backend-team-1A
+src/services/planner/models/templateField.js @toddle-edu/backend-team-1B @toddle-edu/backend-team-3B
+src/services/planner/models/templateFieldProperty.js @toddle-edu/backend-team-3B
+src/services/planner/models/templateFieldTemplateMap.js @toddle-edu/backend-team-3B
+src/services/planner/models/template_theme.js @toddle-edu/backend-team-4A
+src/services/planner/models/theme.js @toddle-edu/backend-team-1B @toddle-edu/backend-team-3C
+src/services/planner/models/treeResolvers.js @toddle-edu/backend-team-4A
+src/services/planner/models/unitFlowSection.js @toddle-edu/backend-team-1B
+src/services/planner/models/unitPlan.js @toddle-edu/backend-team-1B
+src/services/planner/models/unitPlanMapCourse.js @toddle-edu/backend-team-1B
+src/services/planner/models/userGroupSharingOrgTemplateConfig.js @toddle-edu/backend-team-1A
+src/services/planner/models/userGroupSharingSectionMap.js @toddle-edu/backend-team-1A
+src/services/planner/models/weeklySchedule.js @toddle-edu/backend-team-2D
+src/services/planner/models/weeklyScheduleDayTemplate.js @toddle-edu/backend-team-2D
+src/services/planner/models/weeklyScheduleTimeSlot.js @toddle-edu/backend-team-2D @toddle-edu/backend-team-3A
+src/services/planner/models/plannerElementSetConfig.js @toddle-edu/backend-team-3B
+src/services/planner/models/weeklyPlannerSection.js @toddle-edu/backend-team-1B
+src/services/planner/models/weeklyPlannerTemplate.js @toddle-edu/backend-team-1B
+src/services/planner/models/document.js @toddle-edu/backend-team-1B
+src/services/planner/models/documentBlock.js @toddle-edu/backend-team-1B
+src/services/planner/models/mapWeeklyPlannerSectionItem.js @toddle-edu/backend-team-1B
+
+# PLATFORM
+
+src/services/platform/models/academicTerm.js @toddle-edu/backend-team-1A
+src/services/platform/models/academicTermEntityMap.js @toddle-edu/backend-team-1B
+src/services/platform/models/academicYear.js @toddle-edu/backend-team-3A @toddle-edu/backend-team-4A
+src/services/platform/models/assignment.js @toddle-edu/backend-team-2C
+src/services/platform/models/assignmentContentMap.js @toddle-edu/backend-team-2C
+src/services/platform/models/assignmentCourseMap.js @toddle-edu/backend-team-2C
+src/services/platform/models/assignmentFolderMap.js @toddle-edu/backend-team-2C
+src/services/platform/models/assignmentResource.js @toddle-edu/backend-team-2C
+src/services/platform/models/assignmentStudentSubmission.js @toddle-edu/backend-team-2C
+src/services/platform/models/assignmentUserMap.js @toddle-edu/backend-team-2C
+src/services/platform/models/attachment.js @toddle-edu/backend-team-2D
+src/services/platform/models/attachmentGroup.js @toddle-edu/backend-team-2D
+src/services/platform/models/attendanceOptions.js @toddle-edu/backend-team-2D
+src/services/platform/models/attendanceOptionsSet.js @toddle-edu/backend-team-2D
+src/services/platform/models/attendanceReminderInfo.js @toddle-edu/backend-team-2D
+src/services/platform/models/attendance_excusals.js @toddle-edu/backend-team-2D
+src/services/platform/models/attendanceAnalytics.js @toddle-edu/backend-team-2D
+src/services/platform/models/bellSchedule.js @toddle-edu/backend-team-2D
+src/services/platform/models/bellSchedulePeriodMap.js @toddle-edu/backend-team-2D
+src/services/platform/models/authFunctions.js @toddle-edu/backend-team-4A
+src/services/platform/models/calendarEvent.js @toddle-edu/backend-team-2D
+src/services/platform/models/calendarEventItem.js @toddle-edu/backend-team-2C
+src/services/platform/models/calendarEventItemParentMap.js @toddle-edu/backend-team-2C
+src/services/platform/models/calendarEventItemUserMap.js @toddle-edu/backend-team-2C
+src/services/platform/models/calendarEventTag.js @toddle-edu/backend-team-2D
+src/services/platform/models/chat.js @toddle-edu/backend-team-4A
+src/services/platform/models/circular.js @toddle-edu/backend-team-4A
+src/services/platform/models/circularEntityMap.js @toddle-edu/backend-team-4A
+src/services/platform/models/comment.js @toddle-edu/backend-team-4A
+src/services/platform/models/continuum.js @toddle-edu/backend-team-2D
+src/services/platform/models/continuumColorsMap.js @toddle-edu/backend-team-4C
+src/services/platform/models/continuumEntityMap.js @toddle-edu/backend-team-2D
+src/services/platform/models/continuumNode.js @toddle-edu/backend-team-2D
+src/services/platform/models/conversation.js @toddle-edu/backend-team-4A
+src/services/platform/models/course.js @toddle-edu/backend-team-3A @toddle-edu/backend-team-3C
+src/services/platform/models/courseAttendance.js @toddle-edu/backend-team-2D
+src/services/platform/models/courseBasicInfo.js @toddle-edu/backend-team-4A
+src/services/platform/models/courseGradeMap.js @toddle-edu/backend-team-3A
+src/services/platform/models/coursePeriodMap.js @toddle-edu/backend-team-2D
+src/services/platform/models/courseProjectGroupMap.js @toddle-edu/backend-team-1C
+src/services/platform/models/courseSubejctMap.js @toddle-edu/backend-team-3C @toddle-edu/backend-team-3A
+src/services/platform/models/courseSubjectGroupMap.js @toddle-edu/backend-team-1B
+src/services/platform/models/cumulativeAcademicTermWeightage.js @toddle-edu/backend-team-1A
+src/services/platform/models/dayPattern.js @toddle-edu/backend-team-2D
+src/services/platform/models/dayPatternRotationDayMap.js @toddle-edu/backend-team-2D
+src/services/platform/models/deletedStudents.js @toddle-edu/backend-team-4B
+src/services/platform/models/emailSubscription.js @toddle-edu/backend-team-4A
+src/services/platform/models/entityCurriculumTypeMap.js @toddle-edu/backend-team-3C
+src/services/platform/models/entityTranslationMap.js @toddle-edu/backend-team-1B
+src/services/platform/models/eventTracker.js @toddle-edu/backend-team-6A
+src/services/platform/models/examReg.js @toddle-edu/backend-team-4A @toddle-edu/backend-team-4C
+src/services/platform/models/externalEntity.js @toddle-edu/backend-team-1A
+src/services/platform/models/feedback.js @toddle-edu/backend-team-4C
+src/services/platform/models/folder.js @toddle-edu/backend-team-2C
+src/services/platform/models/genericForm.js @toddle-edu/backend-team-4B @toddle-edu/backend-team-3C
+src/services/platform/models/genericFormField.js @toddle-edu/backend-team-4B
+src/services/platform/models/genericFormFieldOption.js @toddle-edu/backend-team-4B
+src/services/platform/models/genericFormResponse.js @toddle-edu/backend-team-4B @toddle-edu/backend-team-3C
+src/services/platform/models/genericFormResponseMap.js @toddle-edu/backend-team-4B
+src/services/platform/models/genericFormSections.js @toddle-edu/backend-team-4B
+src/services/platform/models/genericTag.js @toddle-edu/backend-team-1B @toddle-edu/backend-team-3C
+src/services/platform/models/globalGenericTag.js @toddle-edu/backend-team-1B
+src/services/platform/models/grade.js @toddle-edu/backend-team-4A
+src/services/platform/models/groupStudentMap.js @toddle-edu/backend-team-1C
+src/services/platform/models/i18nLabel.js @toddle-edu/backend-team-3A @toddle-edu/backend-team-3B
+src/services/platform/models/importedEntity.js @toddle-edu/backend-team-1A
+src/services/platform/models/learnerPortfolioGroup.js @toddle-edu/backend-team-2B
+src/services/platform/models/learnerPortfolioStudentMap.js @toddle-edu/backend-team-2B
+src/services/platform/models/like.js @toddle-edu/backend-team-2B
+src/services/platform/models/mapCommentParentUserReadStatus.js @toddle-edu/backend-team-3A
+src/services/platform/models/mapConversationUser.js @toddle-edu/backend-team-4A
+src/services/platform/models/mapCourseInviteLink.js @toddle-edu/backend-team-4C @toddle-edu/backend-team-4A
+src/services/platform/models/mapCourseSignInCode.js @toddle-edu/backend-team-6A
+src/services/platform/models/mapCourseUser.js @toddle-edu/backend-team-3A @toddle-edu/backend-team-3C @toddle-edu/backend-team-4C
+src/services/platform/models/mapCourseUserDeletedLogs.js @toddle-edu/backend-team-4B
+src/services/platform/models/mapEntityLockingState.js @toddle-edu/backend-team-1C
+src/services/platform/models/mapSchoolCourse.js @toddle-edu/backend-team-4A
+src/services/platform/models/mapSnpSetOrganization.js @toddle-edu/backend-team-3B
+src/services/platform/models/mapStudentAdditionalinfo.js @toddle-edu/backend-team-4C
+src/services/platform/models/mapStudentCourseAttendance.js @toddle-edu/backend-team-4A @toddle-edu/backend-team-2D
+src/services/platform/models/mapThirdPartyAccountData.js @toddle-edu/backend-team-2A
+src/services/platform/models/mapUserCircular.js @toddle-edu/backend-team-2D
+src/services/platform/models/mapUserEntityState.js @toddle-edu/backend-team-4A @toddle-edu/backend-team-1C @toddle-edu/backend-team-4C @toddle-edu/backend-team-2D
+src/services/platform/models/mapUserMessageJob.js @toddle-edu/backend-team-4A
+src/services/platform/models/mapUserNewCount.js @toddle-edu/backend-team-4A @toddle-edu/backend-team-3A
+src/services/platform/models/meeting.js @toddle-edu/backend-team-2A
+src/services/platform/models/message.js @toddle-edu/backend-team-4A
+src/services/platform/models/messageJob.js @toddle-edu/backend-team-2D
+src/services/platform/models/mobileSupportedVersions.js @toddle-edu/backend-team-3A
+src/services/platform/models/notification.js @toddle-edu/backend-team-2D
+src/services/platform/models/notification_2_temp.js @toddle-edu/backend-team-2D
+src/services/platform/models/orgGrade.js @toddle-edu/backend-team-3A
+src/services/platform/models/organizationConstants.js @toddle-edu/backend-team-2D
+src/services/platform/models/organizationDataBulkDownload.js @toddle-edu/backend-team-3A @toddle-edu/backend-team-3C
+src/services/platform/models/organizationElementRating.js @toddle-edu/backend-team-1A
+src/services/platform/models/organizationResource.js @toddle-edu/backend-team-1B
+src/services/platform/models/organizationResourceEntityMap.js @toddle-edu/backend-team-2C
+src/services/platform/models/organizationResourceSharedCourseMap.js @toddle-edu/backend-team-3A
+src/services/platform/models/period.js @toddle-edu/backend-team-2D
+src/services/platform/models/periodSet.js @toddle-edu/backend-team-2D
+src/services/platform/models/periodSetValue.js @toddle-edu/backend-team-2D
+src/services/platform/models/platformCalendarEvent.js @toddle-edu/backend-team-2D
+src/services/platform/models/project.js @toddle-edu/backend-team-1C
+src/services/platform/models/rotationDay.js @toddle-edu/backend-team-2D
+src/services/platform/models/routine.js @toddle-edu/backend-team-2D
+src/services/platform/models/routineBellScheduleMap.js @toddle-edu/backend-team-2D
+src/services/platform/models/routineUpdateEvent.js @toddle-edu/backend-team-2D
+src/services/platform/models/scheduledTask.js @toddle-edu/backend-team-2C
+src/services/platform/models/schoolFeedback.js @toddle-edu/backend-team-3A
+src/services/platform/models/seen.js @toddle-edu/backend-team-3A
+src/services/platform/models/sendGrid.js @toddle-edu/backend-team-4A
+src/services/platform/models/smsLogs.js @toddle-edu/backend-team-2C
+src/services/platform/models/snpAction.js @toddle-edu/backend-team-3B
+src/services/platform/models/snpDocumentCategory.js @toddle-edu/backend-team-3B
+src/services/platform/models/snpDocumentCategoryGroup.js @toddle-edu/backend-team-3B
+src/services/platform/models/snpDocumentReviewStage.js @toddle-edu/backend-team-3B
+src/services/platform/models/snpEvaluationCycle.js @toddle-edu/backend-team-3B
+src/services/platform/models/snpEvaluationCycleDocument.js @toddle-edu/backend-team-3B
+src/services/platform/models/snpEvaluationCycleStandard.js @toddle-edu/backend-team-3B
+src/services/platform/models/snpFramework.js @toddle-edu/backend-team-3B
+src/services/platform/models/snpGuidance.js @toddle-edu/backend-team-3B
+src/services/platform/models/snpIbObservation.js @toddle-edu/backend-team-3B
+src/services/platform/models/snpMapActionField.js @toddle-edu/backend-team-3B
+src/services/platform/models/snpMapDocumentCategoryEvidence.js @toddle-edu/backend-team-3B
+src/services/platform/models/snpMapEvaluationCycleUser.js @toddle-edu/backend-team-3B
+src/services/platform/models/snpMapParentEvidence.js @toddle-edu/backend-team-3B
+src/services/platform/models/snpMapPracticeAction.js @toddle-edu/backend-team-3B
+src/services/platform/models/snpMapPracticeEvidence.js @toddle-edu/backend-team-3B
+src/services/platform/models/snpMapPracticeIbObservation.js @toddle-edu/backend-team-3B
+src/services/platform/models/snpMapPracticeSelfReflection.js @toddle-edu/backend-team-3B
+src/services/platform/models/snpMapSelfStudySection.js @toddle-edu/backend-team-3B
+src/services/platform/models/snpMapUserEvidenceViewStatus.js @toddle-edu/backend-team-3B
+src/services/platform/models/snpMilestone.js @toddle-edu/backend-team-3B
+src/services/platform/models/snpPractice.js @toddle-edu/backend-team-3B
+src/services/platform/models/snpSectionQuestion.js @toddle-edu/backend-team-3B
+src/services/platform/models/snpSelfReflection.js @toddle-edu/backend-team-3B
+src/services/platform/models/snpSelfStudy.js @toddle-edu/backend-team-3B
+src/services/platform/models/snpSelfStudyResponse.js @toddle-edu/backend-team-3B
+src/services/platform/models/snpSet.js @toddle-edu/backend-team-3B
+src/services/platform/models/snpStandard.js @toddle-edu/backend-team-3B
+src/services/platform/models/snpUserDescription.js @toddle-edu/backend-team-3B
+src/services/platform/models/snsDrafts.js @toddle-edu/backend-team-3B
+src/services/platform/models/standardSetRequest.js @toddle-edu/backend-team-4A
+src/services/platform/models/studentNote.js @toddle-edu/backend-team-4A
+src/services/platform/models/studentOffense.js @toddle-edu/backend-team-2D
+src/services/platform/models/studentProfileQuestion.js @toddle-edu/backend-team-4A
+src/services/platform/models/studentProfileResponse.js @toddle-edu/backend-team-4A
+src/services/platform/models/studentProfileSection.js @toddle-edu/backend-team-4A
+src/services/platform/models/subjectPoi.js @toddle-edu/backend-team-1B
+src/services/platform/models/subjectVariant.js @toddle-edu/backend-team-3A @toddle-edu/backend-team-1B
+src/services/platform/models/superAdmin.js @toddle-edu/backend-team-3A
+src/services/platform/models/systemConstants.js @toddle-edu/backend-team-3A @toddle-edu/backend-team-4B
+src/services/platform/models/tags.js @toddle-edu/backend-team-4C @toddle-edu/backend-team-4A
+src/services/platform/models/thirdPartyToken.js @toddle-edu/backend-team-2A
+src/services/platform/models/thirdPartyUsageAudits.js @toddle-edu/backend-team-1A
+src/services/platform/models/translate.js @toddle-edu/backend-team-1A
+src/services/platform/models/urlShortCode.js @toddle-edu/backend-team-2B
+src/services/platform/models/user.js @toddle-edu/backend-team-3A
+src/services/platform/models/yearGroup.js @toddle-edu/backend-team-1C @toddle-edu/backend-team-1A
+src/services/platform/models/yearGroupGradeMap.js @toddle-edu/backend-team-1C @toddle-edu/backend-team-1A
+src/services/platform/models/zoomUserData.js @toddle-edu/backend-team-3A
+src/services/platform/models/mapCourseWeeklyPlannerTemplate.js @toddle-edu/backend-team-1B
+src/services/platform/models/workramp.js @toddle-edu/backend-team-3C
+src/services/platform/models/subjectStudentGradeTermMap.js @toddle-edu/backend-team-1A
+src/services/platform/models/snpEvidenceDownload.js @toddle-edu/backend-team-3B
+
+# PLANNING
+
+src/services/planning/models/activityArea.js @toddle-edu/backend-team-4A
+src/services/planning/models/activityMaterial.js @toddle-edu/backend-team-4A
+src/services/planning/models/activityModule.js @toddle-edu/backend-team-4A
+src/services/planning/models/activityTheme.js @toddle-edu/backend-team-4A
+src/services/planning/models/activityType.js @toddle-edu/backend-team-4A
+src/services/planning/models/areaOfDevelopment.js @toddle-edu/backend-team-4A
+src/services/planning/models/authFunctions.js @toddle-edu/backend-team-4A
+src/services/planning/models/benchmark.js @toddle-edu/backend-team-4A
+src/services/planning/models/captureLearning.js @toddle-edu/backend-team-4A
+src/services/planning/models/esActivityListing.js @toddle-edu/backend-team-4A
+src/services/planning/models/esLearningObjective.js @toddle-edu/backend-team-4A
+src/services/planning/models/indicator.js @toddle-edu/backend-team-4A
+src/services/planning/models/mapEventSlotEvent.js @toddle-edu/backend-team-4A
+src/services/planning/models/mapUnitPlanCourse.js @toddle-edu/backend-team-4A
+src/services/planning/models/objective.js @toddle-edu/backend-team-4A
+src/services/planning/models/planning.js @toddle-edu/backend-team-4A
+src/services/planning/models/subObjective.js @toddle-edu/backend-team-4A
+src/services/planning/models/subject.js @toddle-edu/backend-team-4A
+src/services/planning/models/teacherActivity.js @toddle-edu/backend-team-4A
+
+# RESOURCE BANK
+
+src/services/resourceBank/models/allResource.js @toddle-edu/backend-team-6A
+src/services/resourceBank/models/khanAcademy.js @toddle-edu/backend-team-4C
+src/services/resourceBank/models/pixabay.js @toddle-edu/backend-team-4C
+src/services/resourceBank/models/tedEd.js @toddle-edu/backend-team-4C
+src/services/resourceBank/models/unsplash.js @toddle-edu/backend-team-4C
+src/services/resourceBank/models/youtube.js @toddle-edu/backend-team-4C
+
+# REST
+
+src/services/rest/models/benchmarkUsage.js @toddle-edu/backend-team-4A
+src/services/rest/models/dpThinkathon2022Registration.js @toddle-edu/backend-team-3A
+src/services/rest/models/dpcr2023Registrations.js @toddle-edu/backend-team-5C
+src/services/rest/models/gradeUsage.js @toddle-edu/backend-team-4A
+src/services/rest/models/learnRegistration.js @toddle-edu/backend-team-2C
+src/services/rest/models/learnResourceDownloadRegistration.js @toddle-edu/backend-team-2C
+src/services/rest/models/learningJamRegistration.js @toddle-edu/backend-team-1A
+src/services/rest/models/mapTemplateField.js @toddle-edu/backend-team-3A
+src/services/rest/models/mypAc2022Registration.js @toddle-edu/backend-team-3A
+src/services/rest/models/mypMeetUpRegistration.js @toddle-edu/backend-team-3A
+src/services/rest/models/platformSearch.js @toddle-edu/backend-team-4A
+src/services/rest/models/playSummit2023Registrations.js @toddle-edu/backend-team-5C
+src/services/rest/models/poiInsights.js @toddle-edu/backend-team-4A
+src/services/rest/models/pypBootCampRegistration.js @toddle-edu/backend-team-1A
+src/services/rest/models/pypxRegistration.js @toddle-edu/backend-team-1A
+src/services/rest/models/rpc.js @toddle-edu/backend-team-3C
+src/services/rest/models/slb2022Registration.js @toddle-edu/backend-team-3A
+src/services/rest/models/ties2021Registration.js @toddle-edu/backend-team-3A
+src/services/rest/models/ties2022Registration.js @toddle-edu/backend-team-3A
+src/services/rest/models/tiesRegistration.js @toddle-edu/backend-team-1A
+src/services/rest/models/toddleDemoRequest.js @toddle-edu/backend-team-2C
+src/services/rest/models/toddleReferralCode.js @toddle-edu/backend-team-3A
+src/services/rest/models/toddleTalksRegistration.js @toddle-edu/backend-team-3A
+src/services/rest/models/websiteSchoolListManager.js @toddle-edu/backend-team-3A
+src/services/rest/models/yearlyInsights.js @toddle-edu/backend-team-4A
+src/services/rest/models/ibdpLaunchpad2023Registrations.js @toddle-edu/backend-team-5C
+src/services/rest/models/mypLaunchpad2023Registrations.js @toddle-edu/backend-team-5C
+src/services/rest/models/serviceLearningSummit2023Registrations.js @toddle-edu/backend-team-5C
+src/services/rest/models/odysseyCounsellingRegistrations.js @toddle-edu/backend-team-5C
+src/services/rest/models/toddleaiRegistrations.js @toddle-edu/backend-team-5C
+
+# ROUTINES
+
+# FROM HERE ON DB FUNCTIONS ARE LISTED
+
+# AUTH
+
+src/dbFunctions/auth/add_inter_org_data_from_dp_source.sql @toddle-edu/backend-team-1B
+src/dbFunctions/auth/add_inter_org_data_from_myp_source.sql @toddle-edu/backend-team-1B
+src/dbFunctions/auth/add_inter_org_data_from_source.sql @toddle-edu/backend-team-1B
+src/dbFunctions/auth/add_inter_org_data_from_ubd_source.sql @toddle-edu/backend-team-1B
+src/dbFunctions/auth/add_inter_org_subject_contents_from_dp_source.sql @toddle-edu/backend-team-1B
+src/dbFunctions/auth/add_inter_org_subject_contents_from_myp_source.sql @toddle-edu/backend-team-1B
+src/dbFunctions/auth/add_pyp_to_org.sql @toddle-edu/backend-team-3C
+src/dbFunctions/auth/create_organization_from_preset.sql @toddle-edu/backend-team-3C
+src/dbFunctions/auth/deleted_map_parent_child_logs.sql @toddle-edu/backend-team-3C
+src/dbFunctions/auth/generate_configuration_entity_group_id.sql @toddle-edu/backend-team-3A
+src/dbFunctions/auth/get_action.sql @toddle-edu/backend-team-3C
+src/dbFunctions/auth/get_atls.sql @toddle-edu/backend-team-3C
+src/dbFunctions/auth/get_concepts.sql @toddle-edu/backend-team-3C
+src/dbFunctions/auth/get_grade_template_map.sql @toddle-edu/backend-team-3C
+src/dbFunctions/auth/get_inter_org_data_from_dp_source.sql @toddle-edu/backend-team-1B
+src/dbFunctions/auth/get_inter_org_data_from_myp_source.sql @toddle-edu/backend-team-1B
+src/dbFunctions/auth/get_inter_org_data_from_source.sql @toddle-edu/backend-team-1B
+src/dbFunctions/auth/get_inter_org_data_from_ubd_source.sql @toddle-edu/backend-team-1B
+src/dbFunctions/auth/get_inter_org_subject_contents_from_dp_source.sql @toddle-edu/backend-team-1B
+src/dbFunctions/auth/get_inter_org_subject_contents_from_dp_source.sql @toddle-edu/backend-team-1B
+src/dbFunctions/auth/get_inter_org_subject_contents_from_myp_source.sql @toddle-edu/backend-team-1B
+src/dbFunctions/auth/get_learner_profiles.sql @toddle-edu/backend-team-3C
+src/dbFunctions/auth/get_planner_element_sets.sql @toddle-edu/backend-team-3C
+src/dbFunctions/auth/get_themes_focus_areas.sql @toddle-edu/backend-team-3C
+src/dbFunctions/auth/get_user_lvl_access_for_curriculums.sql @toddle-edu/backend-team-4A
+src/rules/platform/Organization.js @toddle-edu/backend-team-3C
+
+# COMMUNITY
+
+src/dbFunctions/community/add_new_le_collection.sql @toddle-edu/backend-team-3D
+src/dbFunctions/community/get_grades_weight_based_on_user_prefrences.sql @toddle-edu/backend-team-3D
+src/dbFunctions/community/get_unit_of_the_week_for_user.sql @toddle-edu/backend-team-3D
+src/dbFunctions/community/add_data_to_entity_search.sql @toddle-edu/backend-team-3D
+
+# CONTENT
+
+src/dbFunctions/content/copy_worksheet_question_data.sql @toddle-edu/backend-team-2A
+src/dbFunctions/content/import_worksheet_question.sql @toddle-edu/backend-team-2A
+src/dbFunctions/content/add_question_to_school_library.sql @toddle-edu/backend-team-2A
+src/dbFunctions/content/fetch_question_object_by_id.sql @toddle-edu/backend-team-2A
+src/dbFunctions/content/toddle_library_question_data_porting.sql @toddle-edu/backend-team-2A
+src/dbFunctions/content/copy_multi_part_fields.sql @toddle-edu/backend-team-2A
+src/dbFunctions/content/h5p_to_toddle_question_conversion.sql @toddle-edu/backend-team-2A
+src/dbFunctions/content/school_library_data_porting.sql @toddle-edu/backend-team-2A
+src/dbFunctions/content/create_worksheet_assessment_from_question.sql @toddle-edu/backend-team-2A
+src/dbFunctions/content/script_worksheet_creation_from_json.sql @toddle-edu/backend-team-2A
+
+# DOCUMENTATION
+
+src/dbFunctions/documentation/add_progress_report_rating_audit_logs.sql @toddle-edu/backend-team-1A
+src/dbFunctions/documentation/add_progress_report_remark_audit_logs.sql @toddle-edu/backend-team-1A
+src/dbFunctions/documentation/add_student_progress_report_published_template_audit_logs.sql @toddle-edu/backend-team-1A
+src/dbFunctions/documentation/get_progress_report_pyp_element_details_1.sql @toddle-edu/backend-team-1A
+src/dbFunctions/documentation/get_progress_report_pyp_element_details.sql @toddle-edu/backend-team-1A
+src/dbFunctions/documentation/get_student_progress_report_atls.sql @toddle-edu/backend-team-1A
+src/dbFunctions/documentation/get_student_progress_report_planner_elements.sql @toddle-edu/backend-team-1A
+src/dbFunctions/documentation/port_project_group_student_and_supervisor_mappings.sql @toddle-edu/backend-team-1C
+src/dbFunctions/documentation/progress_report_base_template_audit_logs.sql @toddle-edu/backend-team-1A
+src/dbFunctions/documentation/jsonb_recursive_merge_i18n.sql @toddle-edu/backend-team-1A
+src/dbFunctions/integration/copy_school_data_to_onboarding.sql @toddle-edu/backend-team-4C
+src/dbFunctions/documentation/update_benchmark_root_node_name_with_subject_name.sql @toddle-edu/backend-team-1A
+
+# PLANNER
+
+src/dbFunctions/planner/get_ibpyp_element_atl_parent.sql @toddle-edu/backend-team-1A
+src/dbFunctions/planner/get_ibpyp_element_benchmark_child_filtered.sql @toddle-edu/backend-team-1A
+src/dbFunctions/planner/get_ibpyp_element_benchmark_for_ids.sql @toddle-edu/backend-team-3C
+src/dbFunctions/planner/get_ibpyp_element_benchmark_child.sql @toddle-edu/backend-team-1A
+src/dbFunctions/planner/get_ibpyp_element_benchmark_for_parent_ids.sql @toddle-edu/backend-team-3C
+src/dbFunctions/planner/get_ibpyp_element_benchmark_parent.sql @toddle-edu/backend-team-1A
+src/dbFunctions/planner/get_inter_org_academic_criteria_from_source.sql @toddle-edu/backend-team-1B
+src/dbFunctions/planner/get_parent_tree_for_planner_element_nodes.sql @toddle-edu/backend-team-3C
+src/dbFunctions/planner/planner.get_parent_tree_for_planner_elements.sql @toddle-edu/backend-team-1B
+src/dbFunctions/planner/get_planner_element_node_all_children.sql @toddle-edu/backend-team-3C
+src/dbFunctions/planner/get_subject_planner_element_node_all_children.sql @toddle-edu/backend-team-3C
+src/dbFunctions/planner/get_unit_plan_pyp_element_details.sql @toddle-edu/backend-team-1A
+src/dbFunctions/planner/add_inter_org_academic_criteria_from_source.sql @toddle-edu/backend-team-1B
+src/dbFunctions/planner/import_point_assessment_set.sql @toddle-edu/backend-team-2C
+src/dbFunctions/planner/import_category_set_for_previous_year.sql @toddle-edu/backend-team-2C
+src/dbFunctions/planner/insert_standard_set_in_subject.sql @toddle-edu/backend-team-3C
+src/dbFunctions/planner/bulk_import_point_assessment_set_across_terms.sql @toddle-edu/backend-team-2C
+src/dbFunctions/planner/point_assessment_set_override_process.sql @toddle-edu/backend-team-2C
+src/dbFunctions/planner/multi_region_get_assessments_data_for_copy.sql @toddle-edu/backend-team-1B
+src/dbFunctions/planner/multi_region_get_map_template_field_data_v1.sql @toddle-edu/backend-team-1B
+src/dbFunctions/planner/multi_region_get_map_template_field_data_v1.sql @toddle-edu/backend-team-1B
+src/dbFunctions/planner/multi_region_import_planner_template_fields_v1.sql @toddle-edu/backend-team-1B
+src/dbFunctions/planner/jsonb_array_spread_to_bigint_array.sql @toddle-edu/backend-team-1B
+src/dbFunctions/planner/calculate_ib_grade_for_student_assignment.sql @toddle-edu/backend-team-2C
+src/dbFunctions/planner/multi_region_import_assessment_v1.sql @toddle-edu/backend-team-1B
+src/dbFunctions/planner/multi_region_import_unit_plan.sql @toddle-edu/backend-team-1B
+src/dbFunctions/planner/create_benchmark_from_draft.sql @toddle-edu/backend-team-3A
+src/dbFunctions/planner/get_atl_all_children.sql @toddle-edu/backend-team-3C
+src/dbFunctions/planner/get_atl_all_tree_from_bottom_to_top.sql @toddle-edu/backend-team-3C
+src/dbFunctions/planner/tranfer_unit_to_another_org.sql @toddle-edu/backend-team-3C
+src/dbFunctions/planner/get_benchmark_all_tree_from_bottom_to_top.sql @toddle-edu/backend-team-3A
+src/dbFunctions/planner/update_auto_evaluate_ib_grade_for_student_assignment.sql @toddle-edu/backend-team-2C
+src/dbFunctions/planner/get_ibpyp_element_atl_child_filtered.sql @toddle-edu/backend-team-1A
+src/dbFunctions/planner/get_ibpyp_element_atl_child.sql @toddle-edu/backend-team-3C
+src/dbFunctions/planner/get_ibpyp_element_atl_children_for_ids.sql @toddle-edu/backend-team-3C
+src/dbFunctions/planner/get_ibpyp_element_atl_parent_for_ids.sql @toddle-edu/backend-team-3C
+src/dbFunctions/planner/add_subject_standards_for_dp_demo_org.sql @toddle-edu/backend-team-3C
+src/dbFunctions/planner/get_subject_standards_for_dp_demo_org.sql @toddle-edu/backend-team-3C
+src/dbFunctions/planner/copy_global_fields_as_custom_fields.sql @toddle-edu/backend-team-3B
+src/dbFunctions/planner/duplicate_weekly_planner_template_data.sql @toddle-edu/backend-team-1B
+src/dbFunctions/planner/get_weekly_planner_template_data_for_copy.sql @toddle-edu/backend-team-1B
+src/dbFunctions/planner/get_leaf_nodes_for_planner_element_nodes.sql @toddle-edu/backend-team-1B
+src/dbFunctions/planner/get_leaf_nodes_for_planner_elements.sql @toddle-edu/backend-team-1B
+src/dbFunctions/planner/get_assessments_tool_data_for_copy.sql @toddle-edu/backend-team-2A
+src/dbFunctions/planner/import_assessment_tool.sql @toddle-edu/backend-team-2A
+src/dbFunctions/planner/change_unit_panner_type_by_ids.sql @toddle-edu/backend-team-3B
+
+# PLATFORM
+
+src/dbFunctions/platform/add_inter_org_subject_contents_translation_from_dp_source.sql @toddle-edu/backend-team-1B
+src/dbFunctions/platform/add_inter_org_translation_data_from_source.sql @toddle-edu/backend-team-1B
+src/dbFunctions/platform/add_inter_org_year_group_contents_from_source.sql @toddle-edu/backend-team-1C
+src/dbFunctions/platform/add_students_to_dp_year_group.sql @toddle-edu/backend-team-1C
+src/dbFunctions/platform/add_year_group_data.sql @toddle-edu/backend-team-1C
+src/dbFunctions/platform/duplicate_attachments_for_parent_type_v1.sql @toddle-edu/backend-team-4A
+src/dbFunctions/platform/generate_i18n_id.sql @toddle-edu/backend-team-2B
+src/dbFunctions/platform/duplicate_attachments_for_parent_type.sql @toddle-edu/backend-team-2D
+src/dbFunctions/platform/generate_i18n_label.sql @toddle-edu/backend-team-2B
+src/dbFunctions/platform/get_calendar_details.sql @toddle-edu/backend-team-2D
+src/dbFunctions/platform/get_inter_org_subject_contents_translation_from_dp_source.sql @toddle-edu/backend-team-1B
+src/dbFunctions/platform/get_inter_org_translation_data_from_source.sql @toddle-edu/backend-team-1B
+src/dbFunctions/platform/get_inter_org_subject_contents_translation_data_from_myp_source.sql @toddle-edu/backend-team-1B
+src/dbFunctions/platform/add_inter_org_subject_contents_translation_data_from_myp_source.sql @toddle-edu/backend-team-1B
+src/dbFunctions/platform/get_system_constants.sql @toddle-edu/backend-team-2B
+src/dbFunctions/platform/get_teacher_course.sql @toddle-edu/backend-team-3C
+src/dbFunctions/platform/get_weeks_between_two_dates.sql @toddle-edu/backend-team-2D
+src/dbFunctions/platform/report_card_for_student_add.sql @toddle-edu/backend-team-1A
+src/dbFunctions/platform/report_card_for_student_edit.sql @toddle-edu/backend-team-1A
+src/dbFunctions/platform/add_data_to_property_view.sql @toddle-edu/backend-team-3C
+src/dbFunctions/platform/add_data_to_property_view_v1.sql @toddle-edu/backend-team-3C
+src/dbFunctions/platform/map_entity_with_term.sql @toddle-edu/backend-team-2C
+src/dbFunctions/platform/calculate_continuum_student_current_phase.sql @toddle-edu/backend-team-2D
+src/dbFunctions/platform/port_admin_timetable_data.sql @toddle-edu/backend-team-2D
+
+# STOREROOM
+
+src/dbFunctions/storeroom/generate_pyp_transcript_query.sql @toddle-edu/backend-team-3C
+
+# VIEWS
+
+src/dbFunctions/views/update_vitally_users.sql @toddle-edu/backend-team-3C
+
+# GRAPHQL SHIELD
+
+src/rules/index.js @toddle-edu/backend-team-1A
+src/rules/global.js @toddle-edu/backend-team-1A @toddle-edu/backend-team-3A
+src/rules/node/index.js @toddle-edu/backend-team-1A
+src/shield/rule.js @toddle-edu/backend-team-1A
+src/shield/index.js @toddle-edu/backend-team-1A
+src/shield/utils.js @toddle-edu/backend-team-1A
+
+# AUTH
+
+src/rules/auth/index.js @toddle-edu/backend-team-3A
+src/rules/auth/ConfigurationV2.js @toddle-edu/backend-team-3A
+
+# DOCUMENTATION
+
+src/rules/documentation/index.js @toddle-edu/backend-team-1A
+src/rules/documentation/ProgressReportTemplate.js @toddle-edu/backend-team-1A
+src/rules/documentation/StudentProgressReport.js @toddle-edu/backend-team-1A
+src/rules/documentation/CourseProgressReportTask.js @toddle-edu/backend-team-1A
+src/rules/documentation/AcademicCriteriaSet.js @toddle-edu/backend-team-1A
+src/rules/documentation/ProgressReportTaskGroup.js @toddle-edu/backend-team-1A
+src/rules/documentation/ProgressReportCommentTemplate.js @toddle-edu/backend-team-1A
+src/rules/documentation/Transcript.js @toddle-edu/backend-team-1A
+src/rules/documentation/Folder.js @toddle-edu/backend-team-2B
+src/rules/documentation/Post.js @toddle-edu/backend-team-2B
+src/rules/documentation/ProjectGroup.js @toddle-edu/backend-team-1C
+src/rules/documentation/Project.js @toddle-edu/backend-team-1C
+
+# INTEGRATION
+
+src/rules/integration/index.js @toddle-edu/backend-team-1A
+src/rules/integration/Turnitin.js @toddle-edu/backend-team-1A
+
+# COMMUNITY
+
+src/rules/community/index.js @toddle-edu/backend-team-3D
+src/rules/community/CommunityActivity.js @toddle-edu/backend-team-3D
+
+# PLANNER
+
+src/rules/planner/AcademicCriteriaSet.js @toddle-edu/backend-team-1A
+src/rules/planner/PlannerTemplate.js @toddle-edu/backend-team-1B
+src/rules/planner/Assessment.js @toddle-edu/backend-team-1B
+src/rules/planner/PlannerElement.js @toddle-edu/backend-team-1B
+src/rules/planner/PlannerResource.js @toddle-edu/backend-team-1B
+src/rules/planner/UnitPlan.js @toddle-edu/backend-team-1B
+src/rules/planner/POI.js @toddle-edu/backend-team-1B
+src/rules/planner/AssessmentEvaluation.js @toddle-edu/backend-team-2C
+src/rules/planner/AssessmentTool.js @toddle-edu/backend-team-2C
+src/rules/planner/Checklist.js @toddle-edu/backend-team-2C
+src/rules/planner/IbPypElementRemark.js @toddle-edu/backend-team-2C
+src/rules/planner/IbPypElementRating.js @toddle-edu/backend-team-2C
+src/rules/planner/MypObjectiveRubric.js @toddle-edu/backend-team-2C
+src/rules/planner/PointAssessmentSet.js @toddle-edu/backend-team-2C
+src/rules/planner/Rubric.js @toddle-edu/backend-team-2C
+src/rules/planner/SinglePointRubric.js @toddle-edu/backend-team-2C
+src/rules/planner/MypObjectiveRubric.js @toddle-edu/backend-team-1C
+src/rules/planner/SubjectGroup.js @toddle-edu/backend-team-1C
+src/services/planner/models/unitFlowBlock.js @toddle-edu/backend-team-1B
+src/rules/planner/Assessment.js @toddle-edu/backend-team-2C
+src/rules/planner/Evaluation.js @toddle-edu/backend-team-2C
+src/rules/planner/PlannerBenchmark.js @toddle-edu/backend-team-1B
+src/rules/planner/PlannerField.js @toddle-edu/backend-team-1B
+src/rules/planner/PlannerATL.js @toddle-edu/backend-team-1B
+src/rules/planner/PlannerConcept.js @toddle-edu/backend-team-1B
+src/rules/planner/PlannerRelatedConcept.js @toddle-edu/backend-team-1B
+src/rules/planner/PlannerLearnerProfile.js @toddle-edu/backend-team-1B
+src/rules/planner/WeeklySchedulerTimeSlot.js @toddle-edu/backend-team-1B
+src/rules/planner/Document.js @toddle-edu/backend-team-1B
+
+# PLATFORM
+
+src/rules/platform/AcademicTerm.js @toddle-edu/backend-team-1A
+src/rules/platform/AcademicYear.js @toddle-edu/backend-team-1A
+src/rules/platform/Staff.js @toddle-edu/backend-team-3A
+src/rules/platform/IdentityUser.js @toddle-edu/backend-team-6A
+src/rules/platform/PlatformQuery.js @toddle-edu/backend-team-3A
+src/rules/platform/StudentOffense.js @toddle-edu/backend-team-2D
+src/rules/platform/Continuum.js @toddle-edu/backend-team-2D
+src/rules/platform/ContinuumNode.js @toddle-edu/backend-team-2D
+src/rules/platform/Assignment.js @toddle-edu/backend-team-2C
+src/rules/platform/Attachment.js @toddle-edu/backend-team-2C
+src/rules/platform/AttachmentGroup.js @toddle-edu/backend-team-2C
+src/rules/platform/Folder.js @toddle-edu/backend-team-2C
+src/rules/platform/StudentAssignment.js @toddle-edu/backend-team-2C
+src/rules/platform/Attachment.js @toddle-edu/backend-team-1C
+src/rules/platform/ThirdPartyAccount.js @toddle-edu/backend-team-2A
+src/rules/platform/InternalMutation.js @toddle-edu/backend-team-2A
+src/rules/platform/WorkbookProcessor.js @toddle-edu/backend-team-2A
+src/rules/platform/OrganizationGlobalConstants.js @toddle-edu/backend-team-2D
+src/rules/platform/OrganizationResource.js @toddle-edu/backend-team-1B
+src/rules/platform/CalendarEventTag.js @toddle-edu/backend-team-2D
+src/rules/platform/PlatformCalendarEvent.js @toddle-edu/backend-team-2D
+src/rules/platform/TermGradeStudentWiseCriteria.js @toddle-edu/backend-team-1A
+src/rules/platform/Chat.js @toddle-edu/backend-team-4A
+src/services/platform/models/entityEventTracking.js @toddle-edu/backend-team-2C
+
+# ORGANIZATION
+
+src/rules/organization/CalendarEvent.js @toddle-edu/backend-team-2D
+src/rules/organization/index.js @toddle-edu/backend-team-2D
+src/rules/organization/User.js @toddle-edu/backend-team-1A
+
+# CONTENT
+
+src/rules/content/index.js @toddle-edu/backend-team-2A
+src/rules/content/Question.js @toddle-edu/backend-team-2A
+
+# NOTIFICATION CONFIGS
+
+# FROM HERE ON ALL THE NOTIFICATION CONFIGS FILES ARE LISTED
+
+src/services/communication/notificationConfig/common/projectAcademicHonestyLocked.js @toddle-edu/backend-team-1C
+src/services/communication/notificationConfig/common/projectAcademicHonestySubmitted.js @toddle-edu/backend-team-1C
+src/services/communication/notificationConfig/common/projectAcademicHonestyUnlocked.js @toddle-edu/backend-team-1C
+src/services/communication/notificationConfig/common/projectDraftReportSubmitted.js @toddle-edu/backend-team-1C
+src/services/communication/notificationConfig/common/projectFinalReportSubmitted.js @toddle-edu/backend-team-1C
+src/services/communication/notificationConfig/common/projectGroupSupervisorApprovalRequested.js @toddle-edu/backend-team-1C
+src/services/communication/notificationConfig/common/projectGroupSupervisorApprovalRequestRejected.js @toddle-edu/backend-team-1C
+src/services/communication/notificationConfig/common/projectOverallStatusChanged.js @toddle-edu/backend-team-1C
+src/services/communication/notificationConfig/common/projectReportStatusUpdated.js @toddle-edu/backend-team-1C
+
+# LIBRARY
+
+src/lib/finalScoreUtil.js @toddle-edu/backend-team-2C @toddle-edu/backend-team-1A
+src/lib/contentUtils.js @toddle-edu/backend-team-2A
