@@ -19,6 +19,6 @@
   "homepage": "https://github.com/arnab-toddleapp/Garbage-Code#readme",
   "dependencies": {
     "lodash": "^4.17.21",
-    "xlsx": ">=0.19.3",
+    "xlsx": "^0.18.5"
   }
 }
