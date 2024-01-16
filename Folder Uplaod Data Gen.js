@@ -5,14 +5,14 @@ const finalData = {
   parentId: "18558845500527853",
   parentType: "STUDENT",
   parentResourceId: null,
+  visibleTo: ["TEACHER", "STUDENT"],
+  type: "STUDENT_FILES",
   organizationResources: [
     {
       label: "TestFolderUpload 1",
       resourceMapId: 1,
       parentResourceMapId: null,
       resourceType: "FOLDER",
-      visibleTo: ["TEACHER", "STUDENT"],
-      type: "STUDENT_FILES",
     },
   ],
 };
@@ -36,15 +36,13 @@ for (let i = 1; i <= 5000; i++) {
         uploadTime: 3645,
       },
     },
-    visibleTo: ["TEACHER", "STUDENT"],
-    type: "STUDENT_FILES",
   };
 
   finalData.organizationResources.push(organizationResourcesData);
 }
 
 const myLogger = new Console({
-  stdout: fs.createWriteStream("5k_files.json"),
+  stdout: fs.createWriteStream("5k_files_new.json"),
 });
 
 myLogger.log(JSON.stringify(finalData));
