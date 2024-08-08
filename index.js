@@ -94,31 +94,35 @@ const _ = require("lodash");
 // const cirl1 = _.map(childOrganizations, (org) => org.fk_entity_id);
 // console.log(cirl1)
 
-const defaultAMValues = {
-  parent_type: "INCIDENT",
-  fk_parent_id: "incidentId",
-  d: null,
-  organization_id: "orgId",
-  created_by: "jwtUserId",
-  created_at: "db.fn.now()",
-  updated_by: "jwtUserId",
-  updated_at: "db.fn.now()",
+const fetchFinalAccess = (oldAccess, newAccess, hasReferredAccess = false) => {
+  const accessableSet = new Set(["CAN_VIEW", "CAN_EDIT"]);
+
+  if (oldAccess && _.isNil(newAccess)) {
+    return hasReferredAccess
+      ? accessableSet.has(oldAccess)
+      : !accessableSet.has(oldAccess);
+  } else if (_.isNil(oldAccess) && newAccess) {
+    return accessableSet.has(newAccess);
+  } else if (oldAccess && newAccess) {
+    if (oldAccess === "NO_ACCESS" && accessableSet.has(newAccess)) {
+      return true;
+    } else if (accessableSet.has(oldAccess) && accessableSet.has(newAccess)) {
+      return hasReferredAccess;
+    }
+  }
+
+  return false;
 };
 
-const insertData = [
-  {
-    ...defaultAMValues,
-    group_type: "STAFF",
-    fk_group_id: "1215",
-    detail_type: "CONFIDENTIAL_DETAIL",
-    value: "OWNER",
-  },
-  {
-    ...defaultAMValues,
-    group_type: "INVOLVED_STUDENT",
-    detail_type: "INCIDENT_DETAIL",
-    value: "NO_ACCESS",
-  }
-];
+// Test cases
+console.log("old: CAN_VIEW, new: NO_ACCESS", fetchFinalAccess("CAN_VIEW", "NO_ACCESS")); // false
+console.log("old: CAN_VIEW, new: CAN_EDIT", fetchFinalAccess("CAN_VIEW", "CAN_EDIT")); // false
+console.log("old: CAN_VIEW, new: CAN_VIEW", fetchFinalAccess("CAN_VIEW", "CAN_VIEW")); // false
 
-console.log(insertData);
+console.log("old: CAN_EDIT, new: NO_ACCESS", fetchFinalAccess("CAN_EDIT", "NO_ACCESS")); // false
+console.log("old: CAN_EDIT, new: CAN_VIEW", fetchFinalAccess("CAN_EDIT", "CAN_VIEW")); // false
+console.log("old: CAN_EDIT, new: CAN_EDIT", fetchFinalAccess("CAN_EDIT", "CAN_EDIT")); // false
+
+console.log("old: NO_ACCESS, new: CAN_EDIT", fetchFinalAccess("NO_ACCESS", "CAN_EDIT")); // true
+console.log("old: NO_ACCESS, new: CAN_VIEW", fetchFinalAccess("NO_ACCESS", "CAN_VIEW")); // true
+console.log("old: NO_ACCESS, new: NO_ACCESS", fetchFinalAccess("NO_ACCESS", "NO_ACCESS")); // false
