@@ -94,35 +94,52 @@ const _ = require("lodash");
 // const cirl1 = _.map(childOrganizations, (org) => org.fk_entity_id);
 // console.log(cirl1)
 
-const fetchFinalAccess = (oldAccess, newAccess, hasReferredAccess = false) => {
-  const accessableSet = new Set(["CAN_VIEW", "CAN_EDIT"]);
+// const fetchFinalAccess = (oldAccess, newAccess, hasReferredAccess = false) => {
+//   const accessableSet = new Set(["CAN_VIEW", "CAN_EDIT"]);
 
-  if (oldAccess && _.isNil(newAccess)) {
-    return hasReferredAccess
-      ? accessableSet.has(oldAccess)
-      : !accessableSet.has(oldAccess);
-  } else if (_.isNil(oldAccess) && newAccess) {
-    return accessableSet.has(newAccess);
-  } else if (oldAccess && newAccess) {
-    if (oldAccess === "NO_ACCESS" && accessableSet.has(newAccess)) {
-      return true;
-    } else if (accessableSet.has(oldAccess) && accessableSet.has(newAccess)) {
-      return hasReferredAccess;
-    }
+//   if (oldAccess && _.isNil(newAccess)) {
+//     return hasReferredAccess
+//       ? accessableSet.has(oldAccess)
+//       : !accessableSet.has(oldAccess);
+//   } else if (_.isNil(oldAccess) && newAccess) {
+//     return accessableSet.has(newAccess);
+//   } else if (oldAccess && newAccess) {
+//     if (oldAccess === "NO_ACCESS" && accessableSet.has(newAccess)) {
+//       return true;
+//     } else if (accessableSet.has(oldAccess) && accessableSet.has(newAccess)) {
+//       return hasReferredAccess;
+//     }
+//   }
+
+//   return false;
+// };
+
+// // Test cases
+// console.log("old: CAN_VIEW, new: NO_ACCESS", fetchFinalAccess("CAN_VIEW", "NO_ACCESS")); // false
+// console.log("old: CAN_VIEW, new: CAN_EDIT", fetchFinalAccess("CAN_VIEW", "CAN_EDIT")); // false
+// console.log("old: CAN_VIEW, new: CAN_VIEW", fetchFinalAccess("CAN_VIEW", "CAN_VIEW")); // false
+
+// console.log("old: CAN_EDIT, new: NO_ACCESS", fetchFinalAccess("CAN_EDIT", "NO_ACCESS")); // false
+// console.log("old: CAN_EDIT, new: CAN_VIEW", fetchFinalAccess("CAN_EDIT", "CAN_VIEW")); // false
+// console.log("old: CAN_EDIT, new: CAN_EDIT", fetchFinalAccess("CAN_EDIT", "CAN_EDIT")); // false
+
+// console.log("old: NO_ACCESS, new: CAN_EDIT", fetchFinalAccess("NO_ACCESS", "CAN_EDIT")); // true
+// console.log("old: NO_ACCESS, new: CAN_VIEW", fetchFinalAccess("NO_ACCESS", "CAN_VIEW")); // true
+// console.log("old: NO_ACCESS, new: NO_ACCESS", fetchFinalAccess("NO_ACCESS", "NO_ACCESS")); // false
+
+const generateBehaviourIncidentUid = (latestUid) => {
+  if (latestUid) {
+    //  The regex `/[-IC]+/` matches any combination of characters "IC", "-", or both. For example:
+    // "IC-24-205" becomes ["", "24", "205"].
+    // "IC178" becomes ["", "178"].
+    const numericPart = Number(_.last(_.split(latestUid, /[-IC]+/))) + 1;
+    return `IC${numericPart}`;
   }
 
-  return false;
+  return `IC1`;
 };
 
 // Test cases
-console.log("old: CAN_VIEW, new: NO_ACCESS", fetchFinalAccess("CAN_VIEW", "NO_ACCESS")); // false
-console.log("old: CAN_VIEW, new: CAN_EDIT", fetchFinalAccess("CAN_VIEW", "CAN_EDIT")); // false
-console.log("old: CAN_VIEW, new: CAN_VIEW", fetchFinalAccess("CAN_VIEW", "CAN_VIEW")); // false
-
-console.log("old: CAN_EDIT, new: NO_ACCESS", fetchFinalAccess("CAN_EDIT", "NO_ACCESS")); // false
-console.log("old: CAN_EDIT, new: CAN_VIEW", fetchFinalAccess("CAN_EDIT", "CAN_VIEW")); // false
-console.log("old: CAN_EDIT, new: CAN_EDIT", fetchFinalAccess("CAN_EDIT", "CAN_EDIT")); // false
-
-console.log("old: NO_ACCESS, new: CAN_EDIT", fetchFinalAccess("NO_ACCESS", "CAN_EDIT")); // true
-console.log("old: NO_ACCESS, new: CAN_VIEW", fetchFinalAccess("NO_ACCESS", "CAN_VIEW")); // true
-console.log("old: NO_ACCESS, new: NO_ACCESS", fetchFinalAccess("NO_ACCESS", "NO_ACCESS")); // false
+console.log(generateBehaviourIncidentUid("IC-24-205")); // IC206
+console.log(generateBehaviourIncidentUid("IC178")); // IC179
+console.log(generateBehaviourIncidentUid()); // IC1
