@@ -1102,3 +1102,750 @@ const _ = require("lodash");
 // });
 
 // console.log("alphabets:: ", alphabets);
+
+// const ids1 = [
+//   "191401050849152422",
+//   "217072179387303052",
+//   "196474732277668982",
+//   "165993892297059777",
+//   "184196415080112763",
+//   "202914131248951830",
+//   "198241788148851476",
+//   "200477723976541692",
+//   "210548719521633994",
+// ];
+
+// const ids2 = [
+//   "204381488362306847",
+//   "193900330465891420",
+//   "193903732952405087",
+//   "195341386864662895",
+//   "181221950129969411",
+//   "203446159279142184",
+//   "218218060618663132",
+//   "218133913388713139",
+//   "198686893716546587",
+//   "193487073024414074",
+//   "194213923329676531",
+//   "199684481580279050",
+//   "205193130012589871",
+//   "193486938357895545",
+//   "200475466719569402",
+//   "206970281124694080",
+//   "201892114546569724",
+//   "211378203959240105",
+//   "212132180971760158",
+//   "199338216648615153",
+// ];
+
+// const ids = ["221766828559436828"];
+
+// ids.push(...ids1);
+// ids.push(...ids2);
+
+// const uniqueIds = _.uniq(ids);
+// console.log("uniqueIds:: ", uniqueIds);
+// console.log("uniqueIds Size:: ", _.size(uniqueIds));
+
+// const defaultOutcomeData = [
+//   {
+//     id: 236977221489657923,
+//     name: "WH-XmasTree_3x2-Confidential-Image6",
+//     type: "IMAGE",
+//     url: "https://cloud.toddleapp.com/eu-west-1/s/5x9Png/content/288DN6i7I/WH-XmasTree_3x2.avif",
+//     thumb_url: "",
+//     title: null,
+//     mime_type: "image/avif",
+//     created_by: 114969623958388811,
+//     created_at: "2025-04-10 05:32:25.802675",
+//     is_deleted: false,
+//     description: "",
+//     parent_type: "DEFAULT_OUTCOME_INCIDENT_CONFIDENTIAL_DETAIL",
+//     parent_id: 236974386144353495,
+//     metadata: {
+//       size: 351593,
+//       fileExtension: "avif",
+//       webkitRelativePath: "",
+//       height: 2048,
+//       width: 3072,
+//       uploadTime: 2889,
+//     },
+//     stream_url: null,
+//     organization_id: 1947,
+//     preset_attachment_id: null,
+//     old_attachment_id: null,
+//     being_modified: false,
+//     updated_at: null,
+//     updated_by: null,
+//     ported_attachment_id: null,
+//     ported_https: null,
+//     parent_project_group_report_id: null,
+//     fk_student_template: null,
+//     display_sequence: null,
+//   },
+//   {
+//     id: 236977221489657922,
+//     name: "WH-XmasTree_3x2-Description-Image6",
+//     type: "IMAGE",
+//     url: "https://cloud.toddleapp.com/eu-west-1/s/5x9Png/content/288DN6i7I/WH-XmasTree_3x2.avif",
+//     thumb_url: "",
+//     title: null,
+//     mime_type: "image/avif",
+//     created_by: 114969623958388811,
+//     created_at: "2025-04-10 05:32:25.802642",
+//     is_deleted: false,
+//     description: "",
+//     parent_type: "DEFAULT_OUTCOME_INCIDENT_DETAIL",
+//     parent_id: 236974386144353495,
+//     metadata: {
+//       size: 351593,
+//       fileExtension: "avif",
+//       webkitRelativePath: "",
+//       height: 2048,
+//       width: 3072,
+//       uploadTime: 2889,
+//     },
+//     stream_url: null,
+//     organization_id: 1947,
+//     preset_attachment_id: null,
+//     old_attachment_id: null,
+//     being_modified: false,
+//     updated_at: null,
+//     updated_by: null,
+//     ported_attachment_id: null,
+//     ported_https: null,
+//     parent_project_group_report_id: null,
+//     fk_student_template: null,
+//     display_sequence: null,
+//   },
+//   {
+//     id: 236977221481269313,
+//     name: "WH-XmasTree_3x2-Confidential-Image5",
+//     type: "IMAGE",
+//     url: "https://cloud.toddleapp.com/eu-west-1/s/5x9Png/content/288DN6i7I/WH-XmasTree_3x2.avif",
+//     thumb_url: "",
+//     title: null,
+//     mime_type: "image/avif",
+//     created_by: 114969623958388811,
+//     created_at: "2025-04-10 05:32:25.801319",
+//     is_deleted: false,
+//     description: "",
+//     parent_type: "DEFAULT_OUTCOME_INCIDENT_CONFIDENTIAL_DETAIL",
+//     parent_id: 234446332079643836,
+//     metadata: {
+//       size: 351593,
+//       fileExtension: "avif",
+//       webkitRelativePath: "",
+//       height: 2048,
+//       width: 3072,
+//       uploadTime: 2889,
+//     },
+//     stream_url: null,
+//     organization_id: 1947,
+//     preset_attachment_id: null,
+//     old_attachment_id: null,
+//     being_modified: false,
+//     updated_at: null,
+//     updated_by: null,
+//     ported_attachment_id: null,
+//     ported_https: null,
+//     parent_project_group_report_id: null,
+//     fk_student_template: null,
+//     display_sequence: null,
+//   },
+//   {
+//     id: 236977221481269312,
+//     name: "WH-XmasTree_3x2-Description-Image5",
+//     type: "IMAGE",
+//     url: "https://cloud.toddleapp.com/eu-west-1/s/5x9Png/content/288DN6i7I/WH-XmasTree_3x2.avif",
+//     thumb_url: "",
+//     title: null,
+//     mime_type: "image/avif",
+//     created_by: 114969623958388811,
+//     created_at: "2025-04-10 05:32:25.801291",
+//     is_deleted: false,
+//     description: "",
+//     parent_type: "DEFAULT_OUTCOME_INCIDENT_DETAIL",
+//     parent_id: 234446332079643836,
+//     metadata: {
+//       size: 351593,
+//       fileExtension: "avif",
+//       webkitRelativePath: "",
+//       height: 2048,
+//       width: 3072,
+//       uploadTime: 2889,
+//     },
+//     stream_url: null,
+//     organization_id: 1947,
+//     preset_attachment_id: null,
+//     old_attachment_id: null,
+//     being_modified: false,
+//     updated_at: null,
+//     updated_by: null,
+//     ported_attachment_id: null,
+//     ported_https: null,
+//     parent_project_group_report_id: null,
+//     fk_student_template: null,
+//     display_sequence: null,
+//   },
+//   {
+//     id: 236977221481269311,
+//     name: "WH-XmasTree_3x2-Confidential-Image4",
+//     type: "IMAGE",
+//     url: "https://cloud.toddleapp.com/eu-west-1/s/5x9Png/content/288DN6i7I/WH-XmasTree_3x2.avif",
+//     thumb_url: "",
+//     title: null,
+//     mime_type: "image/avif",
+//     created_by: 114969623958388811,
+//     created_at: "2025-04-10 05:32:25.801004",
+//     is_deleted: false,
+//     description: "",
+//     parent_type: "DEFAULT_OUTCOME_INCIDENT_CONFIDENTIAL_DETAIL",
+//     parent_id: 236974386144353493,
+//     metadata: {
+//       size: 351593,
+//       fileExtension: "avif",
+//       webkitRelativePath: "",
+//       height: 2048,
+//       width: 3072,
+//       uploadTime: 2889,
+//     },
+//     stream_url: null,
+//     organization_id: 1947,
+//     preset_attachment_id: null,
+//     old_attachment_id: null,
+//     being_modified: false,
+//     updated_at: null,
+//     updated_by: null,
+//     ported_attachment_id: null,
+//     ported_https: null,
+//     parent_project_group_report_id: null,
+//     fk_student_template: null,
+//     display_sequence: null,
+//   },
+//   {
+//     id: 236977221481269310,
+//     name: "WH-XmasTree_3x2-Description-Image4",
+//     type: "IMAGE",
+//     url: "https://cloud.toddleapp.com/eu-west-1/s/5x9Png/content/288DN6i7I/WH-XmasTree_3x2.avif",
+//     thumb_url: "",
+//     title: null,
+//     mime_type: "image/avif",
+//     created_by: 114969623958388811,
+//     created_at: "2025-04-10 05:32:25.800949",
+//     is_deleted: false,
+//     description: "",
+//     parent_type: "DEFAULT_OUTCOME_INCIDENT_DETAIL",
+//     parent_id: 236974386144353493,
+//     metadata: {
+//       size: 351593,
+//       fileExtension: "avif",
+//       webkitRelativePath: "",
+//       height: 2048,
+//       width: 3072,
+//       uploadTime: 2889,
+//     },
+//     stream_url: null,
+//     organization_id: 1947,
+//     preset_attachment_id: null,
+//     old_attachment_id: null,
+//     being_modified: false,
+//     updated_at: null,
+//     updated_by: null,
+//     ported_attachment_id: null,
+//     ported_https: null,
+//     parent_project_group_report_id: null,
+//     fk_student_template: null,
+//     display_sequence: null,
+//   },
+//   {
+//     id: 236977221481269309,
+//     name: "WH-XmasTree_3x2-Confidential-Image3",
+//     type: "IMAGE",
+//     url: "https://cloud.toddleapp.com/eu-west-1/s/5x9Png/content/288DN6i7I/WH-XmasTree_3x2.avif",
+//     thumb_url: "",
+//     title: null,
+//     mime_type: "image/avif",
+//     created_by: 114969623958388811,
+//     created_at: "2025-04-10 05:32:25.800858",
+//     is_deleted: false,
+//     description: "",
+//     parent_type: "DEFAULT_OUTCOME_INCIDENT_CONFIDENTIAL_DETAIL",
+//     parent_id: 236974386144353492,
+//     metadata: {
+//       size: 351593,
+//       fileExtension: "avif",
+//       webkitRelativePath: "",
+//       height: 2048,
+//       width: 3072,
+//       uploadTime: 2889,
+//     },
+//     stream_url: null,
+//     organization_id: 1947,
+//     preset_attachment_id: null,
+//     old_attachment_id: null,
+//     being_modified: false,
+//     updated_at: null,
+//     updated_by: null,
+//     ported_attachment_id: null,
+//     ported_https: null,
+//     parent_project_group_report_id: null,
+//     fk_student_template: null,
+//     display_sequence: null,
+//   },
+//   {
+//     id: 236977221481269308,
+//     name: "WH-XmasTree_3x2-Description-Image3",
+//     type: "IMAGE",
+//     url: "https://cloud.toddleapp.com/eu-west-1/s/5x9Png/content/288DN6i7I/WH-XmasTree_3x2.avif",
+//     thumb_url: "",
+//     title: null,
+//     mime_type: "image/avif",
+//     created_by: 114969623958388811,
+//     created_at: "2025-04-10 05:32:25.800707",
+//     is_deleted: false,
+//     description: "",
+//     parent_type: "DEFAULT_OUTCOME_INCIDENT_DETAIL",
+//     parent_id: 236974386144353492,
+//     metadata: {
+//       size: 351593,
+//       fileExtension: "avif",
+//       webkitRelativePath: "",
+//       height: 2048,
+//       width: 3072,
+//       uploadTime: 2889,
+//     },
+//     stream_url: null,
+//     organization_id: 1947,
+//     preset_attachment_id: null,
+//     old_attachment_id: null,
+//     being_modified: false,
+//     updated_at: null,
+//     updated_by: null,
+//     ported_attachment_id: null,
+//     ported_https: null,
+//     parent_project_group_report_id: null,
+//     fk_student_template: null,
+//     display_sequence: null,
+//   },
+//   {
+//     id: 236977221477075003,
+//     name: "WH-XmasTree_3x2-Confidential-Image2",
+//     type: "IMAGE",
+//     url: "https://cloud.toddleapp.com/eu-west-1/s/5x9Png/content/288DN6i7I/WH-XmasTree_3x2.avif",
+//     thumb_url: "",
+//     title: null,
+//     mime_type: "image/avif",
+//     created_by: 114969623958388811,
+//     created_at: "2025-04-10 05:32:25.800434",
+//     is_deleted: false,
+//     description: "",
+//     parent_type: "DEFAULT_OUTCOME_INCIDENT_CONFIDENTIAL_DETAIL",
+//     parent_id: 236974386135964883,
+//     metadata: {
+//       size: 351593,
+//       fileExtension: "avif",
+//       webkitRelativePath: "",
+//       height: 2048,
+//       width: 3072,
+//       uploadTime: 2889,
+//     },
+//     stream_url: null,
+//     organization_id: 1947,
+//     preset_attachment_id: null,
+//     old_attachment_id: null,
+//     being_modified: false,
+//     updated_at: null,
+//     updated_by: null,
+//     ported_attachment_id: null,
+//     ported_https: null,
+//     parent_project_group_report_id: null,
+//     fk_student_template: null,
+//     display_sequence: null,
+//   },
+//   {
+//     id: 236977221477075002,
+//     name: "WH-XmasTree_3x2-Description-Image2",
+//     type: "IMAGE",
+//     url: "https://cloud.toddleapp.com/eu-west-1/s/5x9Png/content/288DN6i7I/WH-XmasTree_3x2.avif",
+//     thumb_url: "",
+//     title: null,
+//     mime_type: "image/avif",
+//     created_by: 114969623958388811,
+//     created_at: "2025-04-10 05:32:25.799639",
+//     is_deleted: false,
+//     description: "",
+//     parent_type: "DEFAULT_OUTCOME_INCIDENT_DETAIL",
+//     parent_id: 236974386135964883,
+//     metadata: {
+//       size: 351593,
+//       fileExtension: "avif",
+//       webkitRelativePath: "",
+//       height: 2048,
+//       width: 3072,
+//       uploadTime: 2889,
+//     },
+//     stream_url: null,
+//     organization_id: 1947,
+//     preset_attachment_id: null,
+//     old_attachment_id: null,
+//     being_modified: false,
+//     updated_at: null,
+//     updated_by: null,
+//     ported_attachment_id: null,
+//     ported_https: null,
+//     parent_project_group_report_id: null,
+//     fk_student_template: null,
+//     display_sequence: null,
+//   },
+//   {
+//     id: 236977221472880697,
+//     name: "WH-XmasTree_3x2-Confidential-Image1",
+//     type: "IMAGE",
+//     url: "https://cloud.toddleapp.com/eu-west-1/s/5x9Png/content/288DN6i7I/WH-XmasTree_3x2.avif",
+//     thumb_url: "",
+//     title: null,
+//     mime_type: "image/avif",
+//     created_by: 114969623958388811,
+//     created_at: "2025-04-10 05:32:25.799190",
+//     is_deleted: false,
+//     description: "",
+//     parent_type: "DEFAULT_OUTCOME_INCIDENT_CONFIDENTIAL_DETAIL",
+//     parent_id: 234446332075449531,
+//     metadata: {
+//       size: 351593,
+//       fileExtension: "avif",
+//       webkitRelativePath: "",
+//       height: 2048,
+//       width: 3072,
+//       uploadTime: 2889,
+//     },
+//     stream_url: null,
+//     organization_id: 1947,
+//     preset_attachment_id: null,
+//     old_attachment_id: null,
+//     being_modified: false,
+//     updated_at: null,
+//     updated_by: null,
+//     ported_attachment_id: null,
+//     ported_https: null,
+//     parent_project_group_report_id: null,
+//     fk_student_template: null,
+//     display_sequence: null,
+//   },
+//   {
+//     id: 236977221426743352,
+//     name: "WH-XmasTree_3x2-Description-Image1",
+//     type: "IMAGE",
+//     url: "https://cloud.toddleapp.com/eu-west-1/s/5x9Png/content/288DN6i7I/WH-XmasTree_3x2.avif",
+//     thumb_url: "",
+//     title: null,
+//     mime_type: "image/avif",
+//     created_by: 114969623958388811,
+//     created_at: "2025-04-10 05:32:25.788238",
+//     is_deleted: false,
+//     description: "",
+//     parent_type: "DEFAULT_OUTCOME_INCIDENT_DETAIL",
+//     parent_id: 234446332075449531,
+//     metadata: {
+//       size: 351593,
+//       fileExtension: "avif",
+//       webkitRelativePath: "",
+//       height: 2048,
+//       width: 3072,
+//       uploadTime: 2889,
+//     },
+//     stream_url: null,
+//     organization_id: 1947,
+//     preset_attachment_id: null,
+//     old_attachment_id: null,
+//     being_modified: false,
+//     updated_at: null,
+//     updated_by: null,
+//     ported_attachment_id: null,
+//     ported_https: null,
+//     parent_project_group_report_id: null,
+//     fk_student_template: null,
+//     display_sequence: null,
+//   },
+// ];
+
+// const [descriptionAttachments = [], confidentialAttachments = []] = _.partition(
+//   defaultOutcomeData,
+//   ({ parent_type }) => parent_type === "DEFAULT_OUTCOME_INCIDENT_DETAIL"
+// );
+
+// console.log(
+//   "\ndescriptionAttachments:: ",
+//   JSON.stringify(descriptionAttachments)
+// );
+// console.log(
+//   "\nconfidentialAttachments:: ",
+//   JSON.stringify(confidentialAttachments)
+// );
+
+// const compiledVars = {};
+// const string =
+//   '<html data-sessionID="JroXjaace4"><head></head><body><p class="tde-paragraph" dir="ltr"><span style="white-space:pre-wrap">ajkdnas <%=user%> dkn aksjd askj </span></p></body></html>';
+// const compiledString = _.template(string);
+// console.log(compiledString(compiledVars));
+
+// const compiled = _.template("hello <%=user%>!");
+// console.log(compiled(compiledVars));
+
+// /**
+//  * Lightweight template function for replacing variables in strings
+//  * @param {string} template - Template string with <varName> or <varName:defaultValue> placeholders, where value after : is the default value for that placeholder
+//  * @param {Object} values - Object containing values to replace placeholders
+//  * @returns {string} - Processed string with replaced variables
+//  */
+// const fillTemplate = (data) => {
+//   const { template, values } = data;
+
+//   const placeholderPattern = /(?:<|&lt;)(\w+)(?::(.*?))?(?:>|&gt;)/g;
+
+//   return template.replace(placeholderPattern, (match, key, defaultVal) => {
+//     if (_.has(values, key)) {
+//       return _.get(values, key);
+//     }
+
+//     return !_.isNil(defaultVal) ? defaultVal : match;
+//   });
+// };
+
+// // Example usage:
+// const template =
+//   "Hello &lt;name:Arnabs&gt;, your order &lt;orderId::%_123241&gt; is confirmed! &lt;missingData&gt; &lt;with:defaultValue&gt;";
+// const template2 =
+//   "Hello <name:Arnabs>, your order <orderId::%_123241> is confirmed! <missingData> <with:defaultValue>";
+// const values = {
+//   name: "Alice",
+//   orderId: "12345",
+//   missingData: "defa12321",
+//   with: "deult",
+// };
+
+// const result1 = fillTemplate({ template: template, values: values });
+// const result2 = fillTemplate({ template: template2, values: values });
+// console.log(result1); // "Hello Alice, your order 12345 is confirmed! <missing> default"
+// console.log(result2); // "Hello <name:Arnabs>, your order
+
+// const additionalLocalFieldsKeyMap = {
+//   House: {
+//     key: "firstNameLocale",
+//     customLabel: "studentProfileFields:house",
+//     fieldConfig: {
+//       fieldType: "SelectDropdown",
+//       dropdownOptions: [
+//         {
+//           label: "Red",
+//           value: "Red",
+//         },
+//         {
+//           label: "Green",
+//           value: "Green",
+//         },
+//         {
+//           label: "Blue",
+//           value: "Blue",
+//         },
+//         {
+//           label: "Code",
+//           value: "Code",
+//         },
+//       ],
+//     },
+//   },
+//   Custody: {
+//     key: "lastNameLocale",
+//     customLabel: "studentProfileFields:custody",
+//     fieldConfig: {
+//       fieldType: "TextInput",
+//     },
+//   },
+//   "Blood group": {
+//     key: "birthPlaceLocale",
+//     customLabel: "studentProfileFields:blood_group",
+//     fieldConfig: {
+//       fieldType: "TextInput",
+//     },
+//   },
+//   Height: {
+//     key: "dobLocale",
+//     customLabel: "studentProfileFields:height",
+//     fieldConfig: {
+//       fieldType: "TextInput",
+//     },
+//   },
+//   Weight: {
+//     key: "religionLocale",
+//     customLabel: "studentProfileFields:weight",
+//     fieldConfig: {
+//       fieldType: "TextInput",
+//     },
+//   },
+//   "Date of enrolment": {
+//     key: "primaryNationalityLocale",
+//     customLabel: "studentProfileFields:date_of_enrolment",
+//     fieldConfig: {
+//       fieldType: "TextInput",
+//     },
+//   },
+//   Ethnicity: {
+//     key: "seventhAdditionalField",
+//     customLabel: "studentProfileFields:ethnicity",
+//     fieldConfig: {
+//       fieldType: "TextInput",
+//     },
+//   },
+//   Religion: {
+//     key: "eighthAdditionalField",
+//     customLabel: "studentProfileFields:religion",
+//     fieldConfig: {
+//       fieldType: "TextInput",
+//     },
+//   },
+// };
+
+const v1 = (additionalLocalFieldsKeyMap) => {
+  const dropdownAdditionalFields = _.filter(
+    _.keys(additionalLocalFieldsKeyMap),
+    (key) =>
+      _.get(additionalLocalFieldsKeyMap, [key, "fieldConfig", "fieldType"]) ===
+      "SelectDropdown"
+  );
+
+  const dropdownData = {};
+  const columnKeyMap = _.reduce(
+    dropdownAdditionalFields,
+    (acc, field) => {
+      acc[field] = field;
+      return acc;
+    },
+    {}
+  );
+
+  _.forEach(dropdownAdditionalFields, (field) => {
+    const fieldConfig = _.get(additionalLocalFieldsKeyMap, [
+      field,
+      "fieldConfig",
+    ]);
+    const fieldOptions = _.get(fieldConfig, "dropdownOptions");
+    dropdownData[field] = _.map(fieldOptions, "label");
+  });
+
+  return {
+    dropdownData,
+    columnKeyMap,
+  };
+};
+
+const v2 = (additionalLocalFieldsKeyMap) => {
+  const dropdownData = {};
+  const columnKeyMap = {};
+
+  _.forEach(_.keys(additionalLocalFieldsKeyMap), (field) => {
+    const { fieldType, dropdownOptions } = _.get(
+      additionalLocalFieldsKeyMap,
+      [field, "fieldConfig"],
+      {}
+    );
+
+    if (fieldType === "SelectDropdown") {
+      columnKeyMap[field] = field;
+      dropdownData[field] = _.map(dropdownOptions, "label");
+    }
+  });
+
+  return {
+    dropdownData,
+    columnKeyMap,
+  };
+};
+
+console.log("v1:: ", JSON.stringify(v1(additionalLocalFieldsKeyMap)));
+console.log("v2:: ", JSON.stringify(v2(additionalLocalFieldsKeyMap)));
+
+const data = {
+  firstName: "AVCTZS SBWGZ",
+  lastName: "AHASEKD RHU",
+  yearGroupId: "140997895372408466",
+  gender: "M",
+  first_additional_field: "Red",
+  second_additional_field: "الفصل 5A",
+  third_additional_field: "كوالالمبور",
+  fourth_additional_field: "2005-05-20",
+  fifth_additional_field: "إسلام",
+  sixth_additional_field: "ماليزي",
+  seventh_additional_field: "5A",
+};
+
+const userOtherDetailFieldNamesMap = new Map([
+  ["dob", "dob"],
+  ["pronouns", "pronouns"],
+  ["middle_name", "middleName"],
+  ["primary_nationality", "primaryNationality"],
+  ["secondary_nationality", "secondaryNationality"],
+  ["national_id", "nationalId"],
+  ["birth_place", "birthPlace"],
+  ["phone_number", "phoneNumber"],
+  ["personal_email", "personalEmail"],
+  ["myp_personal_code", "mypPersonalCode"],
+  ["organization_name", "organizationName"],
+  ["first_additional_field", "firstNameLocale"],
+  ["second_additional_field", "lastNameLocale"],
+  ["third_additional_field", "birthPlaceLocale"],
+  ["fourth_additional_field", "dobLocale"],
+  ["fifth_additional_field", "religionLocale"],
+  ["sixth_additional_field", "primaryNationalityLocale"],
+  ["seventh_additional_field", "seventhAdditionalField"],
+  ["eighth_additional_field", "eighthAdditionalField"],
+]);
+
+const additionalLocalFieldsEntries = _.filter(
+  Array.from(userOtherDetailFieldNamesMap.entries()),
+  ([key]) => _.includes(key, "_additional_field")
+);
+const additionalLocalFieldsKeys = _.map(
+  additionalLocalFieldsEntries,
+  ([key]) => key
+);
+const doesAdditionalLocalFieldsExist = _.some(
+  additionalLocalFieldsKeys,
+  (field) => _.has(data, field)
+);
+
+const additionalLocalFieldsKeyMap = {};
+
+_.forEach(additionalLocalFieldsKeys, (key) => {
+  if (_.has(data, key)) {
+    console.log("\nkey:: ", key);
+    console.log("data[key]:: ", data[key]);
+    const value = userOtherDetailFieldNamesMap.get(key);
+    console.log("value:: ", value);
+
+    const fieldKey = _.findKey(additionalLocalFieldsKeyMap, { key: value });
+    console.log("fieldKey:: ", fieldKey);
+
+    const { fieldConfig = {} } = _.get(
+      additionalLocalFieldsKeyMap,
+      fieldKey,
+      {}
+    );
+
+    if (_.get(fieldConfig, "fieldType") === "SelectDropdown") {
+      const dropdownOptions = _.get(fieldConfig, "dropdownOptions", []);
+      const dropdownLabels = _.map(dropdownOptions, "label");
+
+      if (!_.includes(dropdownLabels, data[key])) {
+        throw new Error(`${key} should be one of the dropdown values`);
+      }
+
+      data[key] = _.get(_.find(dropdownOptions, { label: data[key] }), "value");
+    } else if (!_.isString(data[key])) {
+      throw new Error(`${key} should be string`);
+    }
+
+    data[key] = _.trim(data[key]);
+  }
+});

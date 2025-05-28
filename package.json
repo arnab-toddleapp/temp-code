@@ -19,6 +19,7 @@
   "homepage": "https://github.com/arnab-toddleapp/Garbage-Code#readme",
   "dependencies": {
     "exceljs": "^4.4.0",
-    "lodash": "^4.17.21"
+    "lodash": "^4.17.21",
+    "xlsx": "^0.18.5"
   }
 }
