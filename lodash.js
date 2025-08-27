@@ -1707,145 +1707,593 @@ const _ = require("lodash");
 //   },
 // };
 
-const v1 = (additionalLocalFieldsKeyMap) => {
-  const dropdownAdditionalFields = _.filter(
-    _.keys(additionalLocalFieldsKeyMap),
-    (key) =>
-      _.get(additionalLocalFieldsKeyMap, [key, "fieldConfig", "fieldType"]) ===
-      "SelectDropdown"
-  );
+// const v1 = (additionalLocalFieldsKeyMap) => {
+//   const dropdownAdditionalFields = _.filter(
+//     _.keys(additionalLocalFieldsKeyMap),
+//     (key) =>
+//       _.get(additionalLocalFieldsKeyMap, [key, "fieldConfig", "fieldType"]) ===
+//       "SelectDropdown"
+//   );
 
-  const dropdownData = {};
-  const columnKeyMap = _.reduce(
-    dropdownAdditionalFields,
-    (acc, field) => {
-      acc[field] = field;
-      return acc;
-    },
-    {}
-  );
+//   const dropdownData = {};
+//   const columnKeyMap = _.reduce(
+//     dropdownAdditionalFields,
+//     (acc, field) => {
+//       acc[field] = field;
+//       return acc;
+//     },
+//     {}
+//   );
 
-  _.forEach(dropdownAdditionalFields, (field) => {
-    const fieldConfig = _.get(additionalLocalFieldsKeyMap, [
-      field,
-      "fieldConfig",
-    ]);
-    const fieldOptions = _.get(fieldConfig, "dropdownOptions");
-    dropdownData[field] = _.map(fieldOptions, "label");
-  });
+//   _.forEach(dropdownAdditionalFields, (field) => {
+//     const fieldConfig = _.get(additionalLocalFieldsKeyMap, [
+//       field,
+//       "fieldConfig",
+//     ]);
+//     const fieldOptions = _.get(fieldConfig, "dropdownOptions");
+//     dropdownData[field] = _.map(fieldOptions, "label");
+//   });
 
-  return {
-    dropdownData,
-    columnKeyMap,
-  };
+//   return {
+//     dropdownData,
+//     columnKeyMap,
+//   };
+// };
+
+// const v2 = (additionalLocalFieldsKeyMap) => {
+//   const dropdownData = {};
+//   const columnKeyMap = {};
+
+//   _.forEach(_.keys(additionalLocalFieldsKeyMap), (field) => {
+//     const { fieldType, dropdownOptions } = _.get(
+//       additionalLocalFieldsKeyMap,
+//       [field, "fieldConfig"],
+//       {}
+//     );
+
+//     if (fieldType === "SelectDropdown") {
+//       columnKeyMap[field] = field;
+//       dropdownData[field] = _.map(dropdownOptions, "label");
+//     }
+//   });
+
+//   return {
+//     dropdownData,
+//     columnKeyMap,
+//   };
+// };
+
+// console.log("v1:: ", JSON.stringify(v1(additionalLocalFieldsKeyMap)));
+// console.log("v2:: ", JSON.stringify(v2(additionalLocalFieldsKeyMap)));
+
+// const data = {
+//   firstName: "AVCTZS SBWGZ",
+//   lastName: "AHASEKD RHU",
+//   yearGroupId: "140997895372408466",
+//   gender: "M",
+//   first_additional_field: "Red",
+//   second_additional_field: "الفصل 5A",
+//   third_additional_field: "كوالالمبور",
+//   fourth_additional_field: "2005-05-20",
+//   fifth_additional_field: "إسلام",
+//   sixth_additional_field: "ماليزي",
+//   seventh_additional_field: "5A",
+// };
+
+// const userOtherDetailFieldNamesMap = new Map([
+//   ["dob", "dob"],
+//   ["pronouns", "pronouns"],
+//   ["middle_name", "middleName"],
+//   ["primary_nationality", "primaryNationality"],
+//   ["secondary_nationality", "secondaryNationality"],
+//   ["national_id", "nationalId"],
+//   ["birth_place", "birthPlace"],
+//   ["phone_number", "phoneNumber"],
+//   ["personal_email", "personalEmail"],
+//   ["myp_personal_code", "mypPersonalCode"],
+//   ["organization_name", "organizationName"],
+//   ["first_additional_field", "firstNameLocale"],
+//   ["second_additional_field", "lastNameLocale"],
+//   ["third_additional_field", "birthPlaceLocale"],
+//   ["fourth_additional_field", "dobLocale"],
+//   ["fifth_additional_field", "religionLocale"],
+//   ["sixth_additional_field", "primaryNationalityLocale"],
+//   ["seventh_additional_field", "seventhAdditionalField"],
+//   ["eighth_additional_field", "eighthAdditionalField"],
+// ]);
+
+// const additionalLocalFieldsEntries = _.filter(
+//   Array.from(userOtherDetailFieldNamesMap.entries()),
+//   ([key]) => _.includes(key, "_additional_field")
+// );
+// const additionalLocalFieldsKeys = _.map(
+//   additionalLocalFieldsEntries,
+//   ([key]) => key
+// );
+// const doesAdditionalLocalFieldsExist = _.some(
+//   additionalLocalFieldsKeys,
+//   (field) => _.has(data, field)
+// );
+
+// const additionalLocalFieldsKeyMap = {};
+
+// _.forEach(additionalLocalFieldsKeys, (key) => {
+//   if (_.has(data, key)) {
+//     console.log("\nkey:: ", key);
+//     console.log("data[key]:: ", data[key]);
+//     const value = userOtherDetailFieldNamesMap.get(key);
+//     console.log("value:: ", value);
+
+//     const fieldKey = _.findKey(additionalLocalFieldsKeyMap, { key: value });
+//     console.log("fieldKey:: ", fieldKey);
+
+//     const { fieldConfig = {} } = _.get(
+//       additionalLocalFieldsKeyMap,
+//       fieldKey,
+//       {}
+//     );
+
+//     if (_.get(fieldConfig, "fieldType") === "SelectDropdown") {
+//       const dropdownOptions = _.get(fieldConfig, "dropdownOptions", []);
+//       const dropdownLabels = _.map(dropdownOptions, "label");
+
+//       if (!_.includes(dropdownLabels, data[key])) {
+//         throw new Error(`${key} should be one of the dropdown values`);
+//       }
+
+//       data[key] = _.get(_.find(dropdownOptions, { label: data[key] }), "value");
+//     } else if (!_.isString(data[key])) {
+//       throw new Error(`${key} should be string`);
+//     }
+
+//     data[key] = _.trim(data[key]);
+//   }
+// });
+
+const string = `<p class="tde-paragraph" dir="ltr" data-sessionid="4nHEw5ZFdy" style="text-align: left;"><span style="white-space:pre-wrap">NCCD Incident involving student Revenger v, Artimus of Grade 5 PYP is reported by Biswas Arnab.Incident report: ....Category: Testing bugs</span><br><span style="white-space:pre-wrap">Sub-category: Social Skills</span><br><span style="white-space:pre-wrap">[Date &amp; Time]</span><br></p>`;
+
+const populateChar = (ch, amount) => {
+  return _.repeat(ch, amount);
 };
 
-const v2 = (additionalLocalFieldsKeyMap) => {
-  const dropdownData = {};
-  const columnKeyMap = {};
+const htmlToPlainText = (htmlText) => {
+  const linkProcess = null;
+  const imgProcess = null;
+  const headingStyle = "underline";
+  const listStyle = "indention";
+  const uIndentionChar = "-";
+  const listIndentionTabs = 3;
+  const oIndentionChar = "-";
+  const keepNbsps = false;
 
-  _.forEach(_.keys(additionalLocalFieldsKeyMap), (field) => {
-    const { fieldType, dropdownOptions } = _.get(
-      additionalLocalFieldsKeyMap,
-      [field, "fieldConfig"],
-      {}
+  const uIndention = populateChar(uIndentionChar, listIndentionTabs);
+
+  // removel all \n linebreaks
+  let plainText = _.replace(String(htmlText), /\n|\r/g, " ");
+
+  console.log("v1 plainText 1:: ", plainText);
+
+  // remove everything before and after <body> tags including the tag itself
+  const bodyEndMatch = plainText.match(/<\/body>/i);
+  console.log("v1 bodyEndMatch:: ", bodyEndMatch);
+
+  if (bodyEndMatch) {
+    plainText = _.slice(plainText, 1, bodyEndMatch?.index);
+  }
+  console.log("v1 plainText 2:: ", plainText);
+
+  const bodyStartMatch = plainText.match(/<body[^>]*>/i);
+  console.log("v1 bodyStartMatch:: ", bodyStartMatch);
+
+  if (bodyStartMatch) {
+    plainText = _.slice(
+      plainText,
+      bodyStartMatch.index + bodyStartMatch[0]?.length + 1,
+      plainText.length
     );
+  }
+  console.log("v1 plainText 3:: ", plainText);
 
-    if (fieldType === "SelectDropdown") {
-      columnKeyMap[field] = field;
-      dropdownData[field] = _.map(dropdownOptions, "label");
+  // remove inbody scripts and styles
+  const scriptRegex =
+    /<(script|style)( [^>]*)*>((?!<\/\1( [^>]*)*>).)*<\/\1>/gi;
+  plainText = _.replace(plainText, scriptRegex, "");
+
+  // remove all tags except that are being handled separately
+  const allTagsRegex =
+    /<(\/)?((?!h[1-6]( [^>]*)*>)(?!img( [^>]*)*>)(?!a( [^>]*)*>)(?!ul( [^>]*)*>)(?!ol( [^>]*)*>)(?!li( [^>]*)*>)(?!p( [^>]*)*>)(?!div( [^>]*)*>)(?!td( [^>]*)*>)(?!br( [^>]*)*>)[^>/])[^<>]*>/gi;
+  plainText = _.replace(plainText, allTagsRegex, "");
+
+  // remove or replace images - replacement texts with <> tags will be removed also, if not intentional, try to use other notation
+  plainText = _.replace(plainText, /<img([^>]*)>/gi, (imAttrs) => {
+    let imSrc = "";
+    let imAlt = "";
+    const imSrcResult = /src="([^"]*)"/i.exec(imAttrs);
+    const imAltResult = /alt="([^"]*)"/i.exec(imAttrs);
+
+    if (imSrcResult !== null) {
+      imSrc = imSrcResult[1];
     }
+
+    if (imAltResult !== null) {
+      imAlt = imAltResult[1];
+    }
+
+    if (typeof imgProcess === "function") {
+      return imgProcess(imSrc, imAlt);
+    }
+
+    if (imAlt === "") {
+      return `![image] (${imSrc})`;
+    }
+
+    return `![${imAlt}] (${imSrc})`;
   });
 
-  return {
-    dropdownData,
-    columnKeyMap,
-  };
-};
+  const createListReplaceCb =
+    () => (match, listType, listAttributes, listBody) => {
+      let liIndex = 0;
 
-console.log("v1:: ", JSON.stringify(v1(additionalLocalFieldsKeyMap)));
-console.log("v2:: ", JSON.stringify(v2(additionalLocalFieldsKeyMap)));
-
-const data = {
-  firstName: "AVCTZS SBWGZ",
-  lastName: "AHASEKD RHU",
-  yearGroupId: "140997895372408466",
-  gender: "M",
-  first_additional_field: "Red",
-  second_additional_field: "الفصل 5A",
-  third_additional_field: "كوالالمبور",
-  fourth_additional_field: "2005-05-20",
-  fifth_additional_field: "إسلام",
-  sixth_additional_field: "ماليزي",
-  seventh_additional_field: "5A",
-};
-
-const userOtherDetailFieldNamesMap = new Map([
-  ["dob", "dob"],
-  ["pronouns", "pronouns"],
-  ["middle_name", "middleName"],
-  ["primary_nationality", "primaryNationality"],
-  ["secondary_nationality", "secondaryNationality"],
-  ["national_id", "nationalId"],
-  ["birth_place", "birthPlace"],
-  ["phone_number", "phoneNumber"],
-  ["personal_email", "personalEmail"],
-  ["myp_personal_code", "mypPersonalCode"],
-  ["organization_name", "organizationName"],
-  ["first_additional_field", "firstNameLocale"],
-  ["second_additional_field", "lastNameLocale"],
-  ["third_additional_field", "birthPlaceLocale"],
-  ["fourth_additional_field", "dobLocale"],
-  ["fifth_additional_field", "religionLocale"],
-  ["sixth_additional_field", "primaryNationalityLocale"],
-  ["seventh_additional_field", "seventhAdditionalField"],
-  ["eighth_additional_field", "eighthAdditionalField"],
-]);
-
-const additionalLocalFieldsEntries = _.filter(
-  Array.from(userOtherDetailFieldNamesMap.entries()),
-  ([key]) => _.includes(key, "_additional_field")
-);
-const additionalLocalFieldsKeys = _.map(
-  additionalLocalFieldsEntries,
-  ([key]) => key
-);
-const doesAdditionalLocalFieldsExist = _.some(
-  additionalLocalFieldsKeys,
-  (field) => _.has(data, field)
-);
-
-const additionalLocalFieldsKeyMap = {};
-
-_.forEach(additionalLocalFieldsKeys, (key) => {
-  if (_.has(data, key)) {
-    console.log("\nkey:: ", key);
-    console.log("data[key]:: ", data[key]);
-    const value = userOtherDetailFieldNamesMap.get(key);
-    console.log("value:: ", value);
-
-    const fieldKey = _.findKey(additionalLocalFieldsKeyMap, { key: value });
-    console.log("fieldKey:: ", fieldKey);
-
-    const { fieldConfig = {} } = _.get(
-      additionalLocalFieldsKeyMap,
-      fieldKey,
-      {}
-    );
-
-    if (_.get(fieldConfig, "fieldType") === "SelectDropdown") {
-      const dropdownOptions = _.get(fieldConfig, "dropdownOptions", []);
-      const dropdownLabels = _.map(dropdownOptions, "label");
-
-      if (!_.includes(dropdownLabels, data[key])) {
-        throw new Error(`${key} should be one of the dropdown values`);
+      // Check for start attribute and extract the value if present
+      if (listAttributes && /start="([0-9]+)"/i.test(listAttributes)) {
+        liIndex = Number(/start="([0-9]+)"/i.exec(listAttributes)[1]) - 1;
       }
 
-      data[key] = _.get(_.find(dropdownOptions, { label: data[key] }), "value");
-    } else if (!_.isString(data[key])) {
-      throw new Error(`${key} should be string`);
+      // Replace list body items with custom formatting
+      const listBodyRegex = /<li[^>]*>(((?!<li[^>]*>)(?!<\/li>).)*)<\/li>/gi;
+      const plainListItem = `<p>${_.replace(
+        listBody,
+        listBodyRegex,
+        (str, listItem) => {
+          let actSubIndex = 0;
+          const preventBrFollowedByPRegex = /(^|(<br \/>))(?!<p>)/gi;
+
+          return _.replace(listItem, preventBrFollowedByPRegex, () => {
+            if (listType === "o" && actSubIndex === 0) {
+              liIndex += 1;
+              actSubIndex += 1;
+              return `<br />${liIndex}${populateChar(
+                oIndentionChar,
+                listIndentionTabs - String(liIndex).length
+              )}`;
+            }
+            return `<br />${uIndention}`;
+          });
+        }
+      )}</p>`;
+
+      return plainListItem;
+    };
+
+  // handle lists
+  if (listStyle === "linebreak") {
+    const listRegex = /<\/?ul[^>]*>|<\/?ol[^>]*>|<\/?li[^>]*>/gi;
+    plainText = _.replace(plainText, listRegex, "\n");
+  } else if (listStyle === "indention") {
+    const orderedUnOrderedRegex = /<(o|u)l[^>]*>(.*)<\/\1l>/gi;
+    while (orderedUnOrderedRegex.test(plainText)) {
+      const nonNestedListRegex =
+        /<(o|u)l([^>]*)>(((?!<(o|u)l[^>]*>)(?!<\/(o|u)l>).)*)<\/\1l>/gi;
+      plainText = _.replace(
+        plainText,
+        nonNestedListRegex,
+        createListReplaceCb()
+      );
+    }
+  }
+
+  // handle headings
+
+  switch (headingStyle) {
+    case "linebreak": {
+      const headingTagRegex = /<h([1-6])[^>]*>([^<]*)<\/h\1>/gi;
+      plainText = _.replace(plainText, headingTagRegex, "\n$2\n");
+      break;
     }
 
-    data[key] = _.trim(data[key]);
+    case "underline": {
+      const h1TagContentRegex = /<h1[^>]*>(((?!<\/h1>).)*)<\/h1>/gi;
+      plainText = _.replace(plainText, h1TagContentRegex, (str, p1) => {
+        return `\n&nbsp;\n${p1}\n${populateChar("=", p1.length)}\n&nbsp;\n`;
+      });
+
+      const h2TagContentRegex = /<h2[^>]*>(((?!<\/h2>).)*)<\/h2>/gi;
+      plainText = _.replace(plainText, h2TagContentRegex, (str, p1) => {
+        return `\n&nbsp;\n${p1}\n${populateChar("-", p1.length)}\n&nbsp;\n`;
+      });
+
+      const h3toH6TagContentRegex = /<h([3-6])[^>]*>(((?!<\/h\1>).)*)<\/h\1>/gi;
+      plainText = _.replace(plainText, h3toH6TagContentRegex, (str, p1, p2) => {
+        return `\n&nbsp;\n${p2}\n&nbsp;\n`;
+      });
+
+      break;
+    }
+
+    case "hashify": {
+      const h1toH6TagContentRegex = /<h([1-6])[^>]*>([^<]*)<\/h\1>/gi;
+      plainText = _.replace(plainText, h1toH6TagContentRegex, (str, p1, p2) => {
+        return `\n&nbsp;\n${populateChar("#", p1)} ${p2}\n&nbsp;\n`;
+      });
+
+      break;
+    }
+
+    default:
+      break;
   }
-});
+
+  // replace <br>s, <td>s, <divs> and <p>s with linebreaks
+  const htmlTagMatcherRegex =
+    /<br( [^>]*)*>|<p( [^>]*)*>|<\/p( [^>]*)*>|<div( [^>]*)*>|<\/div( [^>]*)*>|<td( [^>]*)*>|<\/td( [^>]*)*>/gi;
+  plainText = _.replace(plainText, htmlTagMatcherRegex, "\n");
+
+  // replace <a href>b<a> links with b (href) or as described in the linkProcess function
+  const anchorTagWithHrefRegex =
+    /<a[^>]*href="([^"]*)"[^>]*>([^<]+)<\/a[^>]*>/gi;
+  plainText = _.replace(
+    plainText,
+    anchorTagWithHrefRegex,
+    (str, href, linkText) => {
+      if (typeof linkProcess === "function") {
+        return linkProcess(href, linkText);
+      }
+      return ` [${linkText}] (${href}) `;
+    }
+  );
+
+  // remove whitespace from empty lines excluding nbsp
+  plainText = _.replace(plainText, /\n[ \t\f]*/gi, "\n");
+
+  // remove duplicated empty lines
+  plainText = _.replace(plainText, /\n\n+/gi, "\n");
+
+  if (keepNbsps) {
+    // remove duplicated spaces including non braking spaces
+    plainText = _.replace(plainText, /( |\t)+/gi, " ");
+    plainText = _.replace(plainText, /&nbsp;/gi, " ");
+  } else {
+    // remove duplicated spaces including non braking spaces
+    plainText = _.replace(plainText, /( |&nbsp;|\t)+/gi, " ");
+  }
+
+  // remove line starter spaces
+  plainText = _.replace(plainText, /\n +/gi, "\n");
+
+  // remove content starter spaces
+  plainText = _.replace(plainText, /^ +/gi, "");
+
+  // remove first empty line
+  while (_.indexOf(plainText, "\n") === 0) {
+    plainText = _.join(_.slice(plainText, 1), "");
+  }
+
+  // put a new line at the end
+  if (plainText.length === 0 || !_.endsWith(plainText, "\n")) {
+    plainText += "\n";
+  }
+
+  return plainText;
+};
+
+const htmlToPlainTextV2 = (htmlText) => {
+  const linkProcess = null;
+  const imgProcess = null;
+  const headingStyle = "underline";
+  const listStyle = "indention";
+  const uIndentionChar = "-";
+  const listIndentionTabs = 3;
+  const oIndentionChar = "-";
+  const keepNbsps = false;
+
+  const uIndention = populateChar(uIndentionChar, listIndentionTabs);
+
+  // removel all \n linebreaks
+  let plainText = _.replace(String(htmlText), /\n|\r/g, " ");
+  console.log("v2 plainText 1:: ", plainText);
+
+  // remove everything before and after <body> tags including the tag itself
+  const bodyEndMatch = plainText.match(/<\/body>/i);
+  console.log("v2 bodyEndMatch:: ", bodyEndMatch);
+
+  if (bodyEndMatch) {
+    plainText = plainText.slice(1, bodyEndMatch?.index);
+  }
+  console.log("v2 plainText 2:: ", plainText);
+
+  const bodyStartMatch = plainText.match(/<body[^>]*>/i);
+  console.log("v2 bodyStartMatch:: ", bodyStartMatch);
+
+  if (bodyStartMatch) {
+    plainText = plainText.slice(
+      bodyStartMatch.index + bodyStartMatch[0]?.length,
+      plainText.length
+    );
+  }
+  console.log("v2 plainText 3:: ", plainText);
+
+  // remove inbody scripts and styles
+  const scriptRegex =
+    /<(script|style)( [^>]*)*>((?!<\/\1( [^>]*)*>).)*<\/\1>/gi;
+  plainText = _.replace(plainText, scriptRegex, "");
+
+  // remove all tags except that are being handled separately
+  const allTagsRegex =
+    /<(\/)?((?!h[1-6]( [^>]*)*>)(?!img( [^>]*)*>)(?!a( [^>]*)*>)(?!ul( [^>]*)*>)(?!ol( [^>]*)*>)(?!li( [^>]*)*>)(?!p( [^>]*)*>)(?!div( [^>]*)*>)(?!td( [^>]*)*>)(?!br( [^>]*)*>)[^>/])[^<>]*>/gi;
+  plainText = _.replace(plainText, allTagsRegex, "");
+
+  // remove or replace images - replacement texts with <> tags will be removed also, if not intentional, try to use other notation
+  plainText = _.replace(plainText, /<img([^>]*)>/gi, (imAttrs) => {
+    let imSrc = "";
+    let imAlt = "";
+    const imSrcResult = /src="([^"]*)"/i.exec(imAttrs);
+    const imAltResult = /alt="([^"]*)"/i.exec(imAttrs);
+
+    if (imSrcResult !== null) {
+      imSrc = imSrcResult[1];
+    }
+
+    if (imAltResult !== null) {
+      imAlt = imAltResult[1];
+    }
+
+    if (typeof imgProcess === "function") {
+      return imgProcess(imSrc, imAlt);
+    }
+
+    if (imAlt === "") {
+      return `![image] (${imSrc})`;
+    }
+
+    return `![${imAlt}] (${imSrc})`;
+  });
+
+  const createListReplaceCb =
+    () => (match, listType, listAttributes, listBody) => {
+      let liIndex = 0;
+
+      // Check for start attribute and extract the value if present
+      if (listAttributes && /start="([0-9]+)"/i.test(listAttributes)) {
+        liIndex = Number(/start="([0-9]+)"/i.exec(listAttributes)[1]) - 1;
+      }
+
+      // Replace list body items with custom formatting
+      const listBodyRegex = /<li[^>]*>(((?!<li[^>]*>)(?!<\/li>).)*)<\/li>/gi;
+      const plainListItem = `<p>${_.replace(
+        listBody,
+        listBodyRegex,
+        (str, listItem) => {
+          let actSubIndex = 0;
+          const preventBrFollowedByPRegex = /(^|(<br \/>))(?!<p>)/gi;
+
+          return _.replace(listItem, preventBrFollowedByPRegex, () => {
+            if (listType === "o" && actSubIndex === 0) {
+              liIndex += 1;
+              actSubIndex += 1;
+              return `<br />${liIndex}${populateChar(
+                oIndentionChar,
+                listIndentionTabs - String(liIndex).length
+              )}`;
+            }
+            return `<br />${uIndention}`;
+          });
+        }
+      )}</p>`;
+
+      return plainListItem;
+    };
+
+  // handle lists
+  if (listStyle === "linebreak") {
+    const listRegex = /<\/?ul[^>]*>|<\/?ol[^>]*>|<\/?li[^>]*>/gi;
+    plainText = _.replace(plainText, listRegex, "\n");
+  } else if (listStyle === "indention") {
+    const orderedUnOrderedRegex = /<(o|u)l[^>]*>(.*)<\/\1l>/gi;
+    while (orderedUnOrderedRegex.test(plainText)) {
+      const nonNestedListRegex =
+        /<(o|u)l([^>]*)>(((?!<(o|u)l[^>]*>)(?!<\/(o|u)l>).)*)<\/\1l>/gi;
+      plainText = _.replace(
+        plainText,
+        nonNestedListRegex,
+        createListReplaceCb()
+      );
+    }
+  }
+
+  // handle headings
+
+  switch (headingStyle) {
+    case "linebreak": {
+      const headingTagRegex = /<h([1-6])[^>]*>([^<]*)<\/h\1>/gi;
+      plainText = _.replace(plainText, headingTagRegex, "\n$2\n");
+      break;
+    }
+
+    case "underline": {
+      const h1TagContentRegex = /<h1[^>]*>(((?!<\/h1>).)*)<\/h1>/gi;
+      plainText = _.replace(plainText, h1TagContentRegex, (str, p1) => {
+        return `\n&nbsp;\n${p1}\n${populateChar("=", p1.length)}\n&nbsp;\n`;
+      });
+
+      const h2TagContentRegex = /<h2[^>]*>(((?!<\/h2>).)*)<\/h2>/gi;
+      plainText = _.replace(plainText, h2TagContentRegex, (str, p1) => {
+        return `\n&nbsp;\n${p1}\n${populateChar("-", p1.length)}\n&nbsp;\n`;
+      });
+
+      const h3toH6TagContentRegex = /<h([3-6])[^>]*>(((?!<\/h\1>).)*)<\/h\1>/gi;
+      plainText = _.replace(plainText, h3toH6TagContentRegex, (str, p1, p2) => {
+        return `\n&nbsp;\n${p2}\n&nbsp;\n`;
+      });
+
+      break;
+    }
+
+    case "hashify": {
+      const h1toH6TagContentRegex = /<h([1-6])[^>]*>([^<]*)<\/h\1>/gi;
+      plainText = _.replace(plainText, h1toH6TagContentRegex, (str, p1, p2) => {
+        return `\n&nbsp;\n${populateChar("#", p1)} ${p2}\n&nbsp;\n`;
+      });
+
+      break;
+    }
+
+    default:
+      break;
+  }
+
+  // replace <br>s, <td>s, <divs> and <p>s with linebreaks
+  const htmlTagMatcherRegex =
+    /<br( [^>]*)*>|<p( [^>]*)*>|<\/p( [^>]*)*>|<div( [^>]*)*>|<\/div( [^>]*)*>|<td( [^>]*)*>|<\/td( [^>]*)*>/gi;
+  plainText = _.replace(plainText, htmlTagMatcherRegex, "\n");
+
+  // replace <a href>b<a> links with b (href) or as described in the linkProcess function
+  const anchorTagWithHrefRegex =
+    /<a[^>]*href="([^"]*)"[^>]*>([^<]+)<\/a[^>]*>/gi;
+  plainText = _.replace(
+    plainText,
+    anchorTagWithHrefRegex,
+    (str, href, linkText) => {
+      if (typeof linkProcess === "function") {
+        return linkProcess(href, linkText);
+      }
+      return ` [${linkText}] (${href}) `;
+    }
+  );
+
+  // remove whitespace from empty lines excluding nbsp
+  plainText = _.replace(plainText, /\n[ \t\f]*/gi, "\n");
+
+  // remove duplicated empty lines
+  plainText = _.replace(plainText, /\n\n+/gi, "\n");
+
+  if (keepNbsps) {
+    // remove duplicated spaces including non braking spaces
+    plainText = _.replace(plainText, /( |\t)+/gi, " ");
+    plainText = _.replace(plainText, /&nbsp;/gi, " ");
+  } else {
+    // remove duplicated spaces including non braking spaces
+    plainText = _.replace(plainText, /( |&nbsp;|\t)+/gi, " ");
+  }
+
+  // remove line starter spaces
+  plainText = _.replace(plainText, /\n +/gi, "\n");
+
+  // remove content starter spaces
+  plainText = _.replace(plainText, /^ +/gi, "");
+
+  // remove first empty line
+  while (_.indexOf(plainText, "\n") === 0) {
+    plainText = _.join(_.slice(plainText, 1), "");
+  }
+
+  // put a new line at the end
+  if (plainText.length === 0 || !_.endsWith(plainText, "\n")) {
+    plainText += "\n";
+  }
+
+  return plainText;
+};
+
+console.log("V1:: ", htmlToPlainText(string));
+
+console.log("V2:: ", htmlToPlainTextV2(string));
