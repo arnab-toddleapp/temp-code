@@ -1850,450 +1850,520 @@ const _ = require("lodash");
 //   }
 // });
 
-const string = `<p class="tde-paragraph" dir="ltr" data-sessionid="4nHEw5ZFdy" style="text-align: left;"><span style="white-space:pre-wrap">NCCD Incident involving student Revenger v, Artimus of Grade 5 PYP is reported by Biswas Arnab.Incident report: ....Category: Testing bugs</span><br><span style="white-space:pre-wrap">Sub-category: Social Skills</span><br><span style="white-space:pre-wrap">[Date &amp; Time]</span><br></p>`;
+// const string = `<p class="tde-paragraph" dir="ltr" data-sessionid="4nHEw5ZFdy" style="text-align: left;"><span style="white-space:pre-wrap">NCCD Incident involving student Revenger v, Artimus of Grade 5 PYP is reported by Biswas Arnab.Incident report: ....Category: Testing bugs</span><br><span style="white-space:pre-wrap">Sub-category: Social Skills</span><br><span style="white-space:pre-wrap">[Date &amp; Time]</span><br></p>`;
 
-const populateChar = (ch, amount) => {
-  return _.repeat(ch, amount);
+// const populateChar = (ch, amount) => {
+//   return _.repeat(ch, amount);
+// };
+
+// const htmlToPlainText = (htmlText) => {
+//   const linkProcess = null;
+//   const imgProcess = null;
+//   const headingStyle = "underline";
+//   const listStyle = "indention";
+//   const uIndentionChar = "-";
+//   const listIndentionTabs = 3;
+//   const oIndentionChar = "-";
+//   const keepNbsps = false;
+
+//   const uIndention = populateChar(uIndentionChar, listIndentionTabs);
+
+//   // removel all \n linebreaks
+//   let plainText = _.replace(String(htmlText), /\n|\r/g, " ");
+
+//   console.log("v1 plainText 1:: ", plainText);
+
+//   // remove everything before and after <body> tags including the tag itself
+//   const bodyEndMatch = plainText.match(/<\/body>/i);
+//   console.log("v1 bodyEndMatch:: ", bodyEndMatch);
+
+//   if (bodyEndMatch) {
+//     plainText = _.slice(plainText, 1, bodyEndMatch?.index);
+//   }
+//   console.log("v1 plainText 2:: ", plainText);
+
+//   const bodyStartMatch = plainText.match(/<body[^>]*>/i);
+//   console.log("v1 bodyStartMatch:: ", bodyStartMatch);
+
+//   if (bodyStartMatch) {
+//     plainText = _.slice(
+//       plainText,
+//       bodyStartMatch.index + bodyStartMatch[0]?.length + 1,
+//       plainText.length
+//     );
+//   }
+//   console.log("v1 plainText 3:: ", plainText);
+
+//   // remove inbody scripts and styles
+//   const scriptRegex =
+//     /<(script|style)( [^>]*)*>((?!<\/\1( [^>]*)*>).)*<\/\1>/gi;
+//   plainText = _.replace(plainText, scriptRegex, "");
+
+//   // remove all tags except that are being handled separately
+//   const allTagsRegex =
+//     /<(\/)?((?!h[1-6]( [^>]*)*>)(?!img( [^>]*)*>)(?!a( [^>]*)*>)(?!ul( [^>]*)*>)(?!ol( [^>]*)*>)(?!li( [^>]*)*>)(?!p( [^>]*)*>)(?!div( [^>]*)*>)(?!td( [^>]*)*>)(?!br( [^>]*)*>)[^>/])[^<>]*>/gi;
+//   plainText = _.replace(plainText, allTagsRegex, "");
+
+//   // remove or replace images - replacement texts with <> tags will be removed also, if not intentional, try to use other notation
+//   plainText = _.replace(plainText, /<img([^>]*)>/gi, (imAttrs) => {
+//     let imSrc = "";
+//     let imAlt = "";
+//     const imSrcResult = /src="([^"]*)"/i.exec(imAttrs);
+//     const imAltResult = /alt="([^"]*)"/i.exec(imAttrs);
+
+//     if (imSrcResult !== null) {
+//       imSrc = imSrcResult[1];
+//     }
+
+//     if (imAltResult !== null) {
+//       imAlt = imAltResult[1];
+//     }
+
+//     if (typeof imgProcess === "function") {
+//       return imgProcess(imSrc, imAlt);
+//     }
+
+//     if (imAlt === "") {
+//       return `![image] (${imSrc})`;
+//     }
+
+//     return `![${imAlt}] (${imSrc})`;
+//   });
+
+//   const createListReplaceCb =
+//     () => (match, listType, listAttributes, listBody) => {
+//       let liIndex = 0;
+
+//       // Check for start attribute and extract the value if present
+//       if (listAttributes && /start="([0-9]+)"/i.test(listAttributes)) {
+//         liIndex = Number(/start="([0-9]+)"/i.exec(listAttributes)[1]) - 1;
+//       }
+
+//       // Replace list body items with custom formatting
+//       const listBodyRegex = /<li[^>]*>(((?!<li[^>]*>)(?!<\/li>).)*)<\/li>/gi;
+//       const plainListItem = `<p>${_.replace(
+//         listBody,
+//         listBodyRegex,
+//         (str, listItem) => {
+//           let actSubIndex = 0;
+//           const preventBrFollowedByPRegex = /(^|(<br \/>))(?!<p>)/gi;
+
+//           return _.replace(listItem, preventBrFollowedByPRegex, () => {
+//             if (listType === "o" && actSubIndex === 0) {
+//               liIndex += 1;
+//               actSubIndex += 1;
+//               return `<br />${liIndex}${populateChar(
+//                 oIndentionChar,
+//                 listIndentionTabs - String(liIndex).length
+//               )}`;
+//             }
+//             return `<br />${uIndention}`;
+//           });
+//         }
+//       )}</p>`;
+
+//       return plainListItem;
+//     };
+
+//   // handle lists
+//   if (listStyle === "linebreak") {
+//     const listRegex = /<\/?ul[^>]*>|<\/?ol[^>]*>|<\/?li[^>]*>/gi;
+//     plainText = _.replace(plainText, listRegex, "\n");
+//   } else if (listStyle === "indention") {
+//     const orderedUnOrderedRegex = /<(o|u)l[^>]*>(.*)<\/\1l>/gi;
+//     while (orderedUnOrderedRegex.test(plainText)) {
+//       const nonNestedListRegex =
+//         /<(o|u)l([^>]*)>(((?!<(o|u)l[^>]*>)(?!<\/(o|u)l>).)*)<\/\1l>/gi;
+//       plainText = _.replace(
+//         plainText,
+//         nonNestedListRegex,
+//         createListReplaceCb()
+//       );
+//     }
+//   }
+
+//   // handle headings
+
+//   switch (headingStyle) {
+//     case "linebreak": {
+//       const headingTagRegex = /<h([1-6])[^>]*>([^<]*)<\/h\1>/gi;
+//       plainText = _.replace(plainText, headingTagRegex, "\n$2\n");
+//       break;
+//     }
+
+//     case "underline": {
+//       const h1TagContentRegex = /<h1[^>]*>(((?!<\/h1>).)*)<\/h1>/gi;
+//       plainText = _.replace(plainText, h1TagContentRegex, (str, p1) => {
+//         return `\n&nbsp;\n${p1}\n${populateChar("=", p1.length)}\n&nbsp;\n`;
+//       });
+
+//       const h2TagContentRegex = /<h2[^>]*>(((?!<\/h2>).)*)<\/h2>/gi;
+//       plainText = _.replace(plainText, h2TagContentRegex, (str, p1) => {
+//         return `\n&nbsp;\n${p1}\n${populateChar("-", p1.length)}\n&nbsp;\n`;
+//       });
+
+//       const h3toH6TagContentRegex = /<h([3-6])[^>]*>(((?!<\/h\1>).)*)<\/h\1>/gi;
+//       plainText = _.replace(plainText, h3toH6TagContentRegex, (str, p1, p2) => {
+//         return `\n&nbsp;\n${p2}\n&nbsp;\n`;
+//       });
+
+//       break;
+//     }
+
+//     case "hashify": {
+//       const h1toH6TagContentRegex = /<h([1-6])[^>]*>([^<]*)<\/h\1>/gi;
+//       plainText = _.replace(plainText, h1toH6TagContentRegex, (str, p1, p2) => {
+//         return `\n&nbsp;\n${populateChar("#", p1)} ${p2}\n&nbsp;\n`;
+//       });
+
+//       break;
+//     }
+
+//     default:
+//       break;
+//   }
+
+//   // replace <br>s, <td>s, <divs> and <p>s with linebreaks
+//   const htmlTagMatcherRegex =
+//     /<br( [^>]*)*>|<p( [^>]*)*>|<\/p( [^>]*)*>|<div( [^>]*)*>|<\/div( [^>]*)*>|<td( [^>]*)*>|<\/td( [^>]*)*>/gi;
+//   plainText = _.replace(plainText, htmlTagMatcherRegex, "\n");
+
+//   // replace <a href>b<a> links with b (href) or as described in the linkProcess function
+//   const anchorTagWithHrefRegex =
+//     /<a[^>]*href="([^"]*)"[^>]*>([^<]+)<\/a[^>]*>/gi;
+//   plainText = _.replace(
+//     plainText,
+//     anchorTagWithHrefRegex,
+//     (str, href, linkText) => {
+//       if (typeof linkProcess === "function") {
+//         return linkProcess(href, linkText);
+//       }
+//       return ` [${linkText}] (${href}) `;
+//     }
+//   );
+
+//   // remove whitespace from empty lines excluding nbsp
+//   plainText = _.replace(plainText, /\n[ \t\f]*/gi, "\n");
+
+//   // remove duplicated empty lines
+//   plainText = _.replace(plainText, /\n\n+/gi, "\n");
+
+//   if (keepNbsps) {
+//     // remove duplicated spaces including non braking spaces
+//     plainText = _.replace(plainText, /( |\t)+/gi, " ");
+//     plainText = _.replace(plainText, /&nbsp;/gi, " ");
+//   } else {
+//     // remove duplicated spaces including non braking spaces
+//     plainText = _.replace(plainText, /( |&nbsp;|\t)+/gi, " ");
+//   }
+
+//   // remove line starter spaces
+//   plainText = _.replace(plainText, /\n +/gi, "\n");
+
+//   // remove content starter spaces
+//   plainText = _.replace(plainText, /^ +/gi, "");
+
+//   // remove first empty line
+//   while (_.indexOf(plainText, "\n") === 0) {
+//     plainText = _.join(_.slice(plainText, 1), "");
+//   }
+
+//   // put a new line at the end
+//   if (plainText.length === 0 || !_.endsWith(plainText, "\n")) {
+//     plainText += "\n";
+//   }
+
+//   return plainText;
+// };
+
+// const htmlToPlainTextV2 = (htmlText) => {
+//   const linkProcess = null;
+//   const imgProcess = null;
+//   const headingStyle = "underline";
+//   const listStyle = "indention";
+//   const uIndentionChar = "-";
+//   const listIndentionTabs = 3;
+//   const oIndentionChar = "-";
+//   const keepNbsps = false;
+
+//   const uIndention = populateChar(uIndentionChar, listIndentionTabs);
+
+//   // removel all \n linebreaks
+//   let plainText = _.replace(String(htmlText), /\n|\r/g, " ");
+//   console.log("v2 plainText 1:: ", plainText);
+
+//   // remove everything before and after <body> tags including the tag itself
+//   const bodyEndMatch = plainText.match(/<\/body>/i);
+//   console.log("v2 bodyEndMatch:: ", bodyEndMatch);
+
+//   if (bodyEndMatch) {
+//     plainText = plainText.slice(1, bodyEndMatch?.index);
+//   }
+//   console.log("v2 plainText 2:: ", plainText);
+
+//   const bodyStartMatch = plainText.match(/<body[^>]*>/i);
+//   console.log("v2 bodyStartMatch:: ", bodyStartMatch);
+
+//   if (bodyStartMatch) {
+//     plainText = plainText.slice(
+//       bodyStartMatch.index + bodyStartMatch[0]?.length,
+//       plainText.length
+//     );
+//   }
+//   console.log("v2 plainText 3:: ", plainText);
+
+//   // remove inbody scripts and styles
+//   const scriptRegex =
+//     /<(script|style)( [^>]*)*>((?!<\/\1( [^>]*)*>).)*<\/\1>/gi;
+//   plainText = _.replace(plainText, scriptRegex, "");
+
+//   // remove all tags except that are being handled separately
+//   const allTagsRegex =
+//     /<(\/)?((?!h[1-6]( [^>]*)*>)(?!img( [^>]*)*>)(?!a( [^>]*)*>)(?!ul( [^>]*)*>)(?!ol( [^>]*)*>)(?!li( [^>]*)*>)(?!p( [^>]*)*>)(?!div( [^>]*)*>)(?!td( [^>]*)*>)(?!br( [^>]*)*>)[^>/])[^<>]*>/gi;
+//   plainText = _.replace(plainText, allTagsRegex, "");
+
+//   // remove or replace images - replacement texts with <> tags will be removed also, if not intentional, try to use other notation
+//   plainText = _.replace(plainText, /<img([^>]*)>/gi, (imAttrs) => {
+//     let imSrc = "";
+//     let imAlt = "";
+//     const imSrcResult = /src="([^"]*)"/i.exec(imAttrs);
+//     const imAltResult = /alt="([^"]*)"/i.exec(imAttrs);
+
+//     if (imSrcResult !== null) {
+//       imSrc = imSrcResult[1];
+//     }
+
+//     if (imAltResult !== null) {
+//       imAlt = imAltResult[1];
+//     }
+
+//     if (typeof imgProcess === "function") {
+//       return imgProcess(imSrc, imAlt);
+//     }
+
+//     if (imAlt === "") {
+//       return `![image] (${imSrc})`;
+//     }
+
+//     return `![${imAlt}] (${imSrc})`;
+//   });
+
+//   const createListReplaceCb =
+//     () => (match, listType, listAttributes, listBody) => {
+//       let liIndex = 0;
+
+//       // Check for start attribute and extract the value if present
+//       if (listAttributes && /start="([0-9]+)"/i.test(listAttributes)) {
+//         liIndex = Number(/start="([0-9]+)"/i.exec(listAttributes)[1]) - 1;
+//       }
+
+//       // Replace list body items with custom formatting
+//       const listBodyRegex = /<li[^>]*>(((?!<li[^>]*>)(?!<\/li>).)*)<\/li>/gi;
+//       const plainListItem = `<p>${_.replace(
+//         listBody,
+//         listBodyRegex,
+//         (str, listItem) => {
+//           let actSubIndex = 0;
+//           const preventBrFollowedByPRegex = /(^|(<br \/>))(?!<p>)/gi;
+
+//           return _.replace(listItem, preventBrFollowedByPRegex, () => {
+//             if (listType === "o" && actSubIndex === 0) {
+//               liIndex += 1;
+//               actSubIndex += 1;
+//               return `<br />${liIndex}${populateChar(
+//                 oIndentionChar,
+//                 listIndentionTabs - String(liIndex).length
+//               )}`;
+//             }
+//             return `<br />${uIndention}`;
+//           });
+//         }
+//       )}</p>`;
+
+//       return plainListItem;
+//     };
+
+//   // handle lists
+//   if (listStyle === "linebreak") {
+//     const listRegex = /<\/?ul[^>]*>|<\/?ol[^>]*>|<\/?li[^>]*>/gi;
+//     plainText = _.replace(plainText, listRegex, "\n");
+//   } else if (listStyle === "indention") {
+//     const orderedUnOrderedRegex = /<(o|u)l[^>]*>(.*)<\/\1l>/gi;
+//     while (orderedUnOrderedRegex.test(plainText)) {
+//       const nonNestedListRegex =
+//         /<(o|u)l([^>]*)>(((?!<(o|u)l[^>]*>)(?!<\/(o|u)l>).)*)<\/\1l>/gi;
+//       plainText = _.replace(
+//         plainText,
+//         nonNestedListRegex,
+//         createListReplaceCb()
+//       );
+//     }
+//   }
+
+//   // handle headings
+
+//   switch (headingStyle) {
+//     case "linebreak": {
+//       const headingTagRegex = /<h([1-6])[^>]*>([^<]*)<\/h\1>/gi;
+//       plainText = _.replace(plainText, headingTagRegex, "\n$2\n");
+//       break;
+//     }
+
+//     case "underline": {
+//       const h1TagContentRegex = /<h1[^>]*>(((?!<\/h1>).)*)<\/h1>/gi;
+//       plainText = _.replace(plainText, h1TagContentRegex, (str, p1) => {
+//         return `\n&nbsp;\n${p1}\n${populateChar("=", p1.length)}\n&nbsp;\n`;
+//       });
+
+//       const h2TagContentRegex = /<h2[^>]*>(((?!<\/h2>).)*)<\/h2>/gi;
+//       plainText = _.replace(plainText, h2TagContentRegex, (str, p1) => {
+//         return `\n&nbsp;\n${p1}\n${populateChar("-", p1.length)}\n&nbsp;\n`;
+//       });
+
+//       const h3toH6TagContentRegex = /<h([3-6])[^>]*>(((?!<\/h\1>).)*)<\/h\1>/gi;
+//       plainText = _.replace(plainText, h3toH6TagContentRegex, (str, p1, p2) => {
+//         return `\n&nbsp;\n${p2}\n&nbsp;\n`;
+//       });
+
+//       break;
+//     }
+
+//     case "hashify": {
+//       const h1toH6TagContentRegex = /<h([1-6])[^>]*>([^<]*)<\/h\1>/gi;
+//       plainText = _.replace(plainText, h1toH6TagContentRegex, (str, p1, p2) => {
+//         return `\n&nbsp;\n${populateChar("#", p1)} ${p2}\n&nbsp;\n`;
+//       });
+
+//       break;
+//     }
+
+//     default:
+//       break;
+//   }
+
+//   // replace <br>s, <td>s, <divs> and <p>s with linebreaks
+//   const htmlTagMatcherRegex =
+//     /<br( [^>]*)*>|<p( [^>]*)*>|<\/p( [^>]*)*>|<div( [^>]*)*>|<\/div( [^>]*)*>|<td( [^>]*)*>|<\/td( [^>]*)*>/gi;
+//   plainText = _.replace(plainText, htmlTagMatcherRegex, "\n");
+
+//   // replace <a href>b<a> links with b (href) or as described in the linkProcess function
+//   const anchorTagWithHrefRegex =
+//     /<a[^>]*href="([^"]*)"[^>]*>([^<]+)<\/a[^>]*>/gi;
+//   plainText = _.replace(
+//     plainText,
+//     anchorTagWithHrefRegex,
+//     (str, href, linkText) => {
+//       if (typeof linkProcess === "function") {
+//         return linkProcess(href, linkText);
+//       }
+//       return ` [${linkText}] (${href}) `;
+//     }
+//   );
+
+//   // remove whitespace from empty lines excluding nbsp
+//   plainText = _.replace(plainText, /\n[ \t\f]*/gi, "\n");
+
+//   // remove duplicated empty lines
+//   plainText = _.replace(plainText, /\n\n+/gi, "\n");
+
+//   if (keepNbsps) {
+//     // remove duplicated spaces including non braking spaces
+//     plainText = _.replace(plainText, /( |\t)+/gi, " ");
+//     plainText = _.replace(plainText, /&nbsp;/gi, " ");
+//   } else {
+//     // remove duplicated spaces including non braking spaces
+//     plainText = _.replace(plainText, /( |&nbsp;|\t)+/gi, " ");
+//   }
+
+//   // remove line starter spaces
+//   plainText = _.replace(plainText, /\n +/gi, "\n");
+
+//   // remove content starter spaces
+//   plainText = _.replace(plainText, /^ +/gi, "");
+
+//   // remove first empty line
+//   while (_.indexOf(plainText, "\n") === 0) {
+//     plainText = _.join(_.slice(plainText, 1), "");
+//   }
+
+//   // put a new line at the end
+//   if (plainText.length === 0 || !_.endsWith(plainText, "\n")) {
+//     plainText += "\n";
+//   }
+
+//   return plainText;
+// };
+
+// console.log("V1:: ", htmlToPlainText(string));
+
+// console.log("V2:: ", htmlToPlainTextV2(string));
+
+let shouldNotify = false;
+const oldAccess = "CAN_VIEW";
+const newAccess = "CAN_EDIT";
+const hasReferredAccess = true;
+const isNotifyToggleEnabled = true;
+const oldShouldNotify = true;
+const newShouldNotify = true;
+
+const v1 = () => {
+  const accessableSet = new Set(["CAN_VIEW", "CAN_EDIT"]);
+
+  if (oldAccess && _.isNil(newAccess)) {
+    return hasReferredAccess
+      ? accessableSet.has(oldAccess)
+      : !accessableSet.has(oldAccess);
+  } else if (_.isNil(oldAccess) && newAccess) {
+    return accessableSet.has(newAccess);
+  } else if (oldAccess && newAccess) {
+    if (oldAccess === "NO_ACCESS" && accessableSet.has(newAccess)) {
+      return true;
+    } else if (accessableSet.has(oldAccess) && accessableSet.has(newAccess)) {
+      return hasReferredAccess;
+    }
+  }
+
+  return false;
 };
 
-const htmlToPlainText = (htmlText) => {
-  const linkProcess = null;
-  const imgProcess = null;
-  const headingStyle = "underline";
-  const listStyle = "indention";
-  const uIndentionChar = "-";
-  const listIndentionTabs = 3;
-  const oIndentionChar = "-";
-  const keepNbsps = false;
+const v2 = () => {
+  if (isNotifyToggleEnabled && !newShouldNotify) {
+    console.log("in first block");
+    shouldNotify = false;
+  } else if (!isNotifyToggleEnabled || newShouldNotify) {
+    console.log("in second block");
+    const accessableSet = new Set(["CAN_VIEW", "CAN_EDIT"]);
 
-  const uIndention = populateChar(uIndentionChar, listIndentionTabs);
-
-  // removel all \n linebreaks
-  let plainText = _.replace(String(htmlText), /\n|\r/g, " ");
-
-  console.log("v1 plainText 1:: ", plainText);
-
-  // remove everything before and after <body> tags including the tag itself
-  const bodyEndMatch = plainText.match(/<\/body>/i);
-  console.log("v1 bodyEndMatch:: ", bodyEndMatch);
-
-  if (bodyEndMatch) {
-    plainText = _.slice(plainText, 1, bodyEndMatch?.index);
-  }
-  console.log("v1 plainText 2:: ", plainText);
-
-  const bodyStartMatch = plainText.match(/<body[^>]*>/i);
-  console.log("v1 bodyStartMatch:: ", bodyStartMatch);
-
-  if (bodyStartMatch) {
-    plainText = _.slice(
-      plainText,
-      bodyStartMatch.index + bodyStartMatch[0]?.length + 1,
-      plainText.length
-    );
-  }
-  console.log("v1 plainText 3:: ", plainText);
-
-  // remove inbody scripts and styles
-  const scriptRegex =
-    /<(script|style)( [^>]*)*>((?!<\/\1( [^>]*)*>).)*<\/\1>/gi;
-  plainText = _.replace(plainText, scriptRegex, "");
-
-  // remove all tags except that are being handled separately
-  const allTagsRegex =
-    /<(\/)?((?!h[1-6]( [^>]*)*>)(?!img( [^>]*)*>)(?!a( [^>]*)*>)(?!ul( [^>]*)*>)(?!ol( [^>]*)*>)(?!li( [^>]*)*>)(?!p( [^>]*)*>)(?!div( [^>]*)*>)(?!td( [^>]*)*>)(?!br( [^>]*)*>)[^>/])[^<>]*>/gi;
-  plainText = _.replace(plainText, allTagsRegex, "");
-
-  // remove or replace images - replacement texts with <> tags will be removed also, if not intentional, try to use other notation
-  plainText = _.replace(plainText, /<img([^>]*)>/gi, (imAttrs) => {
-    let imSrc = "";
-    let imAlt = "";
-    const imSrcResult = /src="([^"]*)"/i.exec(imAttrs);
-    const imAltResult = /alt="([^"]*)"/i.exec(imAttrs);
-
-    if (imSrcResult !== null) {
-      imSrc = imSrcResult[1];
-    }
-
-    if (imAltResult !== null) {
-      imAlt = imAltResult[1];
-    }
-
-    if (typeof imgProcess === "function") {
-      return imgProcess(imSrc, imAlt);
-    }
-
-    if (imAlt === "") {
-      return `![image] (${imSrc})`;
-    }
-
-    return `![${imAlt}] (${imSrc})`;
-  });
-
-  const createListReplaceCb =
-    () => (match, listType, listAttributes, listBody) => {
-      let liIndex = 0;
-
-      // Check for start attribute and extract the value if present
-      if (listAttributes && /start="([0-9]+)"/i.test(listAttributes)) {
-        liIndex = Number(/start="([0-9]+)"/i.exec(listAttributes)[1]) - 1;
-      }
-
-      // Replace list body items with custom formatting
-      const listBodyRegex = /<li[^>]*>(((?!<li[^>]*>)(?!<\/li>).)*)<\/li>/gi;
-      const plainListItem = `<p>${_.replace(
-        listBody,
-        listBodyRegex,
-        (str, listItem) => {
-          let actSubIndex = 0;
-          const preventBrFollowedByPRegex = /(^|(<br \/>))(?!<p>)/gi;
-
-          return _.replace(listItem, preventBrFollowedByPRegex, () => {
-            if (listType === "o" && actSubIndex === 0) {
-              liIndex += 1;
-              actSubIndex += 1;
-              return `<br />${liIndex}${populateChar(
-                oIndentionChar,
-                listIndentionTabs - String(liIndex).length
-              )}`;
-            }
-            return `<br />${uIndention}`;
-          });
+    if (oldAccess && _.isNil(newAccess)) {
+      console.log("in third block");
+      shouldNotify = hasReferredAccess
+        ? accessableSet.has(oldAccess)
+        : !accessableSet.has(oldAccess);
+    } else if (_.isNil(oldAccess) && newAccess) {
+      console.log("in fourth block");
+      shouldNotify = accessableSet.has(newAccess);
+    } else if (oldAccess && newAccess) {
+      console.log("in fifth block");
+      if (oldAccess === "NO_ACCESS" && accessableSet.has(newAccess)) {
+        console.log("in sixth block");
+        shouldNotify = true;
+      } else if (accessableSet.has(oldAccess) && accessableSet.has(newAccess)) {
+        console.log("in seventh block");
+        // if both old and new access level are viewable but the oldNotify is false and the newNotify is true then only send email/notification
+        // else follow the hasReferredAccess logic
+        if (isNotifyToggleEnabled && !oldShouldNotify) {
+          console.log("in eighth block");
+          shouldNotify = true;
+        } else {
+          console.log("in ninth block");
+          shouldNotify = hasReferredAccess;
         }
-      )}</p>`;
-
-      return plainListItem;
-    };
-
-  // handle lists
-  if (listStyle === "linebreak") {
-    const listRegex = /<\/?ul[^>]*>|<\/?ol[^>]*>|<\/?li[^>]*>/gi;
-    plainText = _.replace(plainText, listRegex, "\n");
-  } else if (listStyle === "indention") {
-    const orderedUnOrderedRegex = /<(o|u)l[^>]*>(.*)<\/\1l>/gi;
-    while (orderedUnOrderedRegex.test(plainText)) {
-      const nonNestedListRegex =
-        /<(o|u)l([^>]*)>(((?!<(o|u)l[^>]*>)(?!<\/(o|u)l>).)*)<\/\1l>/gi;
-      plainText = _.replace(
-        plainText,
-        nonNestedListRegex,
-        createListReplaceCb()
-      );
-    }
-  }
-
-  // handle headings
-
-  switch (headingStyle) {
-    case "linebreak": {
-      const headingTagRegex = /<h([1-6])[^>]*>([^<]*)<\/h\1>/gi;
-      plainText = _.replace(plainText, headingTagRegex, "\n$2\n");
-      break;
-    }
-
-    case "underline": {
-      const h1TagContentRegex = /<h1[^>]*>(((?!<\/h1>).)*)<\/h1>/gi;
-      plainText = _.replace(plainText, h1TagContentRegex, (str, p1) => {
-        return `\n&nbsp;\n${p1}\n${populateChar("=", p1.length)}\n&nbsp;\n`;
-      });
-
-      const h2TagContentRegex = /<h2[^>]*>(((?!<\/h2>).)*)<\/h2>/gi;
-      plainText = _.replace(plainText, h2TagContentRegex, (str, p1) => {
-        return `\n&nbsp;\n${p1}\n${populateChar("-", p1.length)}\n&nbsp;\n`;
-      });
-
-      const h3toH6TagContentRegex = /<h([3-6])[^>]*>(((?!<\/h\1>).)*)<\/h\1>/gi;
-      plainText = _.replace(plainText, h3toH6TagContentRegex, (str, p1, p2) => {
-        return `\n&nbsp;\n${p2}\n&nbsp;\n`;
-      });
-
-      break;
-    }
-
-    case "hashify": {
-      const h1toH6TagContentRegex = /<h([1-6])[^>]*>([^<]*)<\/h\1>/gi;
-      plainText = _.replace(plainText, h1toH6TagContentRegex, (str, p1, p2) => {
-        return `\n&nbsp;\n${populateChar("#", p1)} ${p2}\n&nbsp;\n`;
-      });
-
-      break;
-    }
-
-    default:
-      break;
-  }
-
-  // replace <br>s, <td>s, <divs> and <p>s with linebreaks
-  const htmlTagMatcherRegex =
-    /<br( [^>]*)*>|<p( [^>]*)*>|<\/p( [^>]*)*>|<div( [^>]*)*>|<\/div( [^>]*)*>|<td( [^>]*)*>|<\/td( [^>]*)*>/gi;
-  plainText = _.replace(plainText, htmlTagMatcherRegex, "\n");
-
-  // replace <a href>b<a> links with b (href) or as described in the linkProcess function
-  const anchorTagWithHrefRegex =
-    /<a[^>]*href="([^"]*)"[^>]*>([^<]+)<\/a[^>]*>/gi;
-  plainText = _.replace(
-    plainText,
-    anchorTagWithHrefRegex,
-    (str, href, linkText) => {
-      if (typeof linkProcess === "function") {
-        return linkProcess(href, linkText);
       }
-      return ` [${linkText}] (${href}) `;
     }
-  );
-
-  // remove whitespace from empty lines excluding nbsp
-  plainText = _.replace(plainText, /\n[ \t\f]*/gi, "\n");
-
-  // remove duplicated empty lines
-  plainText = _.replace(plainText, /\n\n+/gi, "\n");
-
-  if (keepNbsps) {
-    // remove duplicated spaces including non braking spaces
-    plainText = _.replace(plainText, /( |\t)+/gi, " ");
-    plainText = _.replace(plainText, /&nbsp;/gi, " ");
-  } else {
-    // remove duplicated spaces including non braking spaces
-    plainText = _.replace(plainText, /( |&nbsp;|\t)+/gi, " ");
   }
 
-  // remove line starter spaces
-  plainText = _.replace(plainText, /\n +/gi, "\n");
-
-  // remove content starter spaces
-  plainText = _.replace(plainText, /^ +/gi, "");
-
-  // remove first empty line
-  while (_.indexOf(plainText, "\n") === 0) {
-    plainText = _.join(_.slice(plainText, 1), "");
-  }
-
-  // put a new line at the end
-  if (plainText.length === 0 || !_.endsWith(plainText, "\n")) {
-    plainText += "\n";
-  }
-
-  return plainText;
+  return shouldNotify;
 };
 
-const htmlToPlainTextV2 = (htmlText) => {
-  const linkProcess = null;
-  const imgProcess = null;
-  const headingStyle = "underline";
-  const listStyle = "indention";
-  const uIndentionChar = "-";
-  const listIndentionTabs = 3;
-  const oIndentionChar = "-";
-  const keepNbsps = false;
-
-  const uIndention = populateChar(uIndentionChar, listIndentionTabs);
-
-  // removel all \n linebreaks
-  let plainText = _.replace(String(htmlText), /\n|\r/g, " ");
-  console.log("v2 plainText 1:: ", plainText);
-
-  // remove everything before and after <body> tags including the tag itself
-  const bodyEndMatch = plainText.match(/<\/body>/i);
-  console.log("v2 bodyEndMatch:: ", bodyEndMatch);
-
-  if (bodyEndMatch) {
-    plainText = plainText.slice(1, bodyEndMatch?.index);
-  }
-  console.log("v2 plainText 2:: ", plainText);
-
-  const bodyStartMatch = plainText.match(/<body[^>]*>/i);
-  console.log("v2 bodyStartMatch:: ", bodyStartMatch);
-
-  if (bodyStartMatch) {
-    plainText = plainText.slice(
-      bodyStartMatch.index + bodyStartMatch[0]?.length,
-      plainText.length
-    );
-  }
-  console.log("v2 plainText 3:: ", plainText);
-
-  // remove inbody scripts and styles
-  const scriptRegex =
-    /<(script|style)( [^>]*)*>((?!<\/\1( [^>]*)*>).)*<\/\1>/gi;
-  plainText = _.replace(plainText, scriptRegex, "");
-
-  // remove all tags except that are being handled separately
-  const allTagsRegex =
-    /<(\/)?((?!h[1-6]( [^>]*)*>)(?!img( [^>]*)*>)(?!a( [^>]*)*>)(?!ul( [^>]*)*>)(?!ol( [^>]*)*>)(?!li( [^>]*)*>)(?!p( [^>]*)*>)(?!div( [^>]*)*>)(?!td( [^>]*)*>)(?!br( [^>]*)*>)[^>/])[^<>]*>/gi;
-  plainText = _.replace(plainText, allTagsRegex, "");
-
-  // remove or replace images - replacement texts with <> tags will be removed also, if not intentional, try to use other notation
-  plainText = _.replace(plainText, /<img([^>]*)>/gi, (imAttrs) => {
-    let imSrc = "";
-    let imAlt = "";
-    const imSrcResult = /src="([^"]*)"/i.exec(imAttrs);
-    const imAltResult = /alt="([^"]*)"/i.exec(imAttrs);
-
-    if (imSrcResult !== null) {
-      imSrc = imSrcResult[1];
-    }
-
-    if (imAltResult !== null) {
-      imAlt = imAltResult[1];
-    }
-
-    if (typeof imgProcess === "function") {
-      return imgProcess(imSrc, imAlt);
-    }
-
-    if (imAlt === "") {
-      return `![image] (${imSrc})`;
-    }
-
-    return `![${imAlt}] (${imSrc})`;
-  });
-
-  const createListReplaceCb =
-    () => (match, listType, listAttributes, listBody) => {
-      let liIndex = 0;
-
-      // Check for start attribute and extract the value if present
-      if (listAttributes && /start="([0-9]+)"/i.test(listAttributes)) {
-        liIndex = Number(/start="([0-9]+)"/i.exec(listAttributes)[1]) - 1;
-      }
-
-      // Replace list body items with custom formatting
-      const listBodyRegex = /<li[^>]*>(((?!<li[^>]*>)(?!<\/li>).)*)<\/li>/gi;
-      const plainListItem = `<p>${_.replace(
-        listBody,
-        listBodyRegex,
-        (str, listItem) => {
-          let actSubIndex = 0;
-          const preventBrFollowedByPRegex = /(^|(<br \/>))(?!<p>)/gi;
-
-          return _.replace(listItem, preventBrFollowedByPRegex, () => {
-            if (listType === "o" && actSubIndex === 0) {
-              liIndex += 1;
-              actSubIndex += 1;
-              return `<br />${liIndex}${populateChar(
-                oIndentionChar,
-                listIndentionTabs - String(liIndex).length
-              )}`;
-            }
-            return `<br />${uIndention}`;
-          });
-        }
-      )}</p>`;
-
-      return plainListItem;
-    };
-
-  // handle lists
-  if (listStyle === "linebreak") {
-    const listRegex = /<\/?ul[^>]*>|<\/?ol[^>]*>|<\/?li[^>]*>/gi;
-    plainText = _.replace(plainText, listRegex, "\n");
-  } else if (listStyle === "indention") {
-    const orderedUnOrderedRegex = /<(o|u)l[^>]*>(.*)<\/\1l>/gi;
-    while (orderedUnOrderedRegex.test(plainText)) {
-      const nonNestedListRegex =
-        /<(o|u)l([^>]*)>(((?!<(o|u)l[^>]*>)(?!<\/(o|u)l>).)*)<\/\1l>/gi;
-      plainText = _.replace(
-        plainText,
-        nonNestedListRegex,
-        createListReplaceCb()
-      );
-    }
-  }
-
-  // handle headings
-
-  switch (headingStyle) {
-    case "linebreak": {
-      const headingTagRegex = /<h([1-6])[^>]*>([^<]*)<\/h\1>/gi;
-      plainText = _.replace(plainText, headingTagRegex, "\n$2\n");
-      break;
-    }
-
-    case "underline": {
-      const h1TagContentRegex = /<h1[^>]*>(((?!<\/h1>).)*)<\/h1>/gi;
-      plainText = _.replace(plainText, h1TagContentRegex, (str, p1) => {
-        return `\n&nbsp;\n${p1}\n${populateChar("=", p1.length)}\n&nbsp;\n`;
-      });
-
-      const h2TagContentRegex = /<h2[^>]*>(((?!<\/h2>).)*)<\/h2>/gi;
-      plainText = _.replace(plainText, h2TagContentRegex, (str, p1) => {
-        return `\n&nbsp;\n${p1}\n${populateChar("-", p1.length)}\n&nbsp;\n`;
-      });
-
-      const h3toH6TagContentRegex = /<h([3-6])[^>]*>(((?!<\/h\1>).)*)<\/h\1>/gi;
-      plainText = _.replace(plainText, h3toH6TagContentRegex, (str, p1, p2) => {
-        return `\n&nbsp;\n${p2}\n&nbsp;\n`;
-      });
-
-      break;
-    }
-
-    case "hashify": {
-      const h1toH6TagContentRegex = /<h([1-6])[^>]*>([^<]*)<\/h\1>/gi;
-      plainText = _.replace(plainText, h1toH6TagContentRegex, (str, p1, p2) => {
-        return `\n&nbsp;\n${populateChar("#", p1)} ${p2}\n&nbsp;\n`;
-      });
-
-      break;
-    }
-
-    default:
-      break;
-  }
-
-  // replace <br>s, <td>s, <divs> and <p>s with linebreaks
-  const htmlTagMatcherRegex =
-    /<br( [^>]*)*>|<p( [^>]*)*>|<\/p( [^>]*)*>|<div( [^>]*)*>|<\/div( [^>]*)*>|<td( [^>]*)*>|<\/td( [^>]*)*>/gi;
-  plainText = _.replace(plainText, htmlTagMatcherRegex, "\n");
-
-  // replace <a href>b<a> links with b (href) or as described in the linkProcess function
-  const anchorTagWithHrefRegex =
-    /<a[^>]*href="([^"]*)"[^>]*>([^<]+)<\/a[^>]*>/gi;
-  plainText = _.replace(
-    plainText,
-    anchorTagWithHrefRegex,
-    (str, href, linkText) => {
-      if (typeof linkProcess === "function") {
-        return linkProcess(href, linkText);
-      }
-      return ` [${linkText}] (${href}) `;
-    }
-  );
-
-  // remove whitespace from empty lines excluding nbsp
-  plainText = _.replace(plainText, /\n[ \t\f]*/gi, "\n");
-
-  // remove duplicated empty lines
-  plainText = _.replace(plainText, /\n\n+/gi, "\n");
-
-  if (keepNbsps) {
-    // remove duplicated spaces including non braking spaces
-    plainText = _.replace(plainText, /( |\t)+/gi, " ");
-    plainText = _.replace(plainText, /&nbsp;/gi, " ");
-  } else {
-    // remove duplicated spaces including non braking spaces
-    plainText = _.replace(plainText, /( |&nbsp;|\t)+/gi, " ");
-  }
-
-  // remove line starter spaces
-  plainText = _.replace(plainText, /\n +/gi, "\n");
-
-  // remove content starter spaces
-  plainText = _.replace(plainText, /^ +/gi, "");
-
-  // remove first empty line
-  while (_.indexOf(plainText, "\n") === 0) {
-    plainText = _.join(_.slice(plainText, 1), "");
-  }
-
-  // put a new line at the end
-  if (plainText.length === 0 || !_.endsWith(plainText, "\n")) {
-    plainText += "\n";
-  }
-
-  return plainText;
-};
-
-console.log("V1:: ", htmlToPlainText(string));
-
-console.log("V2:: ", htmlToPlainTextV2(string));
+console.log(v1());
+console.log(v2());
